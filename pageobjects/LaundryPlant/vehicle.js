@@ -2,11 +2,6 @@ import ReusablesComponents from "./../reuse"
 
 class vehicle {
 
-
-    get masterDropDown() { return $("//a[.='Master']") }
-    getMasterSubModules(MasterSubModules) { return $(`//span[.='${MasterSubModules}']`) }
-    getLinenPlantSubModuleDropDown(subModuleValues) { return $(`//ul[@class='show']/li/a[.='${subModuleValues}']`) }
-    get addButton() { return $("//td[@id='Add']") }
     get vehicleNo() { return $("//input[@id='txtVehicleNo']") }
     get manufacturer() { return $("//input[@name='Manufacturer']") }
     get effectiveDate() { return $("(//input[@name='EffectiveFrom'])[1]") }
@@ -14,7 +9,6 @@ class vehicle {
     getLicenseDropDown(licenseCode) { return $(`//ul[@id='UlFetchLicenseCode']/li/div/a[.='${licenseCode}']`) }
     get LicenseNo() { return $("//input[@id='txtLicenseNo']") }
     getClassGrade(Grade) { return $(`//select[@id='txtClassGrade']/option[.='${Grade}']`) }
-    get saveButton() { return $("(//button[@type='submit'])[1]") }
     getIssuedBy(IssuedBy) { return $(`//select[@id='txtIssuedBy']/option[.='${IssuedBy}']`) }
     get issuedDate() { return $("//input[@name='IssuedDate']") }
     get expiryDate() { return $("//input[@ng-model='Position.ExpiryDate']") }
@@ -22,19 +16,6 @@ class vehicle {
     get loadLabel() { return $("//label[.='Load Weight BDM (Kg)']") }
     get ExpiryBox() { return $("(//div[@class='xdsoft_datepicker active'])[9]") }
 
-
-    async clickMasterDropDown(LaundryPlant) {
-        await ReusablesComponents.waitAndClick(this.masterDropDown)
-        await ReusablesComponents.waitAndClick(this.getMasterSubModules(LaundryPlant))
-    }
-
-    async clickSubModulesDropDown(VehicleDetails) {
-        await ReusablesComponents.waitAndClick(this.getLinenPlantSubModuleDropDown(VehicleDetails))
-    }
-
-    async clickaddButton() {
-        await ReusablesComponents.waitAndClick(this.addButton)
-    }
 
     async setVehicleNo(vehicleNo) {
         await ReusablesComponents.waitAndSetValue(this.vehicleNo, vehicleNo)
@@ -61,11 +42,6 @@ class vehicle {
 
     async selectClassGrade(Grade) {
         await ReusablesComponents.waitAndClick(this.getClassGrade(Grade))
-    }
-
-
-    async clickSaveButton() {
-        await ReusablesComponents.waitAndClick(this.saveButton)
     }
 
     async selectIssuedBy(IssuedBy) {

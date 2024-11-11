@@ -3,10 +3,6 @@ import ReusablesComponents from "./../reuse"
 
 class DriverDetails {
 
-    get masterDropDown() { return $("//a[.='Master']") }
-    getMasterSubModules(MasterSubModules) { return $(`//span[.='${MasterSubModules}']`) }
-    getLinenPlantSubModuleDropDown(subModuleValues) { return $(`//ul[@class='show']/li/a[.='${subModuleValues}']`) }
-    get addButton() { return $("//td[@id='Add']") }
     get drivercode() { return $("//input[@id='txtDriverCode']") }
     get driverName() { return $("//input[@name='DriverName']") }
     get effectiveFrom() { return $("//input[@ng-model='Driver.EffectiveFrom']") }
@@ -14,7 +10,6 @@ class DriverDetails {
     getLicenseDropDown(licenseCode) { return $(`//ul[@id='UlFetchLicenseCode']/li/div/a[.='${licenseCode}']`) }
     get LicenseNo() { return $("//input[@id='txtLicenseNo']") }
     getClassGrade(Grade) { return $(`//select[@id='txtClassGrade']/option[.='${Grade}']`) }
-    get saveButton() { return $("(//button[@type='submit'])[1]") }
     getIssuedBy(IssuedBy) { return $(`//select[@id='txtIssuedBy']/option[.='${IssuedBy}']`) }
     get issuedDate() { return $("//input[@name='IssuedDate']") }
     get expiryDate() { return $("//input[@ng-model='Position.ExpiryDate']") }
@@ -22,19 +17,6 @@ class DriverDetails {
     get loadLabel() { return $("//label[.='Load Weight BDM (Kg)']") }
     get ExpiryBox() { return $("(//div[@class='xdsoft_datetimepicker xdsoft_noselect xdsoft_'])[9]") }
 
-
-    async clickMasterDropDown(LaundryPlant) {
-        await ReusablesComponents.waitAndClick(this.masterDropDown)
-        await ReusablesComponents.waitAndClick(this.getMasterSubModules(LaundryPlant))
-    }
-
-    async clickSubModulesDropDown(VehicleDetails) {
-        await ReusablesComponents.waitAndClick(this.getLinenPlantSubModuleDropDown(VehicleDetails))
-    }
-
-    async clickaddButton() {
-        await ReusablesComponents.waitAndClick(this.addButton)
-    }
 
     async setDriverCode(driverCode) {
         await ReusablesComponents.waitAndSetValue(this.drivercode, driverCode)
@@ -60,11 +42,6 @@ class DriverDetails {
 
     async selectClassGrade(Grade) {
         await ReusablesComponents.waitAndClick(this.getClassGrade(Grade))
-    }
-
-
-    async clickSaveButton() {
-        await ReusablesComponents.waitAndClick(this.saveButton)
     }
 
     async selectIssuedBy(IssuedBy) {

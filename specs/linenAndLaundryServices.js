@@ -13,6 +13,9 @@ import cleanLinenDespatch from "../pageobjects/LaundryPlant/cleanLinenDespatch"
 import driverDetails from "../pageobjects/LaundryPlant/DriverDetails"
 import cleanLinenRequest from "../pageobjects/cleanLinenRequest"
 import cleanLinenIssue from "../pageobjects/CleanLinenIssue"
+import reuseButtons from "./../pageobjects/button"
+import sideNavBar from "../pageobjects/sideNavBar"
+import WaitUtil from "../pageobjects/waitUntil"
 
 let clono
 let clrDocumentNo
@@ -24,9 +27,9 @@ describe("Creating a full flow for Linen and Laundry Services", async () => {
         await browser.maximizeWindow()
     })
 
-    // after(async () => {
-    //     await asisHomePage.asisuserLogoutToTheApplication()
-    // })
+    after(async () => {
+        await reuseButtons.asisuserLogoutToTheApplication()
+    })
 
 
     describe("Asis User Login to the Application and Creating User Area Master and User Location Master", async () => {
@@ -37,12 +40,12 @@ describe("Creating a full flow for Linen and Laundry Services", async () => {
             await asisHomePage.chooseCompany(constant.company)
             await asisHomePage.chooseLocation(constant.location)
             await asisHomePage.selectServicesIcon(constant.gmServices)
-            await GeneralMaster.clickMasterDropDown(constant.masterSubModulesGeneral)
-            await GeneralMaster.clickSubModulesDropDown(constant.subModuleValues)
-            await GeneralMaster.clickSUDAddButton()
+            await sideNavBar.clickMasterDropDown(constant.masterSubModulesGeneral)
+            await sideNavBar.clickSubModulesDropDown(constant.subModuleValues)
+            await reuseButtons.clickAddButton()
             await GeneralMaster.enterUserDepartmentCode(constant.userDepartmentCode)
             await GeneralMaster.enterUserDepartmentName(constant.userDepartmentName)
-            await GeneralMaster.clickSaveButton()
+            await reuseButtons.clickSaveButton()
             await GeneralMaster.clickasisHeartIcon()
         })
 
@@ -51,20 +54,20 @@ describe("Creating a full flow for Linen and Laundry Services", async () => {
 
             await asisHomePage.hoverOnServiceIcon(constant.fmsServices)
             await asisHomePage.selectServicesIcon(constant.fmsServices)
-            await fMSModule.clickMasterDropDown(constant.masterLocationSubModule)
-            await fMSModule.clickSubModulesDropDown(constant.locationSubModule1)
-            await fMSModule.clickUserAreaMasterAddButton()
+            await sideNavBar.clickMasterDropDown(constant.masterLocationSubModule)
+            await sideNavBar.clickSubModulesDropDown(constant.locationSubModule1)
+            await reuseButtons.clickAddButton()
             await fMSModule.enterFMSUserAreaCode(constant.fmsUserAreaCode)
             await fMSModule.enterFMSUserAreaName(constant.fmsUserAreaName)
             await fMSModule.enterfmsUserDepartCode(constant.userDepartmentCode)
             await fMSModule.clickLabelUDC()
-            await browser.pause(2567)
+            await WaitUtil.ElementIsVisible(2)
             await fMSModule.entermySPATACode(constant.fmsMySpaCode)
             await fMSModule.selectCategoryOfAreaDropDown(constant.fmsCategoryOfArea)
             await fMSModule.setStatus(constant.fmsStatus)
             await fMSModule.selectlevel(constant.fmsLevel)
             await fMSModule.setWorkingHours(constant.fmsWorkingHours)
-            await browser.pause(2567)
+            await WaitUtil.ElementIsVisible(2)
             await fMSModule.setTotalFloorArea(constant.fmsTotalFloorArea)
             await fMSModule.clickLabelLevel()
             await fMSModule.setStartServiceDate(constant.fmsStartServiceDate)
@@ -82,7 +85,7 @@ describe("Creating a full flow for Linen and Laundry Services", async () => {
             await fMSModule.clickLabelSSD()
             await fMSModule.clickLabelLevel()
             await browser.pause(2567)
-            await fMSModule.clickSaveButton()
+            await reuseButtons.clickSaveButton1()
             await fMSModule.checkSuccessNotification(constant.fmsSuccessMessage)
             await browser.pause(2567)
 
@@ -91,8 +94,8 @@ describe("Creating a full flow for Linen and Laundry Services", async () => {
 
         it("Creating user Location Master in FMS", async () => {
 
-            await fMSModule.clickSubModulesDropDown(constant.locationSubModule2)
-            await fmsUserLocationMaster.clickULMAddButton()
+            await sideNavBar.clickSubModulesDropDown(constant.locationSubModule2)
+            await reuseButtons.clickAddButton()
             await fmsUserLocationMaster.enterUserLocationCode(constant.fmsUserLocationCode)
             await fmsUserLocationMaster.enterUserLocationName(constant.fmsUserLocationName)
             await fmsUserLocationMaster.selectUserAreaCodeDropDown(constant.fmsUserAreaCode)
@@ -110,7 +113,7 @@ describe("Creating a full flow for Linen and Laundry Services", async () => {
             await fmsUserLocationMaster.selectCriticality(constant.criticality)
             await fmsUserLocationMaster.selectInstalledFacility(constant.installedFacility)
             await fmsUserLocationMaster.clickLabelDiscipline()
-            await fmsUserLocationMaster.clickSaveButton()
+            await reuseButtons.clickfmsSaveButton()
             await fmsUserLocationMaster.checkSuccessNotification(constant.ULMSuccessMessage)
         });
     })
@@ -121,17 +124,17 @@ describe("Creating a full flow for Linen and Laundry Services", async () => {
 
             await GeneralMaster.clickasisHeartIcon()
             await asisHomePage.selectServicesIcon(constant.gmServices)
-            await GeneralMaster.clickMasterDropDown(constant.masterSubModulesLLS)
-            await GeneralMaster.clickSubModulesDropDown(constant.subModuleLinenGroup)
-            await gmLinenGroup.clicklinenGroupaddButton()
+            await sideNavBar.clickMasterDropDown(constant.masterSubModulesLLS)
+            await sideNavBar.clickSubModulesDropDown(constant.subModuleLinenGroup)
+            await reuseButtons.clickAddButton()
             await gmLinenGroup.enterlinengrpCode(constant.linenGrpCode)
             await gmLinenGroup.enterLinenGrpDescription(constant.linenGrpDescription)
-            await gmLinenGroup.clickSaveButton()
+            await reuseButtons.clickSaveButton()
             await browser.pause(2567)
 
             //Creating Linen Item Details
-            await GeneralMaster.clickSubModulesDropDown(constant.subModuleLinenItemDetail)
-            await linenItemDetails.clickAddButton()
+            await sideNavBar.clickSubModulesDropDown(constant.subModuleLinenItemDetail)
+            await reuseButtons.clickAddButton()
             await linenItemDetails.selectHospitalSpecific(constant.hospitalSpecific)
             await linenItemDetails.enterLinenGrpCode(constant.linenGrpCode, constant.concatlinen)
             await linenItemDetails.selectLinenCategory(constant.linenCategory)
@@ -149,7 +152,7 @@ describe("Creating a full flow for Linen and Laundry Services", async () => {
             await linenItemDetails.setStandardWeight(constant.standardWeight)
             await linenItemDetails.clickLabelRemarks()
             await browser.pause(2567)
-            await linenItemDetails.clickSaveButton()
+            await reuseButtons.clickLIDSaveButton()
             await linenItemDetails.checkSuccessNotification(constant.lIDSuccessMessage)
             await browser.pause(2567)
 
@@ -161,12 +164,12 @@ describe("Creating a full flow for Linen and Laundry Services", async () => {
         it("Linen Item Details in LLS", async () => {
             await asisHomePage.clickasisHeartIcon()
             await asisHomePage.selectServicesIcon(constant.llsServiceIcon)
-            await lls.clickMasterDropDown(constant.masterDropDownLinenDetails)
-            await lls.clickSubModulesDropDown(constant.subModuleLinenItemDetails)
-            await lls.clickaddButton()
+            await sideNavBar.clickMasterDropDown(constant.masterDropDownLinenDetails)
+            await sideNavBar.clickSubModulesDropDown(constant.subModuleLinenItemDetails)
+            await reuseButtons.clickAddButton()
             await browser.pause(2567)
             await lls.enterLinenGrpCode(constant.linenCode, constant.concatLinenCode)
-            await lls.clickSaveButton()
+            await reuseButtons.clickLIDSaveButton()
             await browser.pause(2567)
             await lls.clickAttachmentsTab()
             await lls.selectFileType(constant.fileType)
@@ -174,13 +177,13 @@ describe("Creating a full flow for Linen and Laundry Services", async () => {
             await lls.uploadFile(constant.filepath)
             await browser.pause(2567)
             // await lls.clickAttachmentSaveButton()
-            await lls.clickAttachmentSaveButton2()
+            await reuseButtons.clickAttachmentSaveButton2()
             await linenItemDetails.checkSuccessNotification(constant.lIDSuccessMessage)
             await browser.pause(2567)
         })
 
         it("Linen Unit Price in LLS ", async () => {
-            await lls.clickSubModulesDropDown(constant.submoduleLinenUnitPrice)
+            await sideNavBar.clickSubModulesDropDown(constant.submoduleLinenUnitPrice)
             await lls.selectPageSize(constant.pagesize)
             await lls.enterUnitPriceRM(constant.linenUnitPrice)
             await lls.clickLinenUnitPriceSaveButton()
@@ -188,8 +191,8 @@ describe("Creating a full flow for Linen and Laundry Services", async () => {
         })
 
         it("Create UserDepartment and Area Details in lls", async () => {
-            await lls.clickSubModulesDropDown(constant.submoduleUserDepartmentArea)
-            await lls.clickaddButton()
+            await sideNavBar.clickSubModulesDropDown(constant.submoduleUserDepartmentArea)
+            await reuseButtons.clickAddButton()
             await browser.pause(2567)
             await lls.selectUserDepartmentArea(constant.fmsUserAreaCode, constant.concatfmsUserAreaCode)
             await browser.pause(2567)
@@ -218,7 +221,7 @@ describe("Creating a full flow for Linen and Laundry Services", async () => {
             await lls.clickUserDepartSaveButton()
             await browser.pause(2567)
             await lls.checkSuccessNotification(constant.lIDSuccessMessage)
-            await lls.clickSubModulesDropDown(constant.submoduleUserDepartmentArea)
+            await sideNavBar.clickSubModulesDropDown(constant.submoduleUserDepartmentArea)
             await browser.pause(2567)
         })
 
@@ -228,26 +231,26 @@ describe("Creating a full flow for Linen and Laundry Services", async () => {
 
         it("Clean Linen Order ", async () => {
 
-            await cleanLinenOrderLLS.clickTransactionDropDown(constant.transactionSubModule)
-            await cleanLinenOrderLLS.clickSubModulesDropDown(constant.linenShipmentSubModule)
+            await sideNavBar.clickTransactionDropDown(constant.transactionSubModule)
+            await sideNavBar.clickSubModulesDropDown(constant.linenShipmentSubModule)
             await browser.pause(2567)
-            await cleanLinenOrderLLS.clickaddButton()
+            await reuseButtons.clickAddButton()
             await cleanLinenOrderLLS.selectPriority(constant.priority)
             await cleanLinenOrderLLS.enterRemarks(constant.remarks)
             await cleanLinenOrderLLS.selectLinenCode(constant.concatLinenCode2, constant.linenCode)
             await browser.pause(2567)
             await cleanLinenOrderLLS.enterRequestedQuantity(constant.requestedQuantity)
             await cleanLinenOrderLLS.getStatusLabel()
-            await cleanLinenOrderLLS.clickSaveButton()
+            await reuseButtons.clickSaveButton1()
             await browser.pause(2567)
-            await cleanLinenOrderLLS.clickSubModulesDropDown(constant.linenShipmentSubModule)
+            await sideNavBar.clickSubModulesDropDown(constant.linenShipmentSubModule)
             clono = await cleanLinenOrderLLS.getCLONo()
             await cleanLinenOrderLLS.clickCLONoEditIcon()
             await browser.pause(2567)
-            await cleanLinenOrderLLS.clickSubmitButton()
-            await cleanLinenOrderLLS.clickSubModulesDropDown(constant.linenShipmentSubModule)
+            await reuseButtons.clickSubmitButton()
+            await sideNavBar.clickSubModulesDropDown(constant.linenShipmentSubModule)
             await cleanLinenOrderLLS.clickCLONoApproveIcon()
-            await cleanLinenOrderLLS.clickApprovedButton()
+            await reuseButtons.clickApprovedButton()
             await browser.pause(2567)
         })
 
@@ -257,9 +260,9 @@ describe("Creating a full flow for Linen and Laundry Services", async () => {
             await asisHomePage.chooseLocation(constant.laundryLocation)
             await browser.pause(2567)
             await asisHomePage.selectServicesIcon(constant.llsServiceIcon)
-            await vehicle.clickMasterDropDown(constant.laundryPlant)
-            await vehicle.clickSubModulesDropDown(constant.vvehicleDetails)
-            await vehicle.clickaddButton()
+            await sideNavBar.clickMasterDropDown(constant.laundryPlant)
+            await sideNavBar.clickSubModulesDropDown(constant.vvehicleDetails)
+            await reuseButtons.clickAddButton()
             await browser.pause(2567)
             await vehicle.setVehicleNo(constant.vvehicleNo)
             await vehicle.setManufacturer(constant.vmanufacturer)
@@ -276,7 +279,7 @@ describe("Creating a full flow for Linen and Laundry Services", async () => {
             await vehicle.enterExpiryDate(constant.vexpiryDate)
             await vehicle.enterRemarks(constant.vVehicleRemarks)
             await browser.pause(10000)
-            await vehicle.clickSaveButton()
+            await reuseButtons.clickvehicleSaveButton()
             await browser.pause(2567)
         })
 
@@ -288,9 +291,9 @@ describe("Creating a full flow for Linen and Laundry Services", async () => {
             // await browser.pause(2567)
             // await asisHomePage.selectServicesIcon(constant.llsServiceIcon)
 
-            await vehicle.clickMasterDropDown(constant.laundryPlant)
-            await vehicle.clickSubModulesDropDown(constant.ddriverDetails)
-            await vehicle.clickaddButton()
+            await sideNavBar.clickMasterDropDown(constant.laundryPlant)
+            await sideNavBar.clickSubModulesDropDown(constant.ddriverDetails)
+            await reuseButtons.clickAddButton()
             await browser.pause(2567)
             await driverDetails.setDriverCode(constant.ddriverCode)
             await driverDetails.setDriverName(constant.ddriverName)
@@ -305,7 +308,7 @@ describe("Creating a full flow for Linen and Laundry Services", async () => {
             await driverDetails.enterExpiryDate(constant.dexpiryDate)
             await browser.pause(2567)
             await driverDetails.enterRemarks(constant.dVehicleRemarks)
-            await driverDetails.clickSaveButton()
+            await reuseButtons.clickvehicleSaveButton()
             await browser.pause(2567)
         })
 
@@ -321,9 +324,9 @@ describe("Creating a full flow for Linen and Laundry Services", async () => {
             await asisHomePage.selectServicesIcon(constant.llsServiceIcon)
 
 
-            await cleanLinenDespatch.clickTransactionDropDown(constant.transactionSubModule)
-            await cleanLinenDespatch.clickSubModulesDropDown(constant.linenDespatch)
-            await cleanLinenDespatch.clickaddButton()
+            await sideNavBar.clickTransactionDropDown(constant.transactionSubModule)
+            await sideNavBar.clickSubModulesDropDown(constant.linenDespatch)
+            await reuseButtons.clickAddButton()
             await browser.pause(2567)
             await cleanLinenDespatch.selectOrderType(constant.orderType)
             await cleanLinenDespatch.enterDespatchDate(constant.despatchDate, constant.despatchTime)
@@ -339,7 +342,7 @@ describe("Creating a full flow for Linen and Laundry Services", async () => {
             await browser.pause(2567)
             await cleanLinenDespatch.clickRemarks()
             await cleanLinenDespatch.enterDespatchQuantity(constant.dispatchQuantity)
-            await cleanLinenDespatch.clickSaveButton()
+            await reuseButtons.clickSaveButton1()
             await browser.pause(2567)
         })
 
@@ -353,9 +356,9 @@ describe("Creating a full flow for Linen and Laundry Services", async () => {
             await asisHomePage.selectServicesIcon(constant.llsServiceIcon)
 
 
-            await cleanLinenRequest.clickTransactionDropDown(constant.transactionLinenAdequacyModule)
-            await cleanLinenRequest.clickSubModulesDropDown(constant.linenAdequacySubModule1)
-            await cleanLinenRequest.clickaddButton()
+            await sideNavBar.clickTransactionDropDown(constant.transactionLinenAdequacyModule)
+            await sideNavBar.clickSubModulesDropDown(constant.linenAdequacySubModule1)
+            await reuseButtons.clickAddButton()
             await browser.pause(2567)
             await cleanLinenRequest.enterUserDepartCode(constant.fmsUserAreaCode)
             await cleanLinenRequest.selectRequestedBy(constant.requestedBy)
@@ -364,7 +367,7 @@ describe("Creating a full flow for Linen and Laundry Services", async () => {
             await browser.pause(2567)
             await cleanLinenRequest.enterRequestedQuantity(constant.requestedQuantity)
             await browser.pause(2567)
-            await cleanLinenRequest.clickSaveButton()
+            await reuseButtons.clickCLRSaveButton()
             await browser.pause(2567)
             await cleanLinenRequest.clickAttachmentTab()
             await cleanLinenRequest.selectFileType(constant.clrFiletype)
@@ -372,15 +375,15 @@ describe("Creating a full flow for Linen and Laundry Services", async () => {
             await cleanLinenRequest.uploadFile(constant.filepath)
             await browser.pause(2567)
             await cleanLinenRequest.clickAttachmentSaveButton()
-            await cleanLinenRequest.clickSubModulesDropDown(constant.linenAdequacySubModule1)
+            await sideNavBar.clickSubModulesDropDown(constant.linenAdequacySubModule1)
             await browser.pause(2567)
             clrDocumentNo = await cleanLinenRequest.getCLRDocumentNo()
         })
 
         it("Creating Clean Linen Issues", async () => {
-            
-            await cleanLinenIssue.clickSubModulesDropDown(constant.linenAdequacySubModule2)
-            await cleanLinenIssue.clickaddButton()
+
+            await sideNavBar.clickSubModulesDropDown(constant.linenAdequacySubModule2)
+            await reuseButtons.clickAddButton()
             await browser.pause(2567)
             await cleanLinenIssue.enterCLRDocumentNo(clrDocumentNo)
             await cleanLinenIssue.clickRequestLabel()
@@ -388,8 +391,8 @@ describe("Creating a full flow for Linen and Laundry Services", async () => {
             await cleanLinenIssue.enterissuedQuantity(constant.issuedQuantity)
             await browser.pause(2567)
             await cleanLinenIssue.enterFirstDeliveryQuantity(constant.selectQuantity)
-            await cleanLinenIssue.clickSavebutton()
-            await cleanLinenIssue.clickSubmitButton()
+            await reuseButtons.clickCLISavebutton()
+            await reuseButtons.clickCLISubmitButton()
             await browser.pause(2567)
             await cleanLinenIssue.clickYesPopUp()
             await browser.pause(2567)

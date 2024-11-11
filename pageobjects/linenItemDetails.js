@@ -3,7 +3,6 @@ import ReusablesComponents from "./reuse"
 class linenItemDetails {
 
     // getHospitalSpecific(selectSpecification) { return $(`//select[@name='hospitalspecific']/option[.='${selectSpecification}']`) }
-    get linenItemDetailAddButton() { return $("//td[@id='Add']") }
     get linenGrpCode() { return $("//input[@id='LinenGroup']") }
     getlinengrpCodeDropDown(grpCode) { return $(`//ul[@id='UlFetch']/li/div/a[.='${grpCode}']`) }
     get linenCode() { return $("//input[@name='LinenCode']") }
@@ -21,7 +20,6 @@ class linenItemDetails {
     get standardWeight(){ return $("//input[@name='standardWeight']")}
     get labelRemark(){ return $("//label[.='Remarks ']")}
     get labelInput(){ return $("//textarea[@name='Remarks']")}
-    get saveButton(){ return $("(//button[@id='saveTab'])[1]")}
     get succesLabel() { return $("//div[@class='notify success']") }
 
     async enterLinenGrpCode(linenGrpCode, concatlinen) {
@@ -34,9 +32,6 @@ class linenItemDetails {
     }
     async enterLinenDescription(linenDescription) {
         await ReusablesComponents.waitAndSetValue(this.linenDescription, linenDescription)
-    }
-    async clickAddButton() {
-        await ReusablesComponents.waitAndClick(this.linenItemDetailAddButton)
     }
 
     async selectStatus(selectStatus) {
@@ -77,10 +72,6 @@ class linenItemDetails {
     }
     async clickLabelRemarks(){
         await ReusablesComponents.waitAndClick(this.labelRemark)
-    }
-
-    async clickSaveButton(){
-        await ReusablesComponents.waitAndClick(this.saveButton)
     }
     async checkSuccessNotification(successMessage) {
         await this.succesLabel.waitForDisplayed({timeout:20000})

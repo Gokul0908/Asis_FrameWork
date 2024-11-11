@@ -4,13 +4,11 @@ import ReusablesComponents from "./reuse"
 
 class FMSModule {
 
-    get masterDropDown() { return $("//a[.='Master']") }
-    getMasterSubModules(MasterSubModules) { return $(`//span[.='${MasterSubModules}']`) }
-    getSubModuleDropDown(subModuleValues) { return $(`//ul[@class='show']/li/a[.='${subModuleValues}']`) }
+
+    
     getCategoryofArea(AreaName) { return $(`//select[@name='CategoryofArea']/option[.='${AreaName}']`) }
     //get companyMasterAddButton() { return $("//span[@class='ui-icon ui-icon-refresh']") }
     get userAreaMaterRefreshIcon() { return $("//span[@class='ui-icon ui-icon-refresh']") }
-    get userAreaMasteraddButton() { return $("//td[@id='Add']") }
     get uamUserAreaCode() { return $("//input[@ng-model='AreaCode']") }
     get uamuserAreaName() { return $("//input[@ng-model='AreaName']") }
     get userDepartmentCode() { return $("//input[@id='Departmentcode']") }
@@ -34,7 +32,6 @@ class FMSModule {
     get cleansingCategory() { return $("//select[@name='CleansingCategory']") }
     get criticality() { return $("//select[@name='Criticality']") }
     get installedFacility() { return ("//select[@name='InstalledFacility']") }
-    get saveButton() { return $("//button[@id='Add']") }
     get addNewButton() { return $("//button[@title='Add New']") }
     get backButton() { return $("//button[@title='Back']") }
     get labelLevel() { return $("//label[.='Level']") }
@@ -52,10 +49,7 @@ class FMSModule {
     get unsavedChangePopup() { return $("//button[.='No']") }
     get remarks() { return $("//textarea[@name='Remarks']") }   
 
-    async clickMasterDropDown(masterSubModules) {
-        await ReusablesComponents.waitAndClick(this.masterDropDown)
-        await ReusablesComponents.waitAndClick(this.getMasterSubModules(masterSubModules))
-    }
+    
     async enterRemarks(remarks) {
         await ReusablesComponents.waitAndSetValue(this.remarks, remarks)
     }
@@ -94,13 +88,6 @@ class FMSModule {
     async clickasisHeartIcon() {
         await this.asisHeartIcon.waitForDisplayed()
         await this.asisHeartIcon.click()
-    }
-
-    async clickSubModulesDropDown(subModuleValues) {
-        await ReusablesComponents.waitAndClick(this.getSubModuleDropDown(subModuleValues))
-    }
-    async clickUserAreaMasterAddButton() {
-        await ReusablesComponents.waitAndClick(this.userAreaMasteraddButton)
     }
     async enterFMSUserAreaCode(fmsUserAreaCode) {
         await ReusablesComponents.waitAndSetValue(this.uamUserAreaCode, fmsUserAreaCode)
@@ -161,9 +148,6 @@ class FMSModule {
         await ReusablesComponents.waitAndSetValue(this.companyRepresentative, companyRepresentative)
         // await this.getCompanyDropDown(Constant.concatCompanyRep).waitForDisplayed()
         await this.getCompanyDropDown(Constant.concatCompanyRep).click()
-    }
-    async clickSaveButton() {
-        await ReusablesComponents.waitAndClick(this.saveButton)
     }
 
 

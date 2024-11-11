@@ -8,7 +8,6 @@ class fmsAddUserLocationMaster {
     get UserLocationName() { return $("//input[@id='txtUserLocationName']") }
     get LabelUDC() { return $("//label[.='User Department Code']") }
     get startServiceDate() { return $("//input[@name='EffectiveFrom']") }
-    get userLocationMasteraddButton() { return $("//td[@id='Add']") }
     get userAreaCode() { return $("//input[@id='UserAreaCode']") }
     getUserAreaCodeDropDown(concatUserAreaCode) { return $(`//ul[@id='UlFetchUserAreaCode']/li/div/a[.='${concatUserAreaCode}']`) }
     getStatus(status) { return $(`//select[@ng-model='UserLocation.Status']/option[.='${status}']`) }
@@ -26,21 +25,10 @@ class fmsAddUserLocationMaster {
     get labelUDC() { return $("//label[text()='User Department Code']") }
     get labelAuthorized() { return $("//label[text()='Authorized Person ']") }
     get labelDiscipline() { return $("//label[text()='Discipline']") }
-    get saveButton() { return $("//button[@title='Save']") }
     get addNewButton() { return $("//button[@title='Add New']") }
     get backButton() { return $("//button[@title='Back']") }
     get succesLabel() { return $("//div[@class='notify success']") }
 
-
-
-
-    async clickULMAddButton() {
-        await ReusablesComponents.waitAndClick(this.userLocationMasteraddButton)
-    }
-
-    async clickSaveButton() {
-        await ReusablesComponents.waitAndClick(this.saveButton)
-    }
     async clickLabelDiscipline() {
         await ReusablesComponents.waitAndClick(this.labelDiscipline)
     }

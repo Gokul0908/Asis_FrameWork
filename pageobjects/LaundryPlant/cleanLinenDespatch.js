@@ -6,12 +6,6 @@ class cleanLinenDespatch {
 
 
     // CLONo = cleanLinenOrderLLS.getCLONo()
-
-    get transactionDropDown() { return $("//a[.='Transaction']") }    
-    getTransactionSubModules(TransactionSubModules) { return $(`//span[.='${TransactionSubModules}']`) }
-    getLinenShipmentSubModuleDropDown(subModuleValues) { return $(`//ul[@class='show']/li/a[.='${subModuleValues}']`) }
-    getSubModuleDropDown(subModuleValues) { return $(`//ul[@class='show']/li/a[.='${subModuleValues}']`) }
-    get addButton() { return $("//td[@id='Add']") }
     getordertype(orderType) { return $(`//select[@name='OrderType']/option[.='${orderType}']`) }
     get CLONo() { return $("//input[@id='txtCLONo']") }
     getCLONoDropdown(CLONo) { return $(`//ul[@id='UlFetchStaff']/li/div/a[contains(.,'${CLONo}')]`) }
@@ -26,31 +20,12 @@ class cleanLinenDespatch {
     get totalWeight() { return $("//input[@id='TotalWeight']") }
     get remarksLabel() { return $("//label[.='Remarks']") }
     get despatchQuantity() { return $("//input[@id='DespatchedQuantity0']") }
-    get saveButton() { return $("(//button[.='Save'])[1]") }
     get despatchDateAndTime() { return $("//input[@id='DateDespatch']") }
     get despatchTimeDropDown() { return $("(//div[@class='xdsoft_datetimepicker xdsoft_noselect xdsoft_'])[1]") }
     gettime(despatchTime) { return $(`(//div[@class='xdsoft_time_box xdsoft_scroller_box'])[1]/div/div[.='${despatchTime}']`) }
     get noOfTrolleys() { return $("//input[@name='NoofTrolley']") }
     get checkedByLabel(){ return $("//label[text()='Checked By ']") }
 
-
-
-    async clickTransactionDropDown(TransactionSubModules) {
-        await ReusablesComponents.waitAndClick(this.transactionDropDown)
-        await ReusablesComponents.waitAndClick(this.getTransactionSubModules(TransactionSubModules))
-    }
-
-    async clickSubModulesDropDown(subModuleValues) {
-        await ReusablesComponents.waitAndClick(this.getLinenShipmentSubModuleDropDown(subModuleValues))
-    }
-
-    async clickSubModulesDropDown(subModuleValues) {
-        await ReusablesComponents.waitAndClick(this.getSubModuleDropDown(subModuleValues))
-    }
-
-    async clickaddButton() {
-        await ReusablesComponents.waitAndClick(this.addButton)
-    }
 
     async selectOrderType(orderType) {
         await ReusablesComponents.waitAndClick(this.getordertype(orderType))
@@ -112,10 +87,6 @@ class cleanLinenDespatch {
 
     async enterDespatchQuantity(DespatchedQuantity) {
         await ReusablesComponents.waitAndSetValue(this.despatchQuantity, DespatchedQuantity)
-    }
-
-    async clickSaveButton() {
-        await ReusablesComponents.waitAndClick(this.saveButton)
     }
     async verifyDespatchTimeDropDown() {
         await this.despatchTimeDropDown.waitForDisplayed()

@@ -1,18 +1,13 @@
 import ReusablesComponents from "./reuse"
 
 class cleanLinenRequest {
-    get transactionDropDown() { return $("//a[.='Transaction']") }
-    getTransactionSubModules(TransactionSubModules) { return $(`//span[.='${TransactionSubModules}']`) }
-    getLinenShipmentSubModuleDropDown(subModuleValues) { return $(`//ul[@class='show']/li/a[.='${subModuleValues}']`) }
-    getSubModuleDropDown(subModuleValues) { return $(`//ul[@class='show']/li/a[.='${subModuleValues}']`) }
-    get addButton() { return $("//td[@id='Add']") }
+
     get userDepartCode() { return $("//input[@id='txtUserDepartmentCode']") }
     getuserDepartCodeDropDown(userDepartCode) { return $(`//ul[@id='UlUserAreaFetch']/li/div/a[contains(.,'${userDepartCode}')]`) }
     get requestedBy() { return $("//input[@id='txtRequestedBy']") }
     getRequestedByDD(RequestedBy) { return $(`//a[.='${RequestedBy}']`) }
     get requestedQuantity() { return $("//input[@id='txtRequestedQuantity']") }
     getPriority(priority) { return $(`//select[@id='ddlPriority']/option[.='${priority}']`) }
-    get saveButton() { return $("//button[@id='AddRequest']") }
     get clrDocumentNo() { return $("(//td[@aria-describedby='grid_CliDocumentNo'])[1]") }
     get remarkInput() { return $("//textarea[@id='txtRemarks']") }
     get attachmentTab() { return $("//a[@id='AttachmentTab']") }
@@ -21,24 +16,6 @@ class cleanLinenRequest {
     getFiletype(filetype) { return $(`//select[@name='FileType']/option[.='${filetype}']`) }
     get fileName() { return $("//input[@id='fileName0']") }
 
-
-
-    async clickTransactionDropDown(TransactionSubModules) {
-        await ReusablesComponents.waitAndClick(this.transactionDropDown)
-        await ReusablesComponents.waitAndClick(this.getTransactionSubModules(TransactionSubModules))
-    }
-
-    async clickSubModulesDropDown(subModuleValues) {
-        await ReusablesComponents.waitAndClick(this.getLinenShipmentSubModuleDropDown(subModuleValues))
-    }
-
-    async clickSubModulesDropDown(subModuleValues) {
-        await ReusablesComponents.waitAndClick(this.getSubModuleDropDown(subModuleValues))
-    }
-
-    async clickaddButton() {
-        await ReusablesComponents.waitAndClick(this.addButton)
-    }
 
     async enterUserDepartCode(userDepartCode) {
         await ReusablesComponents.waitAndSetValue(this.userDepartCode, userDepartCode)
@@ -52,10 +29,10 @@ class cleanLinenRequest {
 
     async enterRequestedQuantity(value) {
 
-        let  textBoxes = await $$("//input[@id='txtRequestedQuantity']");
+        let textBoxes = await $$("//input[@id='txtRequestedQuantity']");
         console.log(`Total number of text boxes: ${textBoxes.length}`); // or use .size if length doesn't work
 
-        
+
         for (let field of textBoxes) {
             await ReusablesComponents.waitAndSetValue(field, value);
         }
@@ -72,10 +49,6 @@ class cleanLinenRequest {
 
     async selectPriority(priority) {
         await ReusablesComponents.waitAndClick(this.getPriority(priority))
-    }
-
-    async clickSaveButton() {
-        await ReusablesComponents.waitAndClick(this.saveButton)
     }
 
     async getCLRDocumentNo() {

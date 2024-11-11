@@ -2,19 +2,12 @@ import ReusablesComponents from "./reuse"
 
 class lls {
 
-    get masterDropDown() { return $("//a[.='Master']") }
-    getMasterSubModules(MasterSubModules) { return $(`//span[.='${MasterSubModules}']`) }
-    getSubModuleDropDown(subModuleValues) { return $(`//ul[@class='show']/li/a[.='${subModuleValues}']`) }
-    get addButton() { return $("//td[@id='Add']") }
     get linenGrpCode() { return $("//input[@id='GmLinenCode']") }
     getLinenCodeDropDown(concatLinenCode) { return $(`//ul[@id='UlFetchGmLinenCode']/li/div/a[.='${concatLinenCode}']`) }
-    get saveButton() { return $("(//button[@id='saveTab'])[1]") }
     get attachmentsTab() { return $("//a[.='Attachments']") }
     getFileType(filetype) { return $(`//select[@name='FileType']/option[.='${filetype}']`) }
     get fileName() { return $("//input[@ng-model='fileAttach.FileName']") }
     get chooseFile() { return $("//input[@type='file']") }
-    get attachmentSaveButton() { return $("(//button[@id='saveUpdate'])[2]") }
-    get attachmentSaveButton2() { return $("(//button[@id='saveTab'])[2]") }
     get linenItemCode() { return $("//input[@name='LinenCode']") }
     get unitPricerm() { return $("//input[@name='UnitPriceRM']") }
     get linenUnitPriceSaveBtn() { return $("//button[@id='saveWorkOrderbtn']") }
@@ -49,41 +42,16 @@ class lls {
     get succesLabel() { return $("//div[@class='notify success']") }
 
 
-    async clickMasterDropDown(MasterSubModules) {
-        await ReusablesComponents.waitAndClick(this.masterDropDown)
-        await ReusablesComponents.waitAndClick(this.getMasterSubModules(MasterSubModules))
-    }
-
-
     async clickLinenUnitPriceSaveButton() {
         await ReusablesComponents.waitAndClick(this.linenUnitPriceSaveBtn)
-    }
-
-    async clickSubModulesDropDown(subModuleValues) {
-        await ReusablesComponents.waitAndClick(this.getSubModuleDropDown(subModuleValues))
     }
     async clickAttachmentsTab() {
         await ReusablesComponents.waitAndClick(this.attachmentsTab)
     }
 
-    async clickAttachmentSaveButton() {
-        await ReusablesComponents.waitAndClick(this.attachmentSaveButton)
-    }
-    async clickAttachmentSaveButton2() {
-        await ReusablesComponents.waitAndClick(this.attachmentSaveButton2)
-    }
-
-    async clickaddButton() {
-        await ReusablesComponents.waitAndClick(this.addButton)
-    }
-
     async enterLinenGrpCode(linenCode, concatLinenCode) {
         await ReusablesComponents.waitAndSetValue(this.linenGrpCode, linenCode)
         await this.getLinenCodeDropDown(concatLinenCode).click()
-    }
-
-    async clickSaveButton() {
-        await ReusablesComponents.waitAndClick(this.saveButton)
     }
     async selectFileType(filetype) {
         await ReusablesComponents.waitAndClick(this.getFileType(filetype))

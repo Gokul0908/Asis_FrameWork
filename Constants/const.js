@@ -1,6 +1,5 @@
 import { getCurrentMonth, getCustomDate, getSystemTimeof10Minutes, getSystemTimeof15Minutes, getTodayDate } from "../Date_TimeFunction"
 import utils from "./../utils/utilities"
-import cleanLinenOrderLLS from "./../pageobjects/cleanLinenOrderLLS"
 
 export const asisURL = "http://172.16.0.60:7500/Account/Login?ReturnUrl=%2fGM%2fstandarduserdepartment%2fadd"
 export const aUserName = "mohadmin"
