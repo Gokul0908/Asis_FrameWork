@@ -3,9 +3,6 @@ import ReusablesComponents from "./reuse"
 
 class CleanLinenIssue {
 
-    getTransactionSubModules(TransactionSubModules) { return $(`//span[.='${TransactionSubModules}']`) }
-    getLinenShipmentSubModuleDropDown(subModuleValues) { return $(`//ul[@class='show']/li/a[.='${subModuleValues}']`) }
-    getSubModuleDropDown(subModuleValues) { return $(`//ul[@class='show']/li/a[.='${subModuleValues}']`) }
     get CLRDocumentNo() { return $("//input[@id='txtCliDocumentNo']") }
     getCLRDDropdown(CLRDocumentNo) { return $(`//ul[@id='UlCliDocNoFetch']/li/div/a[.='${CLRDocumentNo}']`) }
     getQCTimelinesss(selectQCTime) { return $(`//select[@ng-model='LinenIssues.QcTimeliness']/option[.='${selectQCTime}']`) }

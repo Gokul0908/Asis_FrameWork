@@ -2,8 +2,6 @@ import ReusablesComponents from "./reuse"
 
 class generalmaster {
 
-    
-    
     get standardUserDeptRefreshIcon() { return $("//span[@class='ui-icon ui-icon-refresh']") }
     get standardUserDeptUserAreaCodeaddButton() { return $("//td[@id='Add']") }
     get userDepartmentCode() { return $("//input[@name='UserDepartmentCode']") }
@@ -12,7 +10,7 @@ class generalmaster {
     get backButton() { return $("(//button[.='Back'])[1]") }
     get asisHeartIcon() { return $("//img[@alt='Ministry of Health']") }
 
-    
+
     async clickasisHeartIcon() {
         await ReusablesComponents.waitAndClick(this.asisHeartIcon)
     }
@@ -24,5 +22,4 @@ class generalmaster {
         await ReusablesComponents.waitAndSetValue(this.userDepartmentName, userDepartmentName)
     }
 
-}
-export default new generalmaster()
+} export default new generalmaster()
