@@ -1,5 +1,5 @@
 // utils/WaitUtil.js
-class WaitUtil {
+class WaitUntil {
     /**
      * Pauses execution for a specified time
      * @param {number} ms - Time in milliseconds to pause
@@ -7,4 +7,4 @@ class WaitUtil {
     static async ElementIsVisible(second) {
         await browser.pause(second * 1000);
     }
-} export default WaitUtil;
+} export default WaitUntil;

@@ -2,8 +2,6 @@ import ReusablesComponents from "./../pageobjects/reuse"
 
 class asisHomePage {
 
-
-
    get asisFullForm() { return $("//p[.='Asset and Services Information System']") }
    get chooseCompanyDropDown() { return $("//select[@name='Company']") }
    get chooseLocationDropDown() { return $("//select[@name='Hospital']") }

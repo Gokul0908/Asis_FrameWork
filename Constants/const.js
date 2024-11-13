@@ -14,7 +14,6 @@ export const masterLocationSubModule = "Location"
 export const locationSubModule1 = "User Area Master"
 export const locationSubModule2 = "User Location Master"
 
-
 // Add User Area Master 
 export const userDepartmentCode = "AD" + utils.getRandomNumbers(4)
 export const userDepartmentName = "ADentist" + utils.getRandomNumbers(4)
@@ -122,13 +121,13 @@ export const vmanufacturer = "AWebdriver" + utils.getRandomString(4)
 export const veffectiveDate = getTodayDate()
 export const vlicenseCode = "LPKP"
 export const vlicenseDescription = "Commercial Vehicle License"
-export const vconcatLicense = vlicenseCode + ' ' + '-' + ' ' + vlicenseDescription +' '
+export const vconcatLicense = vlicenseCode + ' ' + '-' + ' ' + vlicenseDescription + ' '
 export const vGrade = "A"
 export const vlicenseNo = "ASE" + utils.getRandomNumbers(4)
 export const vIssuedBy = "PUSPAKOM"
 export const vissuedDate = getTodayDate()
 export const vexpiryDate = getCustomDate(10)
-export const vVehicleRemarks = "Today Date and Custom Date Confirmation Message ::"+ vissuedDate + " and " + vexpiryDate
+export const vVehicleRemarks = "Today Date and Custom Date Confirmation Message ::" + vissuedDate + " and " + vexpiryDate
 
 
 // Laundry Plant  Driver Details
@@ -140,13 +139,13 @@ export const vehicleNo = "TN28"   // need to elabrate
 export const deffectiveFrom = getTodayDate()
 export const dlicenseCode = "DL"
 export const dlicenseDescription = "Driving License"
-export const dconcatLicense = dlicenseCode + ' ' + '-' + ' ' + dlicenseDescription +' '
+export const dconcatLicense = dlicenseCode + ' ' + '-' + ' ' + dlicenseDescription + ' '
 export const dGrade = "A"
 export const dlicenseNo = "ASE" + utils.getRandomNumbers(4)
 export const dIssuedBy = "PUSPAKOM"
 export const dissuedDate = getTodayDate()
 export const dexpiryDate = getCustomDate(10)
-export const dVehicleRemarks = "Today Date and Custom Date Confirmation Message ::"+ dissuedDate + " and " + dexpiryDate
+export const dVehicleRemarks = "Today Date and Custom Date Confirmation Message ::" + dissuedDate + " and " + dexpiryDate
 
 
 //Transaction Module in LLS   Clean Linen Order
@@ -184,8 +183,8 @@ export const clrFiletype = "Log Book"
 // Clean linen Issue
 export const requestedQuantity1 = Math.floor(Math.random() * (parseInt(par2Require) + 1)) // less than or equal to par2Require
 export const issuedQuantity = requestedQuantity1 // assign requestedQuantity to issuedQuantity
-export const QCTimeliness='QL11 - Manpower'
-export const selectQuantity=  requestedQuantity
+export const QCTimeliness = 'QL11 - Manpower'
+export const selectQuantity = requestedQuantity
 
 
 
@@ -193,3 +192,10 @@ export const selectQuantity=  requestedQuantity
 
 /*  provide me legth.ts  file
  */
+
+
+///FEMS
+export const femsSubModule = "FEMS"
+export const workGrpDetails = "Work Group Details"
+export const workGroupCode = "AF" + utils.getRandomNumbers(3)
+export const WorkGroupDesc = "AFixing" + utils.getRandomNumbers(3)
