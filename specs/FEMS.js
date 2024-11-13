@@ -6,6 +6,9 @@ import WaitUntil from "../pageobjects/waitUntil"
 import * as constant from "../Constants/const"
 import GeneralMaster from "../pageobjects/GeneralMaster"
 import workGrpDetails from "../FEMS_PageObjects/workGrpDetails"
+import assetGroupDetails from "../FEMS_PageObjects/assetGroupDetails"
+import standardTaskDetails from "../FEMS_PageObjects/standardTaskDetails"
+import typeCodeDetails from "../FEMS_PageObjects/typeCodeDetails"
 
 describe("Creating a full flow for FEMS", async () => {
 
@@ -37,7 +40,7 @@ describe("Creating a full flow for FEMS", async () => {
             await WaitUntil.ElementIsVisible(2)
         })
 
-        it("Creating Work Group Details and Asset Group Details", async () => {            
+        it("Creating Work Group Details and Asset Group Details", async () => {
             await asisHomePage.selectServicesIcon(constant.gmServices)
             await sideNavBar.clickMasterDropDown(constant.femsSubModule)
             await WaitUntil.ElementIsVisible(2)
@@ -47,6 +50,37 @@ describe("Creating a full flow for FEMS", async () => {
             await WaitUntil.ElementIsVisible(2)
             await workGrpDetails.enterWorkgrpDesc(constant.WorkGroupDesc)
             await reuseButtons.clickSaveButton1()
+            await sideNavBar.clickSubModulesDropDown(constant.assetGroupDetails)
+            await reuseButtons.clickAddButton()
+            await assetGroupDetails.enterAssetGroupCode(constant.assetGroupCode)
+            await assetGroupDetails.enterAssetWorkDesc(constant.assetGroupDesc)
+            await reuseButtons.clickSaveButton1()
+        })
+
+        it("Creating Standard Task Details and Type Code Details", async () => {
+            await sideNavBar.clickSubModulesDropDown(constant.standardTaskDetails)
+            await reuseButtons.clickAddButton()
+            await WaitUntil.ElementIsVisible(2)
+            await standardTaskDetails.enterWorkGroupCode(constant.workGroupCode)
+            await standardTaskDetails.enterTaskCode(constant.taskCode)
+            await standardTaskDetails.enterTaskDescription(constant.taskDesc)
+            await standardTaskDetails.setStatus(constant.standardStatus)
+            await standardTaskDetails.selectEffectiveFrom(constant.standardEffectiveFrom)
+            await reuseButtons.clickSaveButton2()
+            await WaitUntil.ElementIsVisible(2)
+            await sideNavBar.clickSubModulesDropDown(constant.typeCodeDetails)
+            await reuseButtons.clickAddButton()
+            await WaitUntil.ElementIsVisible(2)
+            await typeCodeDetails.enterAssetGroupCode(constant.assetGroupCode, constant.concatAssetGroupCode)
+            await typeCodeDetails.selectAssetClarification(constant.assetClarification)
+            await typeCodeDetails.selectAssetCategory(constant.assetCategory)
+            await typeCodeDetails.enterAssetTypeCode(constant.assetTypeCode)
+            await typeCodeDetails.enterAssetTypeDesc(constant.assetTypeDesc)
+            await WaitUntil.ElementIsVisible(2)
+            await typeCodeDetails.clickAssetTypeDetails()
+            await typeCodeDetails.selectMaintenancesCategory(constant.maintenancesCategory)
+            await typeCodeDetails.selectNominatedContractor(constant.nominatedContractor)
+            await typeCodeDetails.selectAssetAuditType(constant.assetAuditType)            
         })
     })
 })

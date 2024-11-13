@@ -11,6 +11,7 @@ class reuseButtons {
    get lidsaveButton() { return $("(//button[@id='saveTab'])[1]") }
    get vehicleSaveButton() { return $("(//button[@type='submit'])[1]") }
    get saveButton1() { return $("(//button[.='Save'])[1]") }
+   get saveButton2() { return $("(//button[.='Save'])[2]") }
    get fms1saveButton() { return $("//button[@id='Add']") }
    get submitButton() { return $("//button[.='Submit']") }
    get approvedButton() { return $("//button[.='Approved']") }
@@ -64,6 +65,9 @@ class reuseButtons {
       await ReusablesComponents.waitAndClick(this.saveButton1)
    }
 
+   async clickSaveButton2() {
+      await ReusablesComponents.waitAndClick(this.saveButton2)
+   }
 
    async clickCLRSaveButton() {
       await ReusablesComponents.waitAndClick(this.clrsaveButton)

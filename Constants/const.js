@@ -199,3 +199,23 @@ export const femsSubModule = "FEMS"
 export const workGrpDetails = "Work Group Details"
 export const workGroupCode = "AF" + utils.getRandomNumbers(3)
 export const WorkGroupDesc = "AFixing" + utils.getRandomNumbers(3)
+
+
+export const assetGroupCode = "ACF" + utils.getRandomNumbers(3)
+export const assetGroupDesc = "AutoCeilingFan" + utils.getRandomNumbers(3)
+export const assetGroupDetails = "Asset Group Details"
+
+export const standardTaskDetails = "Standard Task Details"
+export const taskCode = "AT" + utils.getRandomNumbers(3)
+export const taskDesc = "ATask" + utils.getRandomNumbers(3)
+export const standardStatus = "Active"
+export const standardEffectiveFrom = getTodayDate()
+export const typeCodeDetails = "Type Code Details"
+export const concatAssetGroupCode = assetGroupCode + '-' + assetGroupDesc
+export const assetClarification = "Equipment"
+export const assetCategory = "Electrical"
+export const assetTypeCode = taskCode
+export const assetTypeDesc = taskDesc
+export const maintenancesCategory = "Specialized"
+export const nominatedContractor = "Yes"
+export const assetAuditType = "Yes"
