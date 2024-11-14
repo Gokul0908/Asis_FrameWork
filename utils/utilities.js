@@ -34,6 +34,31 @@ class utils {
     return value
   }
 
+  // Function to generate a random year less than 5 (between 1 and 4)
+  getRandomYearLessThan5() {
+    return Math.floor(Math.random() * 4) + 1; // Generates a number from 1 to 4
+  }
+
+  // Function to generate a random year more than 5 (between 6 and 10)
+  getRandomYearMoreThan5() {
+    return Math.floor(Math.random() * 5) + 6; // Generates a number from 6 to 10
+  }
+
+  // Generates an array of random years either less than 5 or more than 5
+  getRandomYears(length = 9) {
+    const years = [];
+
+    for (let i = 0; i < length; i++) {
+      // Decide randomly to pick less than 5 or more than 5
+      if (Math.random() < 0.5) {
+        years.push(this.getRandomYearLessThan5());
+      } else {
+        years.push(this.getRandomYearMoreThan5());
+      }
+    }
+
+    return years;
+  }
 
   getRandomString(length = 16, upperCase) {
     const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz'.split('')

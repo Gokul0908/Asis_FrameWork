@@ -197,17 +197,17 @@ export const selectQuantity = requestedQuantity
 ///FEMS
 export const femsSubModule = "FEMS"
 export const workGrpDetails = "Work Group Details"
-export const workGroupCode = "AF" + utils.getRandomNumbers(3)
-export const WorkGroupDesc = "AFixing" + utils.getRandomNumbers(3)
+export const workGroupCode = "AR" + utils.getRandomNumbers(3)
+export const WorkGroupDesc = "ARemoving" + utils.getRandomNumbers(3)
 
 
-export const assetGroupCode = "ACF" + utils.getRandomNumbers(3)
-export const assetGroupDesc = "AutoCeilingFan" + utils.getRandomNumbers(3)
+export const assetGroupCode = "ACL" + utils.getRandomNumbers(3)
+export const assetGroupDesc = "AutoCeilingLight" + utils.getRandomNumbers(3)
 export const assetGroupDetails = "Asset Group Details"
 
 export const standardTaskDetails = "Standard Task Details"
-export const taskCode = "AT" + utils.getRandomNumbers(3)
-export const taskDesc = "ATask" + utils.getRandomNumbers(3)
+export const taskCode = "AD" + utils.getRandomNumbers(3)
+export const taskDesc = "ADrilling" + utils.getRandomNumbers(3)
 export const standardStatus = "Active"
 export const standardEffectiveFrom = getTodayDate()
 export const typeCodeDetails = "Type Code Details"
@@ -219,3 +219,12 @@ export const assetTypeDesc = taskDesc
 export const maintenancesCategory = "Specialized"
 export const nominatedContractor = "Yes"
 export const assetAuditType = "Yes"
+export const licenseType = "Yes"
+export const MDAApplicable = "Yes"
+export const expectedLifeSpan = utils.getRandomNumbers(2)
+export const ageLessThan5Yrs = utils.getRandomYearLessThan5()
+export const ageGreaterThan5Yrs = utils.getRandomYearMoreThan5()
+export const duringWarrantyRate = utils.getRandomNumbers(2)
+export const postWarrantyRate = utils.getRandomNumbers(2)
+export const duringWarrantyRateDate = getTodayDate()
+export const postWarrantyRateDate = getTodayDate()
