@@ -3,6 +3,7 @@ class ReusablesComponents {
 
 
     get succesLabel() { return $("//div[@class='notify success']") }
+    get pleaseWaitLabel() { return $("(//h4[@class='modal-title'])[1]") }
 
     async waitAndClick(selector) {
         await selector.waitForDisplayed({ timeout: 60000 })
@@ -47,7 +48,11 @@ class ReusablesComponents {
         return status
     }
 
+    async waitForPleaseWaitNotificationToDisappear() {
+        await this.pleaseWaitLabel.waitForDisplayed({ timeout: 20000 })
+        await this.pleaseWaitLabel.waitForDisplayed({ timeout: 20000, reverse: true })
+        console.log("Please Wait Notification has disappeared")
 
+    }
 }
-
 export default new ReusablesComponents()

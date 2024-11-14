@@ -230,5 +230,9 @@ export const duringWarrantyRateDate = getTodayDate()
 export const postWarrantyRateDate = getTodayDate()
 
 //HEPPM Register
-export const concatAssetTypeCode = assetTypeCode + '-' + assetTypeDesc
+export const concatAssetTypeCode = assetTypeCode + ' ' + '-' + ' ' + assetTypeDesc
+export const concatTaskCode = taskCode + ' ' + '-' + ' ' + taskDesc
+export const selectFrequency = "Monthly"
+export const version = utils.getRandomNumbers(2)
+export const effectiveFrom = getTodayDate()
 

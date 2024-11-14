@@ -1,4 +1,4 @@
-import ReusablesComponents from "../reuse"
+import ReusablesComponents from "common/reuse"
 import * as Constant from "../../../Constants/const"
 
 

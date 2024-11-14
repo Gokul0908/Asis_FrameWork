@@ -110,7 +110,17 @@ describe("Creating a full flow for FEMS", async () => {
 
 
         it("Creating Asset Type Details", async () => {
-            await heppmRegister.enterAssetTypeCode(constant.assetTypeCode, constant.concatAssetTypeCode)
+            await heppmRegister.enterAssetTypeCode(constant.assetTypeDesc, constant.concatAssetTypeCode)
+            await heppmRegister.enterTaskCode(constant.taskDesc, constant.concatTaskCode)
+            await heppmRegister.selectPPMFrequency(constant.selectFrequency)
+            await heppmRegister.enterVersion(constant.version)
+            await heppmRegister.enterEffectiveFrom(constant.effectiveFrom)
+            await heppmRegister.uploadFile(constant.filepath)
+            await heppmRegister.clickAddIcon()
+            await reuseButtons.clickSaveButton1()
+            await WaitUntil.ElementIsVisible(2)
+            await ReusablesComponents.waitForPleaseWaitNotificationToDisappear()
+            await ReusablesComponents.checkSuccessNotification(constant.SuccessMessage)
         })
     })
 })
