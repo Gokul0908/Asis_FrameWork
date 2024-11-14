@@ -1,16 +1,16 @@
-import reuseButtons from "../pageobjects/button"
-import LoginPage from "../pageobjects/loginPage"
-import asisHomePage from "../pageobjects/asisHomePage"
-import sideNavBar from "../pageobjects/sideNavBar"
-import WaitUntil from "../pageobjects/waitUntil"
-import * as constant from "../../Constants/const"
-import GeneralMaster from "../pageobjects/LLS/GeneralMaster"
-import workGrpDetails from "../pageobjects/FEMS/workGrpDetails"
-import assetGroupDetails from "../pageobjects/FEMS/assetGroupDetails"
-import standardTaskDetails from "../pageobjects/FEMS/standardTaskDetails"
-import typeCodeDetails from "../pageobjects/FEMS/typeCodeDetails"
-import ReusablesComponents from "../pageobjects/reuse"
-import heppmRegister from "../pageobjects/FEMS/heppmRegister"
+import reuseButtons from 'common/button.js'
+import LoginPage from 'common/loginPage.js'
+import asisHomePage from 'common/asisHomePage.js'
+import sideNavBar from 'common/sideNavBar.js'
+import WaitUntil from 'common/waitUntil.js'
+import * as constant from '../../Constants/const'
+import GeneralMaster from 'common/LLS/GeneralMaster.js'
+import workGrpDetails from 'common/FEMS/workGrpDetails.js'
+import assetGroupDetails from 'common/FEMS/assetGroupDetails.js'
+import standardTaskDetails from 'common/FEMS/standardTaskDetails.js'
+import typeCodeDetails from 'common/FEMS/typeCodeDetails.js'
+import ReusablesComponents from 'common/reuse.js'
+import heppmRegister from 'common/FEMS/heppmRegister.js'
 
 describe("Creating a full flow for FEMS", async () => {
 

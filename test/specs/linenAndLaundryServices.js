@@ -1,22 +1,22 @@
-import LoginPage from "../pageobjects/loginPage"
-import * as constant from "../../Constants/const"
-import asisHomePage from "../pageobjects/asisHomePage"
-import GeneralMaster from "../pageobjects/LLS/GeneralMaster"
-import fMSModule from "../pageobjects/LLS/fMSModule"
-import fmsUserLocationMaster from "../pageobjects/LLS/fmsUserLocationMaster"
-import gmLinenGroup from "../pageobjects/LLS/gmLinenGroup"
-import linenItemDetails from "../pageobjects/LLS/linenItemDetails"
-import lls from "../pageobjects/LLS/lls"
-import cleanLinenOrderLLS from "../pageobjects/LLS/cleanLinenOrderLLS"
-import vehicle from "../pageobjects/LLS/LaundryPlant/vehicle"
-import cleanLinenDespatch from "../pageobjects/LLS/LaundryPlant/cleanLinenDespatch"
-import driverDetails from "../pageobjects/LLS/LaundryPlant/DriverDetails"
-import cleanLinenRequest from "../pageobjects/LLS/cleanLinenRequest"
-import cleanLinenIssue from "../pageobjects/LLS/CleanLinenIssue"
-import reuseButtons from "../pageobjects/button"
-import sideNavBar from "../pageobjects/sideNavBar"
-import WaitUntil from "../pageobjects/waitUntil"
-import ReusablesComponents from "../pageobjects/reuse"
+import LoginPage from 'common/loginPage.js'
+import * as constant from '../../Constants/const.js'
+import asisHomePage from 'common/asisHomePage.js'
+import GeneralMaster from 'common/LLS/GeneralMaster.js'
+import fMSModule from 'common/LLS/fMSModule.js'
+import fmsUserLocationMaster from 'common/LLS/fmsUserLocationMaster.js'
+import gmLinenGroup from 'common/LLS/gmLinenGroup.js'
+import linenItemDetails from 'common/LLS/linenItemDetails.js'
+import lls from 'common/LLS/lls.js'
+import cleanLinenOrderLLS from 'common/LLS/cleanLinenOrderLLS.js'
+import vehicle from 'common/LLS/LaundryPlant/vehicle.js'
+import cleanLinenDespatch from 'common/LLS/LaundryPlant/cleanLinenDespatch.js'
+import driverDetails from 'common/LLS/LaundryPlant/DriverDetails.js'
+import cleanLinenRequest from 'common/LLS/cleanLinenRequest.js'
+import cleanLinenIssue from 'common/LLS/CleanLinenIssue.js'
+import reuseButtons from 'common/button.js'
+import sideNavBar from 'common/sideNavBar.js'
+import WaitUntil from 'common/waitUntil.js'
+import ReusablesComponents from 'common/reuse.js'
 
 let clono
 let clrDocumentNo
