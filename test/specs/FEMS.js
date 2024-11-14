@@ -1,15 +1,16 @@
-import reuseButtons from "./../pageobjects/button"
+import reuseButtons from "../pageobjects/button"
 import LoginPage from "../pageobjects/loginPage"
 import asisHomePage from "../pageobjects/asisHomePage"
 import sideNavBar from "../pageobjects/sideNavBar"
 import WaitUntil from "../pageobjects/waitUntil"
-import * as constant from "../Constants/const"
-import GeneralMaster from "../pageobjects/GeneralMaster"
-import workGrpDetails from "../FEMS_PageObjects/workGrpDetails"
-import assetGroupDetails from "../FEMS_PageObjects/assetGroupDetails"
-import standardTaskDetails from "../FEMS_PageObjects/standardTaskDetails"
-import typeCodeDetails from "../FEMS_PageObjects/typeCodeDetails"
+import * as constant from "../../Constants/const"
+import GeneralMaster from "../pageobjects/LLS/GeneralMaster"
+import workGrpDetails from "../pageobjects/FEMS/workGrpDetails"
+import assetGroupDetails from "../pageobjects/FEMS/assetGroupDetails"
+import standardTaskDetails from "../pageobjects/FEMS/standardTaskDetails"
+import typeCodeDetails from "../pageobjects/FEMS/typeCodeDetails"
 import ReusablesComponents from "../pageobjects/reuse"
+import heppmRegister from "../pageobjects/FEMS/heppmRegister"
 
 describe("Creating a full flow for FEMS", async () => {
 
@@ -105,6 +106,11 @@ describe("Creating a full flow for FEMS", async () => {
             await reuseButtons.clickSaveButton2()
             await WaitUntil.ElementIsVisible(2)
             await ReusablesComponents.checkSuccessNotification(constant.SuccessMessage)
+        })
+
+
+        it("Creating Asset Type Details", async () => {
+            await heppmRegister.enterAssetTypeCode(constant.assetTypeCode, constant.concatAssetTypeCode)
         })
     })
 })

@@ -4,7 +4,13 @@
             "node",
             "@wdio/globals/types",
             "@wdio/mocha-framework"
-        ]
+        ],
+
+        "baseUrl": "./",
+        "paths": {
+            "LLS": ["test/pageobjects/LLS/*"],
+            "FEMS": ["test/pageobjects/FEMS/*"]
+        }
     },
     "exclude": [
         "node_modules"

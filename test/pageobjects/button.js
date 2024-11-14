@@ -1,4 +1,4 @@
-import ReusablesComponents from "./../pageobjects/reuse"
+import ReusablesComponents from "./reuse"
 
 class reuseButtons {
 

@@ -85,7 +85,7 @@ export const submoduleLinenUnitPrice = "Linen Unit Price"
 export const concatLinenCode = linenCode + ' ' + '-' + ' ' + linenDescription + ' '
 export const fileType = "Manual"
 export const fileName = "MyFiles" + utils.getRandomNumbers(4)
-export const filepath = "./Upload_Files/samplefile.pdf"
+export const filepath = "./Data_Files/samplefile.pdf"
 export const linenUnitPrice = utils.getRandomNumbers(3)
 export const emptyLinenCode = " "
 export const submoduleLinenParRequire = "Linen PAR Requirements"
@@ -228,3 +228,7 @@ export const duringWarrantyRate = utils.getRandomNumbers(2)
 export const postWarrantyRate = utils.getRandomNumbers(2)
 export const duringWarrantyRateDate = getTodayDate()
 export const postWarrantyRateDate = getTodayDate()
+
+//HEPPM Register
+export const concatAssetTypeCode = assetTypeCode + '-' + assetTypeDesc
+

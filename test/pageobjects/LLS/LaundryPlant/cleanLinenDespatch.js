@@ -1,5 +1,5 @@
-import ReusablesComponents from "./../reuse"
-import cleanLinenOrderLLS from "./../cleanLinenOrderLLS"
+import ReusablesComponents from "../../reuse"
+import cleanLinenOrderLLS from "../cleanLinenOrderLLS"
 
 
 class cleanLinenDespatch {

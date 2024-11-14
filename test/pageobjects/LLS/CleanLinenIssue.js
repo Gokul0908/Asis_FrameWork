@@ -1,4 +1,4 @@
-import ReusablesComponents from "./reuse"
+import ReusablesComponents from "../reuse"
 
 
 class CleanLinenIssue {
