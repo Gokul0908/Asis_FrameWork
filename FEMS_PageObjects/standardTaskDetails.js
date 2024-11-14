@@ -1,4 +1,4 @@
-import reusablecomponents from "../pageobjects/reuse"
+import ReusablesComponents from "../pageobjects/reuse"
 
 class standardTaskDetails {
 
@@ -9,21 +9,21 @@ class standardTaskDetails {
     get effectiveFrom() { return $("//input[@id='EffectiveFrom']") }
 
     async enterWorkGroupCode(workGroupCode) {
-        await reusablecomponents.waitAndClick(this.getWorkGroupCode(workGroupCode))
+        await ReusablesComponents.waitAndClick(this.getWorkGroupCode(workGroupCode))
     }
     async enterTaskCode(taskCode) {
-        await reusablecomponents.waitAndSetValue(this.taskCode, taskCode)
+        await ReusablesComponents.waitAndSetValue(this.taskCode, taskCode)
     }
 
     async enterTaskDescription(taskDescription) {
-        await reusablecomponents.waitAndSetValue(this.taskDescription, taskDescription)
+        await ReusablesComponents.waitAndSetValue(this.taskDescription, taskDescription)
     }
     
     async setStatus(status) {
-        await reusablecomponents.waitAndClick(this.getStatus(status))
+        await ReusablesComponents.waitAndClick(this.getStatus(status))
     }
     async selectEffectiveFrom(effectiveFrom) {
-        await reusablecomponents.waitAndSetValue(this.effectiveFrom, effectiveFrom)
+        await ReusablesComponents.waitAndSetValue(this.effectiveFrom, effectiveFrom)
     }
 
 } export default new standardTaskDetails()

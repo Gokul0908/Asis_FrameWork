@@ -59,7 +59,7 @@ class cleanLinenOrderLLS {
         await ReusablesComponents.waitAndClick(this.getCLONoEditIcon(cloNo))
     }
 
-    async getStatusLabel() {
+    async clickStatusLabel() {
         await ReusablesComponents.waitAndClick(this.statusLabel)
     }
 

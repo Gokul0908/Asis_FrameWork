@@ -20,7 +20,6 @@ class linenItemDetails {
     get standardWeight(){ return $("//input[@name='standardWeight']")}
     get labelRemark(){ return $("//label[.='Remarks ']")}
     get labelInput(){ return $("//textarea[@name='Remarks']")}
-    get succesLabel() { return $("//div[@class='notify success']") }
 
     async enterLinenGrpCode(linenGrpCode, concatlinen) {
         await ReusablesComponents.waitAndSetValue(this.linenGrpCode,linenGrpCode)
@@ -72,13 +71,6 @@ class linenItemDetails {
     }
     async clickLabelRemarks(){
         await ReusablesComponents.waitAndClick(this.labelRemark)
-    }
-    async checkSuccessNotification(successMessage) {
-        await this.succesLabel.waitForDisplayed({timeout:20000})
-        const status = await ReusablesComponents.waitAndGetText(this.succesLabel)
-        await expect(status).toBe(successMessage)
-        console.log("User Area Master Status is::::::::::::::"+status)
-        return status
     }
 }
 export default new linenItemDetails

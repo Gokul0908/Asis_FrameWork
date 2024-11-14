@@ -75,7 +75,7 @@ export const linenEffectiveDate = getTodayDate()
 export const selectMaterial = "100% Cotton Drill"
 export const selectStandard = "MS2"
 export const standardWeight = "7"
-export const lIDSuccessMessage = "Data saved successfully"
+export const SuccessMessage = "Data saved successfully"
 
 // LLS Linen Item Details
 export const llsServiceIcon = "LLS"

@@ -45,21 +45,12 @@ class FMSModule {
     gethospitalDropDown(concatHospitalRep) { return $(`//ul[@id='UlFetchHospital']/li/div/a[.='${concatHospitalRep}']`) }
     getCompanyDropDown(concatCompanyRep) { return $(`//ul[@id='UlFetchCompany']/li/div/a[.='${concatCompanyRep}']`) }
     getUserAreaCodeDropDown(concatUserAreaCode) { return $(`//ul[@id='UlFetchUserAreaCode']/li/div/a[.='${concatUserAreaCode}']`) }
-    get succesLabel() { return $("//div[@class='notify success']") }
     get unsavedChangePopup() { return $("//button[.='No']") }
     get remarks() { return $("//textarea[@name='Remarks']") }   
 
     
     async enterRemarks(remarks) {
         await ReusablesComponents.waitAndSetValue(this.remarks, remarks)
-    }
-
-    async checkSuccessNotification(successMessage) {
-        await this.succesLabel.waitForDisplayed({ timeout: 20000 })
-        const status = await ReusablesComponents.waitAndGetText(this.succesLabel)
-        await expect(status).toBe(successMessage)
-        console.log("User Area Master Status is::::::::::::::" + status)
-        return status
     }
 
     async clickUnSavedPopup() {

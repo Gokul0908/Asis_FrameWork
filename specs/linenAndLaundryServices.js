@@ -16,6 +16,7 @@ import cleanLinenIssue from "../pageobjects/CleanLinenIssue"
 import reuseButtons from "./../pageobjects/button"
 import sideNavBar from "../pageobjects/sideNavBar"
 import WaitUntil from "../pageobjects/waitUntil"
+import ReusablesComponents from "../pageobjects/reuse"
 
 let clono
 let clrDocumentNo
@@ -86,7 +87,7 @@ describe("Creating a full flow for Linen and Laundry Services", async () => {
             await fMSModule.clickLabelLevel()
             await WaitUntil.ElementIsVisible(2)
             await reuseButtons.clickSaveButton1()
-            await fMSModule.checkSuccessNotification(constant.fmsSuccessMessage)
+            await ReusablesComponents.checkSuccessNotification(constant.SuccessMessage)
             await WaitUntil.ElementIsVisible(2)
 
         })
@@ -114,7 +115,7 @@ describe("Creating a full flow for Linen and Laundry Services", async () => {
             await fmsUserLocationMaster.selectInstalledFacility(constant.installedFacility)
             await fmsUserLocationMaster.clickLabelDiscipline()
             await reuseButtons.clickfmsSaveButton()
-            await fmsUserLocationMaster.checkSuccessNotification(constant.ULMSuccessMessage)
+            await ReusablesComponents.checkSuccessNotification(constant.SuccessMessage)
         });
     })
 
@@ -130,7 +131,8 @@ describe("Creating a full flow for Linen and Laundry Services", async () => {
             await gmLinenGroup.enterlinengrpCode(constant.linenGrpCode)
             await gmLinenGroup.enterLinenGrpDescription(constant.linenGrpDescription)
             await reuseButtons.clickSaveButton()
-            await WaitUntil.ElementIsVisible(2)
+            await WaitUntil.ElementIsVisible(2)            
+            await ReusablesComponents.checkSuccessNotification(constant.SuccessMessage)
 
             //Creating Linen Item Details
             await sideNavBar.clickSubModulesDropDown(constant.subModuleLinenItemDetail)
@@ -153,7 +155,7 @@ describe("Creating a full flow for Linen and Laundry Services", async () => {
             await linenItemDetails.clickLabelRemarks()
             await WaitUntil.ElementIsVisible(2)
             await reuseButtons.clickLIDSaveButton()
-            await linenItemDetails.checkSuccessNotification(constant.lIDSuccessMessage)
+            await ReusablesComponents.checkSuccessNotification(constant.SuccessMessage)
             await WaitUntil.ElementIsVisible(2)
 
         })
@@ -178,7 +180,7 @@ describe("Creating a full flow for Linen and Laundry Services", async () => {
             await WaitUntil.ElementIsVisible(2)
             // await lls.clickAttachmentSaveButton()
             await reuseButtons.clickAttachmentSaveButton2()
-            await linenItemDetails.checkSuccessNotification(constant.lIDSuccessMessage)
+            await ReusablesComponents.checkSuccessNotification(constant.SuccessMessage)
             await WaitUntil.ElementIsVisible(2)
         })
 
@@ -220,7 +222,7 @@ describe("Creating a full flow for Linen and Laundry Services", async () => {
             await lls.selectDefaultIssue(constant.defaultIssue)
             await lls.clickUserDepartSaveButton()
             await WaitUntil.ElementIsVisible(2)
-            await lls.checkSuccessNotification(constant.lIDSuccessMessage)
+            await ReusablesComponents.checkSuccessNotification(constant.SuccessMessage)
             await sideNavBar.clickSubModulesDropDown(constant.submoduleUserDepartmentArea)
             await WaitUntil.ElementIsVisible(2)
         })
@@ -240,8 +242,9 @@ describe("Creating a full flow for Linen and Laundry Services", async () => {
             await cleanLinenOrderLLS.selectLinenCode(constant.concatLinenCode2, constant.linenCode)
             await WaitUntil.ElementIsVisible(2)
             await cleanLinenOrderLLS.enterRequestedQuantity(constant.requestedQuantity)
-            await cleanLinenOrderLLS.getStatusLabel()
+            await cleanLinenOrderLLS.clickStatusLabel()
             await reuseButtons.clickSaveButton1()
+            await ReusablesComponents.checkSuccessNotification(constant.SuccessMessage)
             await WaitUntil.ElementIsVisible(2)
             await sideNavBar.clickSubModulesDropDown(constant.linenShipmentSubModule)
             clono = await cleanLinenOrderLLS.getCLONo()
@@ -344,6 +347,7 @@ describe("Creating a full flow for Linen and Laundry Services", async () => {
             await cleanLinenDespatch.enterDespatchQuantity(constant.dispatchQuantity)
             await reuseButtons.clickSaveButton1()
             await WaitUntil.ElementIsVisible(2)
+            await ReusablesComponents.checkSuccessNotification(constant.SuccessMessage)
         })
 
 
@@ -369,6 +373,7 @@ describe("Creating a full flow for Linen and Laundry Services", async () => {
             await WaitUntil.ElementIsVisible(2)
             await reuseButtons.clickCLRSaveButton()
             await WaitUntil.ElementIsVisible(2)
+            await ReusablesComponents.checkSuccessNotification(constant.SuccessMessage)
             await cleanLinenRequest.clickAttachmentTab()
             await cleanLinenRequest.selectFileType(constant.clrFiletype)
             await cleanLinenRequest.enterFileName(constant.fileName)
@@ -392,10 +397,13 @@ describe("Creating a full flow for Linen and Laundry Services", async () => {
             await WaitUntil.ElementIsVisible(2)
             await cleanLinenIssue.enterFirstDeliveryQuantity(constant.selectQuantity)
             await reuseButtons.clickCLISavebutton()
+            await ReusablesComponents.checkSuccessNotification(constant.SuccessMessage)
             await reuseButtons.clickCLISubmitButton()
             await WaitUntil.ElementIsVisible(2)
+            await ReusablesComponents.checkSuccessNotification(constant.SuccessMessage)
             await cleanLinenIssue.clickYesPopUp()
             await WaitUntil.ElementIsVisible(2)
+            await ReusablesComponents.checkSuccessNotification(constant.SuccessMessage)
         })
     })
 })

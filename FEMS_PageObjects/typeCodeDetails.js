@@ -1,4 +1,4 @@
-import reusablecomponents from "../pageobjects/reuse"
+import ReusablesComponents from "../pageobjects/reuse"
 
 class typeCodeDetails {
 
@@ -26,80 +26,80 @@ class typeCodeDetails {
     get qapDetailsLabel(){ return $("//h4[.='QAP Details']") }
 
     async enterAssetGroupCode(assetGroupCode, concatAssetGroupCode) {
-        await reusablecomponents.waitAndSetValue(this.assetGroupCode, assetGroupCode)
+        await ReusablesComponents.waitAndSetValue(this.assetGroupCode, assetGroupCode)
         await this.getAssetDropDown(concatAssetGroupCode).click()
     }
 
     async selectAssetClarification(assetclarification) {
-        await reusablecomponents.waitAndClick(this.getAssetClarification(assetclarification))
+        await ReusablesComponents.waitAndClick(this.getAssetClarification(assetclarification))
     }
 
     async selectAssetCategory(assetcategory) {
-        await reusablecomponents.waitAndClick(this.getAssetCategory(assetcategory))
+        await ReusablesComponents.waitAndClick(this.getAssetCategory(assetcategory))
     }
 
     async enterAssetTypeCode(assetTypeCode) {
-        await reusablecomponents.waitAndSetValue(this.assetTypeCode, assetTypeCode)
+        await ReusablesComponents.waitAndSetValue(this.assetTypeCode, assetTypeCode)
     }
 
     async enterAssetTypeDesc(assetTypeDesc) {
-        await reusablecomponents.waitAndSetValue(this.assetTypeDesc, assetTypeDesc)
+        await ReusablesComponents.waitAndSetValue(this.assetTypeDesc, assetTypeDesc)
     }
 
     async clickAssetTypeDetails() {
-        await reusablecomponents.waitAndClick(this.assetTypeDetails)
+        await ReusablesComponents.waitAndClick(this.assetTypeDetails)
     }
 
     async selectMaintenancesCategory(selectCategory) {
-        await reusablecomponents.waitAndClick(this.getmaintenancesCategory(selectCategory))
+        await ReusablesComponents.waitAndClick(this.getmaintenancesCategory(selectCategory))
     }
 
     async selectNominatedContractor(selectContractor) {
-        await reusablecomponents.waitAndClick(this.getNominatedContractor(selectContractor))
+        await ReusablesComponents.waitAndClick(this.getNominatedContractor(selectContractor))
     }
 
     async selectAssetAuditType(assetAuditType) {
-        await reusablecomponents.waitAndClick(this.getAssetAuditType(assetAuditType))
+        await ReusablesComponents.waitAndClick(this.getAssetAuditType(assetAuditType))
     }
 
     async selectMDAApplicable(MDAApplicable) {
-        await reusablecomponents.waitAndClick(this.getMDAApplicable(MDAApplicable))
+        await ReusablesComponents.waitAndClick(this.getMDAApplicable(MDAApplicable))
     }
 
     async selectLicenseType(licenseType) {
-        await reusablecomponents.waitAndClick(this.getlicenseType(licenseType))
+        await ReusablesComponents.waitAndClick(this.getlicenseType(licenseType))
     }
 
     async enterExpectedLifeSpan(expectedLifeSpan) {
-        await reusablecomponents.waitAndSetValue(this.expectedLifeSpan, expectedLifeSpan)
+        await ReusablesComponents.waitAndSetValue(this.expectedLifeSpan, expectedLifeSpan)
     }
 
     async enterAgeLessThan5Yrs(ageLessThan5Yrs) {
-        await reusablecomponents.waitAndSetValue(this.ageLessThan5Yrs, ageLessThan5Yrs)
+        await ReusablesComponents.waitAndSetValue(this.ageLessThan5Yrs, ageLessThan5Yrs)
     }
 
     async enterAgeGreaterThan5Yrs(ageGreaterThan5Yrs) {
-        await reusablecomponents.waitAndSetValue(this.ageGreaterThan5Yrs, ageGreaterThan5Yrs)
+        await ReusablesComponents.waitAndSetValue(this.ageGreaterThan5Yrs, ageGreaterThan5Yrs)
     }
 
     async enterDuringWarrantyRate(duringWarrantyRate) {
-        await reusablecomponents.waitAndSetValue(this.duringWarrantyRate, duringWarrantyRate)
+        await ReusablesComponents.waitAndSetValue(this.duringWarrantyRate, duringWarrantyRate)
     }
 
     async enterPostWarrantyRate(postWarrantyRate) {
-        await reusablecomponents.waitAndSetValue(this.postWarrantyRate, postWarrantyRate)
+        await ReusablesComponents.waitAndSetValue(this.postWarrantyRate, postWarrantyRate)
     }
 
     async enterDuringWarrantyRateDate(duringWarrantyRateDate) {
-        await reusablecomponents.waitAndSetValue(this.duringWarrantyRateDate, duringWarrantyRateDate)
+        await ReusablesComponents.waitAndSetValue(this.duringWarrantyRateDate, duringWarrantyRateDate)
     }
 
     async enterPostWarrantyRateDate(postWarrantyRateDate) {
-        await reusablecomponents.waitAndSetValue(this.postWarrantyRateDate, postWarrantyRateDate)
+        await ReusablesComponents.waitAndSetValue(this.postWarrantyRateDate, postWarrantyRateDate)
     }
 
     async clickQAPDetailsLabel() {
-        await reusablecomponents.waitAndClick(this.qapDetailsLabel)
+        await ReusablesComponents.waitAndClick(this.qapDetailsLabel)
     }
 
 } export default new typeCodeDetails()

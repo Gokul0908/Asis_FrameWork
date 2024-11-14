@@ -1,4 +1,4 @@
-import reusablecomponents from './../pageobjects/reuse'
+import ReusablesComponents from './../pageobjects/reuse'
 
 class assetGroupDetails {
 
@@ -7,11 +7,11 @@ class assetGroupDetails {
 
 
     async enterAssetGroupCode(assetGroupCode) {
-        await reusablecomponents.waitAndSetValue(this.assetGroupCode, assetGroupCode)
+        await ReusablesComponents.waitAndSetValue(this.assetGroupCode, assetGroupCode)
     }
 
     async enterAssetWorkDesc(assetGroupDesc){
-        await reusablecomponents.waitAndSetValue(this.assetGroupDesc, assetGroupDesc)
+        await ReusablesComponents.waitAndSetValue(this.assetGroupDesc, assetGroupDesc)
     }
 
 } export default new assetGroupDetails

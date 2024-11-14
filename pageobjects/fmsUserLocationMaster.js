@@ -27,7 +27,6 @@ class fmsAddUserLocationMaster {
     get labelDiscipline() { return $("//label[text()='Discipline']") }
     get addNewButton() { return $("//button[@title='Add New']") }
     get backButton() { return $("//button[@title='Back']") }
-    get succesLabel() { return $("//div[@class='notify success']") }
 
     async clickLabelDiscipline() {
         await ReusablesComponents.waitAndClick(this.labelDiscipline)
@@ -82,15 +81,6 @@ class fmsAddUserLocationMaster {
     async setStartServiceDate(startServiceDate) {
         await ReusablesComponents.waitAndSetValue(this.startServiceDate, startServiceDate)
     }
-    
-    async checkSuccessNotification(successMessage) {
-        await this.succesLabel.waitForDisplayed({timeout:20000})
-        const status = await ReusablesComponents.waitAndGetText(this.succesLabel)
-        await expect(status).toBe(successMessage)
-        console.log("User Area Master Status is::::::::::::::"+status)
-        return status
-    }
-
 }
 
 export default new fmsAddUserLocationMaster()

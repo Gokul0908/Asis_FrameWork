@@ -9,6 +9,7 @@ import workGrpDetails from "../FEMS_PageObjects/workGrpDetails"
 import assetGroupDetails from "../FEMS_PageObjects/assetGroupDetails"
 import standardTaskDetails from "../FEMS_PageObjects/standardTaskDetails"
 import typeCodeDetails from "../FEMS_PageObjects/typeCodeDetails"
+import ReusablesComponents from "../pageobjects/reuse"
 
 describe("Creating a full flow for FEMS", async () => {
 
@@ -55,6 +56,7 @@ describe("Creating a full flow for FEMS", async () => {
             await assetGroupDetails.enterAssetWorkDesc(constant.assetGroupDesc)
             await reuseButtons.clickSaveButton1()
             await WaitUntil.ElementIsVisible(3)
+            await ReusablesComponents.checkSuccessNotification(constant.assetGroupSuccessMessage)
         })
 
         it("Creating Standard Task Details and Type Code Details", async () => {
@@ -68,6 +70,8 @@ describe("Creating a full flow for FEMS", async () => {
             await standardTaskDetails.selectEffectiveFrom(constant.standardEffectiveFrom)
             await reuseButtons.clickSaveButton2()
             await WaitUntil.ElementIsVisible(2)
+            await ReusablesComponents.checkSuccessNotification(constant.SuccessMessage)
+            
 
             // Type Code Details
             await sideNavBar.clickSubModulesDropDown(constant.typeCodeDetails)
@@ -100,6 +104,7 @@ describe("Creating a full flow for FEMS", async () => {
             await typeCodeDetails.clickQAPDetailsLabel()
             await reuseButtons.clickSaveButton2()
             await WaitUntil.ElementIsVisible(2)
+            await ReusablesComponents.checkSuccessNotification(constant.SuccessMessage)
         })
     })
 })
