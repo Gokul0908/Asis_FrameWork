@@ -1,0 +1,43 @@
+{
+    "presets": [
+        [
+            "@babel/preset-env",
+            {
+                "targets": {
+                    "node": 20
+                }
+            }
+        ]
+    ],
+    "plugins": [
+        ["config-module-resolver"],
+        ["@babel/transform-runtime"],
+        ["@babel/plugin-transform-class-properties"],
+        [
+            "babel-plugin-module-resolver",
+            {
+                "alias": {
+                    "api": ["./src/api"],
+                    "conf": "./conf",
+                    "factories": "./src/factories",
+                    "scripts": "./src/scripts",
+                    "utils": "./utils",
+                    "c2c": "./src/c2c",
+                    "commonSat": "./src/satellites/common",
+                    "axiom": "./src/satellites/axiom",
+                    "carnegie": "./src/satellites/carnegie",
+                    "demo": "./src/satellites/demo",
+                    "empowered": "./src/satellites/empowered",
+                    "euc": "./src/satellites/euc",
+                    "gallopade": "./src/satellites/gallopade",
+                    "goodheart": "./src/satellites/goodheart",
+                    "greatbooks": "./src/satellites/greatbooks",
+                    "src": "./src",
+                    "satellites": "./src/satellites",
+                    "sirius": "./src/satellites/sirius",
+                    "resources": ".src/resources"
+                }
+            }
+        ]
+    ]
+}

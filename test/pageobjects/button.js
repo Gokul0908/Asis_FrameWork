@@ -20,6 +20,7 @@ class reuseButtons {
    get clisubmitButton() { return $("//button[@id='Issuesavesubmit']") }
    get attachmentSaveButton() { return $("(//button[@id='saveUpdate'])[2]") }
    get attachmentSaveButton2() { return $("(//button[@id='saveTab'])[2]") }
+   get addNewButton() { return $("//button[.='Add New']") }
 
 
    async asisuserLogoutToTheApplication() {
@@ -88,6 +89,10 @@ class reuseButtons {
    }
    async clickAttachmentSaveButton2() {
       await ReusablesComponents.waitAndClick(this.attachmentSaveButton2)
+   }
+
+   async clickAddNewButton() {
+      await ReusablesComponents.waitAndClick(this.addNewButton)
    }
 
 } export default new reuseButtons()

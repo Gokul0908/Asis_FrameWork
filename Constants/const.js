@@ -237,3 +237,24 @@ export const selectFrequency = "Monthly"
 export const version = utils.getRandomNumbers(2)
 export const effectiveFrom = getTodayDate()
 
+//Asset Information
+export const assetInformation = "Asset Information"
+export const TypeManufacturer = "Manufacturer"
+export const ManufacturerName = "Manufacturer Name" + utils.getRandomNumbers(3)
+export const TypeMake = "Make"
+export const MakeName = "Make Name" + utils.getRandomNumbers(3)
+export const TypeBrand = "Brand"
+export const BrandName = "Brand Name" + utils.getRandomNumbers(3)
+export const TypeModel = "Model"
+export const ModelName = "Model Name" + utils.getRandomNumbers(3)
+export const selectStatus = "Active"
+
+
+//Asset Standardization
+export const assetStandardization = "Asset Standardization"
+export const concatAssetTypeCode1 = assetTypeCode + ' ' + '-' + ' ' + assetTypeDesc + ' '
+export const concatManufacturer = ManufacturerName + ' '
+export const concatMake = MakeName + ' '
+export const concatBrand = BrandName + ' '
+export const concatModel = ModelName + ' '
+
