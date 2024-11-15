@@ -1,4 +1,4 @@
-import ReusablesComponents from "common/reuse"
+import ReusablesComponents from '../reuse'
 class linenItemDetails {
 
     // getHospitalSpecific(selectSpecification) { return $(`//select[@name='hospitalspecific']/option[.='${selectSpecification}']`) }

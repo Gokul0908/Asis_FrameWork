@@ -15,11 +15,11 @@ export const locationSubModule1 = "User Area Master"
 export const locationSubModule2 = "User Location Master"
 
 // Add User Area Master 
-export const userDepartmentCode = "AD" + utils.getRandomNumbers(4)
-export const userDepartmentName = "ADentist" + utils.getRandomNumbers(4)
+export const userDepartmentCode = "AN" + utils.getRandomNumbers(4)
+export const userDepartmentName = "ANeurology" + utils.getRandomNumbers(4)
 export const concatCodeName = userDepartmentCode + ' ' + '-' + ' ' + userDepartmentName
-export const fmsUserAreaCode = "ADV" + utils.getRandomNumbers(4)
-export const fmsUserAreaName = "ADentalVisitingArea" + utils.getRandomNumbers(4)
+export const fmsUserAreaCode = "AN" + utils.getRandomNumbers(4)
+export const fmsUserAreaName = "ANeuroVisitingArea" + utils.getRandomNumbers(4)
 export const concatfmsUserAreaCode = fmsUserAreaCode + ' ' + '-' + ' ' + fmsUserAreaName
 export const fmsMySpaCode = "ASPA" + utils.getRandomNumbers(4)
 export const fmsCategoryOfArea = "General Area"
@@ -197,17 +197,17 @@ export const selectQuantity = requestedQuantity
 ///FEMS
 export const femsSubModule = "FEMS"
 export const workGrpDetails = "Work Group Details"
-export const workGroupCode = "AR" + utils.getRandomNumbers(3)
-export const WorkGroupDesc = "ARemoving" + utils.getRandomNumbers(3)
+export const workGroupCode = "AA" + utils.getRandomNumbers(3)
+export const WorkGroupDesc = "AAdding" + utils.getRandomNumbers(3)
 
 
-export const assetGroupCode = "ACL" + utils.getRandomNumbers(3)
-export const assetGroupDesc = "AutoCeilingLight" + utils.getRandomNumbers(3)
+export const assetGroupCode = "ADL" + utils.getRandomNumbers(3)
+export const assetGroupDesc = "AutoDiscoLight" + utils.getRandomNumbers(3)
 export const assetGroupDetails = "Asset Group Details"
 
 export const standardTaskDetails = "Standard Task Details"
-export const taskCode = "AD" + utils.getRandomNumbers(3)
-export const taskDesc = "ADrilling" + utils.getRandomNumbers(3)
+export const taskCode = "AP" + utils.getRandomNumbers(3)
+export const taskDesc = "APoniting" + utils.getRandomNumbers(3)
 export const standardStatus = "Active"
 export const standardEffectiveFrom = getTodayDate()
 export const typeCodeDetails = "Type Code Details"
@@ -230,6 +230,7 @@ export const duringWarrantyRateDate = getTodayDate()
 export const postWarrantyRateDate = getTodayDate()
 
 //HEPPM Register
+export const heppmRegister = "HEPPM Register"
 export const concatAssetTypeCode = assetTypeCode + ' ' + '-' + ' ' + assetTypeDesc
 export const concatTaskCode = taskCode + ' ' + '-' + ' ' + taskDesc
 export const selectFrequency = "Monthly"

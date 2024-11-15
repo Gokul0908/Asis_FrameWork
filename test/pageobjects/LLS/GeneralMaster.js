@@ -1,4 +1,4 @@
-import ReusablesComponents from "common/reuse"
+import ReusablesComponents from '../reuse.js'
 
 class generalmaster {
 

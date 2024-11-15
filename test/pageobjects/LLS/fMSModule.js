@@ -1,5 +1,5 @@
 import * as Constant from "../../../Constants/const"
-import ReusablesComponents from "common/reuse"
+import ReusablesComponents from '../reuse'
 
 
 class FMSModule {

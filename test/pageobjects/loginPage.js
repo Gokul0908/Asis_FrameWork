@@ -1,5 +1,5 @@
-import ReusablesComponents from "common/reuse"
-import reuseButtons from "common/button"
+import ReusablesComponents from './reuse'
+import reuseButtons from './button'
 
 class LoginPage {
 

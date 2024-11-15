@@ -31,7 +31,7 @@ class utils {
     for (let i = 1; i < length; i++) {
       value += chars[Math.floor(Math.random() * chars.length)]
     }
-    return value
+    return value    
   }
 
   // Function to generate a random year less than 5 (between 1 and 4)

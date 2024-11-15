@@ -1,4 +1,4 @@
-import ReusablesComponents from "common/reuse"
+import ReusablesComponents from '../pageobjects/reuse'
 
 
 class sideNavBar {
@@ -7,10 +7,14 @@ class sideNavBar {
     getMasterSubModules(MasterSubModules) { return $(`//span[.='${MasterSubModules}']`) }
     getSubModuleDropDown(subModuleValues) { return $(`//ul[@class='show']/li/a[.='${subModuleValues}']`) }
     get transactionDropDown() { return $("//a[.='Transaction']") }
-    getTransactionSubModules(TransactionSubModules) { return $(`//span[.='${TransactionSubModules}']`) }    
+    getTransactionSubModules(TransactionSubModules) { return $(`//span[.='${TransactionSubModules}']`) }
 
     async clickMasterDropDown(MasterSubModules) {
         await ReusablesComponents.waitAndClick(this.masterDropDown)
+        await ReusablesComponents.waitAndClick(this.getMasterSubModules(MasterSubModules))
+    }
+
+    async clickMasterSubModules(MasterSubModules) {
         await ReusablesComponents.waitAndClick(this.getMasterSubModules(MasterSubModules))
     }
 

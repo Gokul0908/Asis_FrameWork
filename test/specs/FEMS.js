@@ -1,16 +1,16 @@
-import reuseButtons from 'common/button.js'
-import LoginPage from 'common/loginPage.js'
-import asisHomePage from 'common/asisHomePage.js'
-import sideNavBar from 'common/sideNavBar.js'
-import WaitUntil from 'common/waitUntil.js'
-import * as constant from '../../Constants/const'
-import GeneralMaster from 'common/LLS/GeneralMaster.js'
-import workGrpDetails from 'common/FEMS/workGrpDetails.js'
-import assetGroupDetails from 'common/FEMS/assetGroupDetails.js'
-import standardTaskDetails from 'common/FEMS/standardTaskDetails.js'
-import typeCodeDetails from 'common/FEMS/typeCodeDetails.js'
-import ReusablesComponents from 'common/reuse.js'
-import heppmRegister from 'common/FEMS/heppmRegister.js'
+import reuseButtons from '../../test/pageobjects/button.js'
+import LoginPage from '../../test/pageobjects/loginPage.js'
+import asisHomePage from '../../test/pageobjects/asisHomePage.js'
+import sideNavBar from '../../test/pageobjects/sideNavBar.js'
+import WaitUntil from '../../test/pageobjects/waitUntil.js'
+import * as constant from '../../Constants/const.js'
+import GeneralMaster from '../../test/pageobjects/LLS/GeneralMaster.js'
+import workGrpDetails from '../../test/pageobjects/FEMS/workGrpDetails.js'
+import assetGroupDetails from '../../test/pageobjects/FEMS/assetGroupDetails.js'
+import standardTaskDetails from '../../test/pageobjects/FEMS/standardTaskDetails.js'
+import typeCodeDetails from '../../test/pageobjects/FEMS/typeCodeDetails.js'
+import ReusablesComponents from '../../test/pageobjects/reuse.js'
+import heppmRegister from '../../test/pageobjects/FEMS/heppmRegister.js'
 
 describe("Creating a full flow for FEMS", async () => {
 
@@ -45,19 +45,19 @@ describe("Creating a full flow for FEMS", async () => {
         it("Creating Work Group Details and Asset Group Details", async () => {
             await asisHomePage.selectServicesIcon(constant.gmServices)
             await sideNavBar.clickMasterDropDown(constant.femsSubModule)
-            await WaitUntil.ElementIsVisible(3)
             await sideNavBar.clickSubModulesDropDown(constant.workGrpDetails)
             await workGrpDetails.clickAddIcon()
             await workGrpDetails.enterWorkGroupCode(constant.workGroupCode)
             await workGrpDetails.enterWorkgrpDesc(constant.WorkGroupDesc)
             await reuseButtons.clickSaveButton1()
+            await WaitUntil.ElementIsVisible(3)
             await sideNavBar.clickSubModulesDropDown(constant.assetGroupDetails)
             await reuseButtons.clickAddButton()
             await assetGroupDetails.enterAssetGroupCode(constant.assetGroupCode)
             await assetGroupDetails.enterAssetWorkDesc(constant.assetGroupDesc)
             await reuseButtons.clickSaveButton1()
             await WaitUntil.ElementIsVisible(3)
-            await ReusablesComponents.checkSuccessNotification(constant.assetGroupSuccessMessage)
+            await ReusablesComponents.checkSuccessNotification(constant.SuccessMessage)
         })
 
         it("Creating Standard Task Details and Type Code Details", async () => {
@@ -72,7 +72,7 @@ describe("Creating a full flow for FEMS", async () => {
             await reuseButtons.clickSaveButton2()
             await WaitUntil.ElementIsVisible(2)
             await ReusablesComponents.checkSuccessNotification(constant.SuccessMessage)
-            
+
 
             // Type Code Details
             await sideNavBar.clickSubModulesDropDown(constant.typeCodeDetails)
@@ -105,11 +105,13 @@ describe("Creating a full flow for FEMS", async () => {
             await typeCodeDetails.clickQAPDetailsLabel()
             await reuseButtons.clickSaveButton2()
             await WaitUntil.ElementIsVisible(2)
+            await reuseButtons.clickSaveButton1()
             await ReusablesComponents.checkSuccessNotification(constant.SuccessMessage)
         })
 
-
-        it("Creating Asset Type Details", async () => {
+        it("Creating HEPPM Register Details", async () => {
+            await sideNavBar.clickSubModulesDropDown(constant.heppmRegister)
+            await reuseButtons.clickAddButton()
             await heppmRegister.enterAssetTypeCode(constant.assetTypeDesc, constant.concatAssetTypeCode)
             await heppmRegister.enterTaskCode(constant.taskDesc, constant.concatTaskCode)
             await heppmRegister.selectPPMFrequency(constant.selectFrequency)
@@ -119,7 +121,6 @@ describe("Creating a full flow for FEMS", async () => {
             await heppmRegister.clickAddIcon()
             await reuseButtons.clickSaveButton1()
             await WaitUntil.ElementIsVisible(2)
-            await ReusablesComponents.waitForPleaseWaitNotificationToDisappear()
             await ReusablesComponents.checkSuccessNotification(constant.SuccessMessage)
         })
     })
