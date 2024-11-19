@@ -197,24 +197,24 @@ export const selectQuantity = requestedQuantity
 ///FEMS
 export const femsSubModule = "FEMS"
 export const workGrpDetails = "Work Group Details"
-export const workGroupCode = "AA" + utils.getRandomNumbers(3)
-export const WorkGroupDesc = "AAdding" + utils.getRandomNumbers(3)
+export const workGroupCode = "AA" + utils.getRandomNumbers(4)
+export const WorkGroupDesc = "AAdding" + utils.getRandomNumbers(4)
 
 
-export const assetGroupCode = "ADL" + utils.getRandomNumbers(3)
-export const assetGroupDesc = "AutoDiscoLight" + utils.getRandomNumbers(3)
+export const assetGroupCode = "ADL" + utils.getRandomNumbers(4)
+export const assetGroupDesc = "AutoDiscoLight" + utils.getRandomNumbers(4)
 export const assetGroupDetails = "Asset Group Details"
 
 export const standardTaskDetails = "Standard Task Details"
-export const taskCode = "AP" + utils.getRandomNumbers(3)
-export const taskDesc = "APoniting" + utils.getRandomNumbers(3)
+export const taskCode = "AP" + utils.getRandomNumbers(4)
+export const taskDesc = "APoniting" + utils.getRandomNumbers(4)
 export const standardStatus = "Active"
 export const standardEffectiveFrom = getTodayDate()
 export const typeCodeDetails = "Type Code Details"
 export const concatAssetGroupCode = assetGroupCode + '-' + assetGroupDesc
 export const assetClarification = "Equipment"
 export const assetCategory = "Electrical"
-export const assetTypeCode = taskCode
+export const assetTypeCode = taskCode   ///taskDesc
 export const assetTypeDesc = taskDesc
 export const maintenancesCategory = "Specialized"
 export const nominatedContractor = "Yes"
@@ -240,13 +240,13 @@ export const effectiveFrom = getTodayDate()
 //Asset Information
 export const assetInformation = "Asset Information"
 export const TypeManufacturer = "Manufacturer"
-export const ManufacturerName = "Manufacturer Name" + utils.getRandomNumbers(3)
+export const ManufacturerName = "Dell" + utils.getRandomNumbers(3)
 export const TypeMake = "Make"
-export const MakeName = "Make Name" + utils.getRandomNumbers(3)
+export const MakeName = "Inspiron" + utils.getRandomNumbers(3)
 export const TypeBrand = "Brand"
-export const BrandName = "Brand Name" + utils.getRandomNumbers(3)
+export const BrandName = "Dell" + utils.getRandomNumbers(3)
 export const TypeModel = "Model"
-export const ModelName = "Model Name" + utils.getRandomNumbers(3)
+export const ModelName = "Inspiron" + utils.getRandomNumbers(3)
 export const selectStatus = "Active"
 
 
@@ -254,7 +254,6 @@ export const selectStatus = "Active"
 export const assetStandardization = "Asset Standardization"
 export const concatAssetTypeCode1 = assetTypeCode + ' ' + '-' + ' ' + assetTypeDesc + ' '
 export const concatManufacturer = ManufacturerName + ' '
-export const concatMake = MakeName + ' '
+export const concatMake = MakeName
 export const concatBrand = BrandName + ' '
-export const concatModel = ModelName + ' '
-
+export const concatModel = ModelName

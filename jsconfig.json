@@ -3,17 +3,17 @@
 
         // "baseUrl": "./",
 
-        "paths": {
-            "common/*": [
-                "./test/pageobjects/*"
-            ],
-            "LLS/*": [
-                "./test/pageobjects/LLS/*"
-            ],
-            "FEMS/*": [
-                "./test/pageobjects/FEMS/*"
-            ]
-        },
+        // "paths": {
+        //     "common/*": [
+        //         "./test/pageobjects/*"
+        //     ],
+        //     "LLS/*": [
+        //         "./test/pageobjects/LLS/*"
+        //     ],
+        //     "FEMS/*": [
+        //         "./test/pageobjects/FEMS/*"
+        //     ]
+        // },
         
         "types": [
             "node",

@@ -13,6 +13,9 @@ import ReusablesComponents from '../../test/pageobjects/reuse.js'
 import heppmRegister from '../../test/pageobjects/FEMS/heppmRegister.js'
 import assetInformation from '../../test/pageobjects/FEMS/assetInformation.js'
 import assetStandardization from '../../test/pageobjects/FEMS/assetStandardization.js'
+import reuse from '../../test/pageobjects/reuse.js'
+import fmsUserLocationMaster from '../../test/pageobjects/LLS/fmsUserLocationMaster.js'
+import fMSModule from '../pageobjects/LLS/fMSModule.js'
 
 describe("Creating a full flow for FEMS", async () => {
 
@@ -162,11 +165,85 @@ describe("Creating a full flow for FEMS", async () => {
             await ReusablesComponents.checkSuccessNotification(constant.SuccessMessage)
         })
 
+
+        it("Creating User Area Master in FMS", async () => {
+
+            await asisHomePage.clickasisHeartIcon()
+            await asisHomePage.hoverOnServiceIcon(constant.fmsServices)
+            await asisHomePage.selectServicesIcon(constant.fmsServices)
+            await sideNavBar.clickMasterDropDown(constant.masterLocationSubModule)
+            await sideNavBar.clickSubModulesDropDown(constant.locationSubModule1)
+            await reuseButtons.clickAddButton()
+            await fMSModule.enterFMSUserAreaCode(constant.fmsUserAreaCode)
+            await fMSModule.enterFMSUserAreaName(constant.fmsUserAreaName)
+            await fMSModule.enterfmsUserDepartCode(constant.userDepartmentCode)
+            await fMSModule.clickLabelUDC()
+            await WaitUntil.ElementIsVisible(2)
+            await fMSModule.entermySPATACode(constant.fmsMySpaCode)
+            await fMSModule.selectCategoryOfAreaDropDown(constant.fmsCategoryOfArea)
+            await fMSModule.setStatus(constant.fmsStatus)
+            await fMSModule.selectlevel(constant.fmsLevel)
+            await fMSModule.setWorkingHours(constant.fmsWorkingHours)
+            await WaitUntil.ElementIsVisible(2)
+            await fMSModule.setTotalFloorArea(constant.fmsTotalFloorArea)
+            await fMSModule.clickLabelLevel()
+            await fMSModule.setStartServiceDate(constant.fmsStartServiceDate)
+            await WaitUntil.ElementIsVisible(2)
+            await fMSModule.clickLabelSSD()
+            //await fMSModule.selectHospitalRepresentative(constant.fmshospitalRepresentative)
+            await fMSModule.selecthospital(constant.fmshospitalRepresentative)
+            await WaitUntil.ElementIsVisible(2)
+            await fMSModule.clickLabelDesignaton()
+            await fMSModule.selectCompanyRepresentative(constant.fmsCompanyRep)
+            await WaitUntil.ElementIsVisible(2)
+            await fMSModule.clickLabelDesignaton()
+            await fMSModule.enterRemarks(constant.remarks)
+            // await browser.pause()
+            await fMSModule.clickLabelSSD()
+            await fMSModule.clickLabelLevel()
+            await WaitUntil.ElementIsVisible(2)
+            await reuseButtons.clickSaveButton1()
+            await ReusablesComponents.checkSuccessNotification(constant.SuccessMessage)
+            await WaitUntil.ElementIsVisible(2)
+
+        })
+
+        //User Location Master
+        it("Creating User Location Master in FMS", async () => {
+            await sideNavBar.clickSubModulesDropDown(constant.locationSubModule2)
+            await reuseButtons.clickAddButton()
+            await fmsUserLocationMaster.enterUserLocationCode(constant.fmsUserLocationCode)
+            await fmsUserLocationMaster.enterUserLocationName(constant.fmsUserLocationName)
+            await fmsUserLocationMaster.selectUserAreaCodeDropDown(constant.fmsUserAreaCode)
+            await fmsUserLocationMaster.clickLabelUDC()
+            await WaitUntil.ElementIsVisible(2)
+            await fmsUserLocationMaster.setStartServiceDate(constant.fmsStartServiceDate)
+            await fmsUserLocationMaster.enterLocationSpecificName(constant.locationSpecificName)
+            await fmsUserLocationMaster.clickLabelUDC()
+            await WaitUntil.ElementIsVisible(2)
+            await fmsUserLocationMaster.clickLabelAuthorized()
+            await fmsUserLocationMaster.setOperatingHours(constant.operatingHours)
+            await fmsUserLocationMaster.setFloorArea(constant.floorArea)
+            await fmsUserLocationMaster.setAirCondArea(constant.airCondArea)
+            await fmsUserLocationMaster.selectCleansingCategory(constant.cleansingCategory)
+            await fmsUserLocationMaster.selectCriticality(constant.criticality)
+            await fmsUserLocationMaster.selectInstalledFacility(constant.installedFacility)
+            await fmsUserLocationMaster.clickLabelDiscipline()
+            await reuseButtons.clickfmsSaveButton()
+            await ReusablesComponents.checkSuccessNotification(constant.SuccessMessage)
+        })
+
         it("Creating Asset Standardization Details", async () => {
-            await sideNavBar.clickMasterSubModules(constant.femsSubModule)
+
+            await asisHomePage.clickasisHeartIcon()
+            await asisHomePage.selectServicesIcon(constant.gmServices)
+            await WaitUntil.ElementIsVisible(2)
+            await sideNavBar.clickMasterDropDown(constant.femsSubModule)
             await sideNavBar.clickSubModulesDropDown(constant.assetStandardization)
+            await WaitUntil.ElementIsVisible(2)
             await reuseButtons.clickAddButton()
             await assetStandardization.enterAssetTypeCode(constant.assetTypeCode, constant.concatAssetTypeCode1)
+            await assetStandardization.clickServiceLabel()
             await assetStandardization.enterManufacturer(constant.ManufacturerName, constant.concatManufacturer)
             await assetStandardization.clickServiceLabel()
             await assetStandardization.enterMake(constant.MakeName, constant.concatMake)
@@ -177,7 +254,7 @@ describe("Creating a full flow for FEMS", async () => {
             await assetStandardization.selectStatus(constant.selectStatus)
             await assetStandardization.clickServiceLabel()
             await reuseButtons.clickSaveButton1()
-            await WaitUntil.ElementIsVisible(2)
+            await WaitUntil.ElementIsVisible(2)            
             await ReusablesComponents.checkSuccessNotification(constant.SuccessMessage)
         })
     })

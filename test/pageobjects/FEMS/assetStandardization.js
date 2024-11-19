@@ -1,3 +1,4 @@
+import WaitUntil from '../waitUntil'
 import ReusablesComponents from '../reuse'
 
 class assetStandardization {
@@ -17,32 +18,32 @@ class assetStandardization {
     get serviceLabel() { return $("//label[.='Service ']") }
 
 
-    async enterAssetTypeCode(assetTypeCode, concatAssetTypeCode) {
+    async enterAssetTypeCode(assetTypeCode, concatAssetTypeCode) {        
         await ReusablesComponents.waitAndSetValue(this.assetTypeCode, assetTypeCode)
-        await this.getAssetTypeCodeDropDown(concatAssetTypeCode).click()
+        await this.getAssetTypeCodeDropDown(concatAssetTypeCode).click()        
     }
 
-    async enterManufacturer(manufacturer, concatManufacturer) {
+    async enterManufacturer(manufacturer, concatManufacturer) {        
         await ReusablesComponents.waitAndSetValue(this.manufacturer, manufacturer)
         await this.getManufacturerDropDown(concatManufacturer).click()
     }
 
-    async enterMake(make, concatMake) {
+    async enterMake(make, concatMake) {       
         await ReusablesComponents.waitAndSetValue(this.make, make)
         await this.getMakeDropDown(concatMake).click()
     }
 
-    async enterBrand(brand, concatBrand) {
+    async enterBrand(brand, concatBrand) {        
         await ReusablesComponents.waitAndSetValue(this.brand, brand)
         await this.getBrandDropDown(concatBrand).click()
     }
 
-    async enterModel(model, concatModel) {
+    async enterModel(model, concatModel) {        
         await ReusablesComponents.waitAndSetValue(this.model, model)
         await this.getModelDropDown(concatModel).click()
     }
 
-    async selectStatus(selectStatus) {
+    async selectStatus(selectStatus) {        
         await ReusablesComponents.waitAndClick(this.getStatus(selectStatus))
     }
 
