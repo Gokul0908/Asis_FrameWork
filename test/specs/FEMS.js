@@ -16,6 +16,7 @@ import assetStandardization from '../../test/pageobjects/FEMS/assetStandardizati
 import reuse from '../../test/pageobjects/reuse.js'
 import fmsUserLocationMaster from '../../test/pageobjects/LLS/fmsUserLocationMaster.js'
 import fMSModule from '../pageobjects/LLS/fMSModule.js'
+import userAreaMaster from '../pageobjects/FEMS/userAreaMaster.js'
 
 describe("Creating a full flow for FEMS", async () => {
 
@@ -256,6 +257,35 @@ describe("Creating a full flow for FEMS", async () => {
             await reuseButtons.clickSaveButton1()
             await WaitUntil.ElementIsVisible(2)            
             await ReusablesComponents.checkSuccessNotification(constant.SuccessMessage)
+        })
+
+        xit("Mapping user Area user Master and User Location Master in FEMS  ", async () => {
+
+            await asisHomePage.clickasisHeartIcon()
+            await asisHomePage.selectServicesIcon(constant.FEMSServiceIcon)
+            await WaitUntil.ElementIsVisible(2)
+            await sideNavBar.clickMasterDropDown(constant.masterLocation)
+            await sideNavBar.clickSubModulesDropDown(constant.FEMSLocationSubModule1)
+            await reuseButtons.clickAddButton()
+            await userAreaMaster.enterUserAreaCode(constant.fmsUserAreaCode)
+            await userAreaMaster.enterStartServiceDate(constant.fmsStartServiceDate)
+            await fMSModule.selecthospital(constant.fmshospitalRepresentative)
+            await fMSModule.clickLabelDesignaton()
+            await fMSModule.selectCompanyRepresentative(constant.fmsCompanyRep)
+            await fMSModule.enterRemarks(constant.remarks)
+            await WaitUntil.ElementIsVisible(2)
+            await reuseButtons.clickSaveButton1()            
+            await ReusablesComponents.checkSuccessNotification(constant.SuccessMessage)
+
+            //User Location Master
+            await sideNavBar.clickSubModulesDropDown(constant.FEMSLocationSubModule2)
+            await reuseButtons.clickAddButton()
+            await fmsUserLocationMaster.enterUserLocationCode(constant.fmsUserLocationCode)
+            await fmsUserLocationMaster.enterUserLocationName(constant.fmsUserLocationName)
+            await fmsUserLocationMaster.selectUserAreaCodeDropDown(constant.fmsUserAreaCode)
+            await fmsUserLocationMaster.clickLabelUDC()
+            await WaitUntil.ElementIsVisible(2)
+            await fmsUserLocationMaster.setStartServiceDate(constant.fmsStartServiceDate)
         })
     })
 })

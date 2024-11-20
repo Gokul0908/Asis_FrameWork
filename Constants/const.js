@@ -15,11 +15,11 @@ export const locationSubModule1 = "User Area Master"
 export const locationSubModule2 = "User Location Master"
 
 // Add User Area Master 
-export const userDepartmentCode = "AN" + utils.getRandomNumbers(4)
-export const userDepartmentName = "ANeurology" + utils.getRandomNumbers(4)
+export const userDepartmentCode = "AS" + utils.getRandomNumbers(4)
+export const userDepartmentName = "ASurgery" + utils.getRandomNumbers(4)
 export const concatCodeName = userDepartmentCode + ' ' + '-' + ' ' + userDepartmentName
-export const fmsUserAreaCode = "AN" + utils.getRandomNumbers(4)
-export const fmsUserAreaName = "ANeuroVisitingArea" + utils.getRandomNumbers(4)
+export const fmsUserAreaCode = "AS" + utils.getRandomNumbers(4)
+export const fmsUserAreaName = "ASurgery" + utils.getRandomNumbers(4)
 export const concatfmsUserAreaCode = fmsUserAreaCode + ' ' + '-' + ' ' + fmsUserAreaName
 export const fmsMySpaCode = "ASPA" + utils.getRandomNumbers(4)
 export const fmsCategoryOfArea = "General Area"
@@ -40,8 +40,8 @@ export const remarks = " Data Saved"
 
 
 //Add User Location Master 
-export const fmsUserLocationCode = "AE" + utils.getRandomNumbers(4)
-export const fmsUserLocationName = "AEmergency" + utils.getRandomString(4)
+export const fmsUserLocationCode = "AO" + utils.getRandomNumbers(4)
+export const fmsUserLocationName = "AOperation" + utils.getRandomString(4)
 export const concatfmsConcatUserAreaCode = fmsUserAreaCode + ' ' + '-' + ' ' + fmsUserAreaName
 export const status = "Active"  //  Inactive  Active
 export const locationSpecificName = "ANearICU"
@@ -57,11 +57,11 @@ export const ULMSuccessMessage = "Data saved successfully"
 //LinenGroup
 export const masterSubModulesLLS = "LLS"
 export const subModuleLinenGroup = "Linen Group"
-export const linenGrpCode = "ASW" + utils.getRandomString(4)
-export const linenGrpDescription = "ASilk" + utils.getRandomString(4)
+export const linenGrpCode = "AOC" + utils.getRandomString(4)
+export const linenGrpDescription = "AOperationCloth" + utils.getRandomString(4)
 export const concatlinen = linenGrpCode + ' ' + '-' + ' ' + linenGrpDescription + ' '
-export const linenCode = "AWindow" + utils.getRandomString(4)
-export const linenDescription = "ASilkWindow" + utils.getRandomString(4)
+export const linenCode = "AOC" + utils.getRandomString(4)
+export const linenDescription = "AOperationCloth" + utils.getRandomString(4)
 
 //Linen Item detail
 export const subModuleLinenItemDetail = "Linen Item Details"
@@ -197,17 +197,17 @@ export const selectQuantity = requestedQuantity
 ///FEMS
 export const femsSubModule = "FEMS"
 export const workGrpDetails = "Work Group Details"
-export const workGroupCode = "AA" + utils.getRandomNumbers(4)
-export const WorkGroupDesc = "AAdding" + utils.getRandomNumbers(4)
+export const workGroupCode = "AWG" + utils.getRandomNumbers(4)
+export const WorkGroupDesc = "AWorkGroup" + utils.getRandomNumbers(4)
 
 
-export const assetGroupCode = "ADL" + utils.getRandomNumbers(4)
-export const assetGroupDesc = "AutoDiscoLight" + utils.getRandomNumbers(4)
+export const assetGroupCode = "AF" + utils.getRandomNumbers(4)
+export const assetGroupDesc = "AFan" + utils.getRandomNumbers(4)
 export const assetGroupDetails = "Asset Group Details"
 
 export const standardTaskDetails = "Standard Task Details"
-export const taskCode = "AP" + utils.getRandomNumbers(4)
-export const taskDesc = "APoniting" + utils.getRandomNumbers(4)
+export const taskCode = "AT" + utils.getRandomNumbers(4)
+export const taskDesc = "ATask" + utils.getRandomNumbers(4)
 export const standardStatus = "Active"
 export const standardEffectiveFrom = getTodayDate()
 export const typeCodeDetails = "Type Code Details"
@@ -257,3 +257,9 @@ export const concatManufacturer = ManufacturerName + ' '
 export const concatMake = MakeName
 export const concatBrand = BrandName + ' '
 export const concatModel = ModelName
+
+//FEMS
+export const FEMSServiceIcon = "FEMS"
+export const masterLocation = "Locations"
+export const FEMSLocationSubModule1 = "User Area Master"
+export const FEMSLocationSubModule2 = "User Location Master"

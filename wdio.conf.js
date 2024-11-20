@@ -22,8 +22,8 @@ export const config = {
     //
     specs: [
         // ToDo: define location for spec files here
-        // "./test/specs/LLS.js"
-        "./test/specs/FEMS.js"
+        "./test/specs/LLS.js"
+        // "./test/specs/FEMS.js"
     ],
     // Patterns to exclude.
     exclude: [
