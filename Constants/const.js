@@ -42,7 +42,7 @@ export const remarks = " Data Saved"
 //Add User Location Master 
 export const fmsUserLocationCode = "AO" + utils.getRandomNumbers(4)
 export const fmsUserLocationName = "AOperation" + utils.getRandomString(4)
-export const concatfmsConcatUserAreaCode = fmsUserAreaCode + ' ' + '-' + ' ' + fmsUserAreaName
+export const concatfmsUserLocationCode = fmsUserLocationCode + ' ' + '-' + ' ' + fmsUserLocationName
 export const status = "Active"  //  Inactive  Active
 export const locationSpecificName = "ANearICU"
 export const operatingHours = "24"
@@ -254,12 +254,15 @@ export const selectStatus = "Active"
 export const assetStandardization = "Asset Standardization"
 export const concatAssetTypeCode1 = assetTypeCode + ' ' + '-' + ' ' + assetTypeDesc + ' '
 export const concatManufacturer = ManufacturerName + ' '
-export const concatMake = MakeName
+export const Make = MakeName
 export const concatBrand = BrandName + ' '
-export const concatModel = ModelName
+export const Model = ModelName
 
 //FEMS
 export const FEMSServiceIcon = "FEMS"
 export const masterLocation = "Locations"
 export const FEMSLocationSubModule1 = "User Area Master"
 export const FEMSLocationSubModule2 = "User Location Master"
+export const serviceRequest = "Service Request"
+export const serviceRequestCode = "AS" + utils.getRandomNumbers(4)
+

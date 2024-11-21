@@ -22,6 +22,8 @@ export const config = {
     //
     specs: [
         // ToDo: define location for spec files here
+
+        // "./test/specs/*"
         // "./test/specs/LLS.js"
         "./test/specs/FEMS.js"
     ],

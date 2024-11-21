@@ -39,12 +39,10 @@ class ReusablesComponents {
         const status = await this.waitAndGetText(this.succesLabel)
         await expect(status).toBe(successMessage)
 
-        if (status === successMessage) {
-            console.log("Success Notification is displayed")
-        }
-        else {
+        if (!status === successMessage) {
             console.log("Success Notification is not displayed")
         }
+
         return status
     }
 
@@ -52,7 +50,10 @@ class ReusablesComponents {
         await this.pleaseWaitLabel.waitForDisplayed({ timeout: 20000 })
         await this.pleaseWaitLabel.waitForDisplayed({ timeout: 20000, reverse: true })
         console.log("Please Wait Notification has disappeared")
+    }
 
+    async refreshPage() {
+        await browser.refresh()
     }
 }
 export default new ReusablesComponents()

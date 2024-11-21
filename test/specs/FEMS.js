@@ -1,4 +1,5 @@
 import reuseButtons from '../../test/pageobjects/button.js'
+import reuse from '../../with_Cursor/reuse.js'
 import LoginPage from '../../test/pageobjects/loginPage.js'
 import asisHomePage from '../../test/pageobjects/asisHomePage.js'
 import sideNavBar from '../../test/pageobjects/sideNavBar.js'
@@ -13,10 +14,10 @@ import ReusablesComponents from '../../test/pageobjects/reuse.js'
 import heppmRegister from '../../test/pageobjects/FEMS/heppmRegister.js'
 import assetInformation from '../../test/pageobjects/FEMS/assetInformation.js'
 import assetStandardization from '../../test/pageobjects/FEMS/assetStandardization.js'
-import reuse from '../../test/pageobjects/reuse.js'
 import fmsUserLocationMaster from '../../test/pageobjects/LLS/fmsUserLocationMaster.js'
 import fMSModule from '../pageobjects/LLS/fMSModule.js'
 import userAreaMaster from '../pageobjects/FEMS/userAreaMaster.js'
+import userLocationMaster from '../pageobjects/FEMS/userLocationMaster.js'
 
 describe("Creating a full flow for FEMS", async () => {
 
@@ -44,6 +45,9 @@ describe("Creating a full flow for FEMS", async () => {
             await GeneralMaster.enterUserDepartmentCode(constant.userDepartmentCode)
             await GeneralMaster.enterUserDepartmentName(constant.userDepartmentName)
             await reuseButtons.clickSaveButton()
+            await WaitUntil.ElementIsVisible(2)
+            await ReusablesComponents.checkSuccessNotification(constant.SuccessMessage)
+             console.log("Validation for Standard User Department Code is successful")
             await asisHomePage.clickasisHeartIcon()
         })
 
@@ -56,6 +60,8 @@ describe("Creating a full flow for FEMS", async () => {
             await workGrpDetails.enterWorkGroupCode(constant.workGroupCode)
             await workGrpDetails.enterWorkgrpDesc(constant.WorkGroupDesc)
             await reuseButtons.clickSaveButton1()
+            await ReusablesComponents.checkSuccessNotification(constant.SuccessMessage)
+             console.log("Validation for Work Group Details is successful")
             await WaitUntil.ElementIsVisible(3)
             await sideNavBar.clickSubModulesDropDown(constant.assetGroupDetails)
             await reuseButtons.clickAddButton()
@@ -64,6 +70,7 @@ describe("Creating a full flow for FEMS", async () => {
             await reuseButtons.clickSaveButton1()
             await WaitUntil.ElementIsVisible(3)
             await ReusablesComponents.checkSuccessNotification(constant.SuccessMessage)
+             console.log("Validation for Asset Group Details is successful")
         })
 
         it("Creating Standard Task Details and Type Code Details", async () => {
@@ -78,7 +85,7 @@ describe("Creating a full flow for FEMS", async () => {
             await reuseButtons.clickSaveButton2()
             await WaitUntil.ElementIsVisible(2)
             await ReusablesComponents.checkSuccessNotification(constant.SuccessMessage)
-
+             console.log("Validation for Standard Task Details is successful")
 
             // Type Code Details
             await sideNavBar.clickSubModulesDropDown(constant.typeCodeDetails)
@@ -113,6 +120,7 @@ describe("Creating a full flow for FEMS", async () => {
             await WaitUntil.ElementIsVisible(2)
             await reuseButtons.clickSaveButton1()
             await ReusablesComponents.checkSuccessNotification(constant.SuccessMessage)
+             console.log("Validation for Type Code Details is successful")
         })
 
         it("Creating HEPPM Register Details and Asset Information", async () => {
@@ -128,6 +136,7 @@ describe("Creating a full flow for FEMS", async () => {
             await reuseButtons.clickSaveButton1()
             await WaitUntil.ElementIsVisible(2)
             await ReusablesComponents.checkSuccessNotification(constant.SuccessMessage)
+             console.log("Validation for HEPPM Register Details is successful")
 
             //Asset Information
             await sideNavBar.clickSubModulesDropDown(constant.assetInformation)
@@ -139,6 +148,7 @@ describe("Creating a full flow for FEMS", async () => {
             await WaitUntil.ElementIsVisible(2)
             await reuseButtons.clickSaveButton1()
             await ReusablesComponents.checkSuccessNotification(constant.SuccessMessage)
+             console.log("Validation for Asset Information is successful")
             await reuseButtons.clickAddNewButton()
 
 
@@ -148,6 +158,7 @@ describe("Creating a full flow for FEMS", async () => {
             await WaitUntil.ElementIsVisible(2)
             await reuseButtons.clickSaveButton1()
             await ReusablesComponents.checkSuccessNotification(constant.SuccessMessage)
+             console.log("Validation for Asset Information is successful")
             await reuseButtons.clickAddNewButton()
 
             //Brand
@@ -156,6 +167,7 @@ describe("Creating a full flow for FEMS", async () => {
             await WaitUntil.ElementIsVisible(2)
             await reuseButtons.clickSaveButton1()
             await ReusablesComponents.checkSuccessNotification(constant.SuccessMessage)
+             console.log("Validation for Asset Information is successful")
             await reuseButtons.clickAddNewButton()
 
             //Model
@@ -164,6 +176,7 @@ describe("Creating a full flow for FEMS", async () => {
             await WaitUntil.ElementIsVisible(2)
             await reuseButtons.clickSaveButton1()
             await ReusablesComponents.checkSuccessNotification(constant.SuccessMessage)
+             console.log("Validation for Asset Information is successful")
         })
 
 
@@ -206,7 +219,7 @@ describe("Creating a full flow for FEMS", async () => {
             await reuseButtons.clickSaveButton1()
             await ReusablesComponents.checkSuccessNotification(constant.SuccessMessage)
             await WaitUntil.ElementIsVisible(2)
-
+             console.log("Validation for User Area Master in FMS is successful")
         })
 
         //User Location Master
@@ -215,7 +228,7 @@ describe("Creating a full flow for FEMS", async () => {
             await reuseButtons.clickAddButton()
             await fmsUserLocationMaster.enterUserLocationCode(constant.fmsUserLocationCode)
             await fmsUserLocationMaster.enterUserLocationName(constant.fmsUserLocationName)
-            await fmsUserLocationMaster.selectUserAreaCodeDropDown(constant.fmsUserAreaCode)
+            await fmsUserLocationMaster.selectUserAreaCodeDropDown(constant.fmsUserAreaCode, constant.concatfmsUserAreaCode)
             await fmsUserLocationMaster.clickLabelUDC()
             await WaitUntil.ElementIsVisible(2)
             await fmsUserLocationMaster.setStartServiceDate(constant.fmsStartServiceDate)
@@ -232,60 +245,83 @@ describe("Creating a full flow for FEMS", async () => {
             await fmsUserLocationMaster.clickLabelDiscipline()
             await reuseButtons.clickfmsSaveButton()
             await ReusablesComponents.checkSuccessNotification(constant.SuccessMessage)
+             console.log("Validation for User Location Master in FMS is successful")
         })
 
         it("Creating Asset Standardization Details", async () => {
 
+            //Asset Standardization Details
+            await ReusablesComponents.refreshPage()
             await asisHomePage.clickasisHeartIcon()
             await asisHomePage.selectServicesIcon(constant.gmServices)
             await WaitUntil.ElementIsVisible(2)
             await sideNavBar.clickMasterDropDown(constant.femsSubModule)
             await sideNavBar.clickSubModulesDropDown(constant.assetStandardization)
             await WaitUntil.ElementIsVisible(2)
-            await reuseButtons.clickAddButton()
-            await assetStandardization.enterAssetTypeCode(constant.assetTypeCode, constant.concatAssetTypeCode1)
-            await assetStandardization.clickServiceLabel()
+            await reuseButtons.clickAddButton()           
+            await ReusablesComponents.refreshPage()            
+            await assetStandardization.enterAssetTypeCode(constant.assetTypeCode, constant.concatAssetTypeCode1)            
             await assetStandardization.enterManufacturer(constant.ManufacturerName, constant.concatManufacturer)
+            await assetStandardization.clickServiceLabel()            
+            await assetStandardization.enterMake(constant.MakeName, constant.Make)
+            await WaitUntil.ElementIsVisible(2)
             await assetStandardization.clickServiceLabel()
-            await assetStandardization.enterMake(constant.MakeName, constant.concatMake)
-            await assetStandardization.clickServiceLabel()
-            await assetStandardization.enterBrand(constant.BrandName, constant.concatBrand)
-            await assetStandardization.clickServiceLabel()
-            await assetStandardization.enterModel(constant.ModelName, constant.concatModel)
+            await assetStandardization.enterBrand(constant.BrandName, constant.concatBrand)            
+            await assetStandardization.enterModel(constant.ModelName, constant.Model)
             await assetStandardization.selectStatus(constant.selectStatus)
+            await WaitUntil.ElementIsVisible(2)
             await assetStandardization.clickServiceLabel()
             await reuseButtons.clickSaveButton1()
-            await WaitUntil.ElementIsVisible(2)            
+            await WaitUntil.ElementIsVisible(2)
             await ReusablesComponents.checkSuccessNotification(constant.SuccessMessage)
+             console.log("Validation for Asset Standardization Details is successful")
         })
 
-        xit("Mapping user Area user Master and User Location Master in FEMS  ", async () => {
+        it("Mapping  user Area Master and User Location Master in FEMS  ", async () => {
 
+            //User Area Master 
             await asisHomePage.clickasisHeartIcon()
             await asisHomePage.selectServicesIcon(constant.FEMSServiceIcon)
             await WaitUntil.ElementIsVisible(2)
             await sideNavBar.clickMasterDropDown(constant.masterLocation)
             await sideNavBar.clickSubModulesDropDown(constant.FEMSLocationSubModule1)
             await reuseButtons.clickAddButton()
-            await userAreaMaster.enterUserAreaCode(constant.fmsUserAreaCode)
+            await ReusablesComponents.refreshPage()
+            await WaitUntil.ElementIsVisible(2)
+            await userAreaMaster.enterUserAreaCode(constant.fmsUserAreaCode, constant.concatfmsUserAreaCode)
+            await WaitUntil.ElementIsVisible(2)
             await userAreaMaster.enterStartServiceDate(constant.fmsStartServiceDate)
             await fMSModule.selecthospital(constant.fmshospitalRepresentative)
             await fMSModule.clickLabelDesignaton()
             await fMSModule.selectCompanyRepresentative(constant.fmsCompanyRep)
             await fMSModule.enterRemarks(constant.remarks)
             await WaitUntil.ElementIsVisible(2)
-            await reuseButtons.clickSaveButton1()            
+            await reuseButtons.clickSaveButton1()
             await ReusablesComponents.checkSuccessNotification(constant.SuccessMessage)
+             console.log("Validation for user Area Master in FEMS is successful")
+            await WaitUntil.ElementIsVisible(2)
+
 
             //User Location Master
             await sideNavBar.clickSubModulesDropDown(constant.FEMSLocationSubModule2)
             await reuseButtons.clickAddButton()
-            await fmsUserLocationMaster.enterUserLocationCode(constant.fmsUserLocationCode)
-            await fmsUserLocationMaster.enterUserLocationName(constant.fmsUserLocationName)
-            await fmsUserLocationMaster.selectUserAreaCodeDropDown(constant.fmsUserAreaCode)
-            await fmsUserLocationMaster.clickLabelUDC()
+            await ReusablesComponents.refreshPage()
             await WaitUntil.ElementIsVisible(2)
-            await fmsUserLocationMaster.setStartServiceDate(constant.fmsStartServiceDate)
+            await userLocationMaster.enterUserLocationCode(constant.fmsUserLocationCode, constant.concatfmsUserLocationCode)            
+            await reuseButtons.clickSaveButton1()
+            await ReusablesComponents.checkSuccessNotification(constant.SuccessMessage)
+             console.log("Validation for User Location Master in FEMS is successful")
+        })
+
+        it("Service Request For FEMS", async () => {
+
+            await asisHomePage.clickasisHeartIcon()
+            await asisHomePage.selectServicesIcon(constant.FEMSServiceIcon)
+            await WaitUntil.ElementIsVisible(2)
+            await sideNavBar.clickServiceRequestDropDown(constant.masterLocation)
+            await WaitUntil.ElementIsVisible(2)
+            await reuseButtons.clickAddButton()
+            await serviceRequest.enterServiceRequestCode(constant.serviceRequestCode)
         })
     })
 })

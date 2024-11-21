@@ -47,10 +47,10 @@ class fmsAddUserLocationMaster {
         await ReusablesComponents.waitAndSetValue(this.UserLocationName, userLocationName)
     }
 
-    async selectUserAreaCodeDropDown(userAreaCode) {
+    async selectUserAreaCodeDropDown(userAreaCode, concatfmsUserAreaCode) {
         await ReusablesComponents.waitAndSetValue(this.userAreaCode, userAreaCode)
         // await this.getUserAreaCodeDropDown(Constant.concatfmsConcatUserAreaCode).waitForDisplayed({ timeout: 20000 })
-        await this.getUserAreaCodeDropDown(Constant.concatfmsConcatUserAreaCode).click()
+        await this.getUserAreaCodeDropDown(concatfmsUserAreaCode).click()
     }
 
     async selectCleansingCategory(selectCategory) {

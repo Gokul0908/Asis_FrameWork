@@ -8,9 +8,9 @@ class userAreaMaster {
     get startServiceDate() { return $("//input[@id='StartServiceDate']") }
 
 
-    async enterUserAreaCode(userAreaCode) {
+    async enterUserAreaCode(userAreaCode, concatfmsUserAreaCode) {
         await ReusablesComponents.waitAndSetValue(this.userAreaCode, userAreaCode)        
-        await this.getUserAreaCodeDD(userAreaCode).click()
+        await this.getUserAreaCodeDD(concatfmsUserAreaCode).click()
     }
 
     async enterStartServiceDate(startServiceDate) {
