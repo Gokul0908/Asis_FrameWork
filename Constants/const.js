@@ -240,13 +240,13 @@ export const effectiveFrom = getTodayDate()
 //Asset Information
 export const assetInformation = "Asset Information"
 export const TypeManufacturer = "Manufacturer"
-export const ManufacturerName = "Dell" + utils.getRandomNumbers(3)
+export const ManufacturerName = "Dell" + utils.getRandomNumbers(4)
 export const TypeMake = "Make"
-export const MakeName = "Inspiron" + utils.getRandomNumbers(3)
+export const MakeName = "Proccessor" + utils.getRandomNumbers(4)
 export const TypeBrand = "Brand"
-export const BrandName = "Dell" + utils.getRandomNumbers(3)
+export const BrandName = "HP" + utils.getRandomNumbers(4)
 export const TypeModel = "Model"
-export const ModelName = "Inspiron" + utils.getRandomNumbers(3)
+export const ModelName = "Acer" + utils.getRandomNumbers(4)
 export const selectStatus = "Active"
 
 
@@ -260,7 +260,7 @@ export const Model = ModelName
 
 //FEMS
 export const FEMSServiceIcon = "FEMS"
-export const masterLocation = "Locations"
+export const addServiceRequest = "Add Service Request"
 export const FEMSLocationSubModule1 = "User Area Master"
 export const FEMSLocationSubModule2 = "User Location Master"
 export const serviceRequest = "Service Request"

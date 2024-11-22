@@ -4,7 +4,7 @@ import ReusablesComponents from '../pageobjects/reuse'
 class sideNavBar {
 
     get masterDropDown() { return $("//a[.='Master']") }
-    get serviceRequestDropDown() { return $("//a[.='Service Request']") }
+    get serviceRequestDropDown() { return $("(//a[.='Service Request'])[1]") }
     getServiceRequestSubModules(ServiceRequestSubModules) { return $(`//a[.='${ServiceRequestSubModules}']`) }
     getMasterSubModules(MasterSubModules) { return $(`//span[.='${MasterSubModules}']`) }
     getSubModuleDropDown(subModuleValues) { return $(`//ul[@class='show']/li/a[.='${subModuleValues}']`) }
