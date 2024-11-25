@@ -194,6 +194,7 @@ describe("Creating a full flow for FEMS", async () => {
             await WaitUntil.ElementIsVisible(2)
             await reuseButtons.clickAddButton()
             await assetStandardization.enterAssetTypeCode(constant.assetTypeCode, constant.concatAssetTypeCode1)
+            await WaitUntil.ElementIsVisible(2)
             await assetStandardization.clickServiceLabel()
             await assetStandardization.enterManufacturer(constant.ManufacturerName, constant.concatManufacturer)
             await assetStandardization.clickServiceLabel()
