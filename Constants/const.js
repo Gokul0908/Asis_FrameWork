@@ -260,9 +260,13 @@ export const Model = ModelName
 
 //FEMS
 export const FEMSServiceIcon = "FEMS"
+export const masterLocations = "Locations"
 export const addServiceRequest = "Add Service Request"
 export const FEMSLocationSubModule1 = "User Area Master"
 export const FEMSLocationSubModule2 = "User Location Master"
-export const serviceRequest = "Service Request"
-export const serviceRequestCode = "AS" + utils.getRandomNumbers(4)
-
+export const serviceRequest = "SR"
+export const requestType = "T&C "
+export const serviceType = "FEMS"
+export const requestorName = "Asisuser"
+export const requestorDesignation = "Hospital Director"
+export const concatRequestorName = requestorName + ' ' + '-' + ' ' + requestorDesignation

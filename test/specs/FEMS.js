@@ -18,6 +18,7 @@ import fmsUserLocationMaster from '../../test/pageobjects/LLS/fmsUserLocationMas
 import fMSModule from '../pageobjects/LLS/fMSModule.js'
 import userAreaMaster from '../pageobjects/FEMS/userAreaMaster.js'
 import userLocationMaster from '../pageobjects/FEMS/userLocationMaster.js'
+import serviceRequest from '../pageobjects/FEMS/serviceRequest.js'
 
 describe("Creating a full flow for FEMS", async () => {
 
@@ -193,12 +194,14 @@ describe("Creating a full flow for FEMS", async () => {
             await WaitUntil.ElementIsVisible(2)
             await reuseButtons.clickAddButton()
             await assetStandardization.enterAssetTypeCode(constant.assetTypeCode, constant.concatAssetTypeCode1)
+            await assetStandardization.clickServiceLabel()
             await assetStandardization.enterManufacturer(constant.ManufacturerName, constant.concatManufacturer)
             await assetStandardization.clickServiceLabel()
             await assetStandardization.enterMake(constant.MakeName, constant.Make)
             await WaitUntil.ElementIsVisible(2)
             await assetStandardization.clickServiceLabel()
             await assetStandardization.enterBrand(constant.BrandName, constant.concatBrand)
+            await WaitUntil.ElementIsVisible(2)
             await assetStandardization.enterModel(constant.ModelName, constant.Model)
             await assetStandardization.selectStatus(constant.selectStatus)
             await WaitUntil.ElementIsVisible(2)
@@ -285,18 +288,18 @@ describe("Creating a full flow for FEMS", async () => {
             await asisHomePage.clickasisHeartIcon()
             await asisHomePage.selectServicesIcon(constant.FEMSServiceIcon)
             await WaitUntil.ElementIsVisible(2)
-            await sideNavBar.clickMasterDropDown(constant.masterLocation)
+            await sideNavBar.clickMasterDropDown(constant.masterLocations)
             await sideNavBar.clickSubModulesDropDown(constant.FEMSLocationSubModule1)
             await reuseButtons.clickAddButton()
-            await WaitUntil.ElementIsVisible(2)
+            await WaitUntil.ElementIsVisible(3)
             await userAreaMaster.enterUserAreaCode(constant.fmsUserAreaCode, constant.concatfmsUserAreaCode)
-            await WaitUntil.ElementIsVisible(2)
+            await WaitUntil.ElementIsVisible(3)
             await userAreaMaster.enterStartServiceDate(constant.fmsStartServiceDate)
-            await fMSModule.selecthospital(constant.fmshospitalRepresentative)
-            await fMSModule.clickLabelDesignaton()
-            await fMSModule.selectCompanyRepresentative(constant.fmsCompanyRep)
+            // await fMSModule.selecthospital(constant.fmshospitalRepresentative)
+            // await fMSModule.clickLabelDesignaton()
+            // await WaitUntil.ElementIsVisible(3)
+            // await fMSModule.selectCompanyRepresentative(constant.fmsCompanyRep)
             await fMSModule.enterRemarks(constant.remarks)
-            await WaitUntil.ElementIsVisible(2)
             await reuseButtons.clickSaveButton1()
             await ReusablesComponents.checkSuccessNotification(constant.SuccessMessage)
             console.log("Validation for user Area Master in FEMS is successful")
@@ -317,11 +320,12 @@ describe("Creating a full flow for FEMS", async () => {
 
             await asisHomePage.clickasisHeartIcon()
             await asisHomePage.selectServicesIcon(constant.serviceRequest)
+            await serviceRequest.selectRequestType(constant.requestType)
             await WaitUntil.ElementIsVisible(2)
             await sideNavBar.clickServiceRequestDropDown(constant.addServiceRequest)
             await WaitUntil.ElementIsVisible(2)
-            await reuseButtons.clickAddButton()
-            await serviceRequest.enterServiceRequestCode(constant.serviceRequestCode)
+            await serviceRequest.selectServiceRequest(constant.serviceType)            
+            await serviceRequest.selectRequestorName(constant.requestorName,constant.concatRequestorName)
         })
     })
 })
