@@ -16,6 +16,12 @@ class generalmaster {
     }
     async enterUserDepartmentCode(userDepartmentCode) {
         await ReusablesComponents.waitAndSetValue(this.userDepartmentCode, userDepartmentCode)
+
+        // for (let i = 0; i < 1; i++) {
+        //     await browser.keys('Backspace');
+        // }
+        await browser.pause(2)
+        // await ReusablesComponents.waitAndSetValue(this.userDepartmentCode, userDepartmentCode)
     }
 
     async enterUserDepartmentName(userDepartmentName) {
