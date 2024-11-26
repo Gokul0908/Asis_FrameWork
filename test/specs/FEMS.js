@@ -134,6 +134,7 @@ describe("Creating a full flow for FEMS", async () => {
             await heppmRegister.enterVersion(constant.version)
             await heppmRegister.enterEffectiveFrom(constant.effectiveFrom)
             await heppmRegister.uploadFile(constant.filepath)
+            await WaitUntil.ElementIsVisible(2)
             await heppmRegister.clickAddIcon()
             await reuseButtons.clickSaveButton1()
             await WaitUntil.ElementIsVisible(2)
@@ -150,7 +151,7 @@ describe("Creating a full flow for FEMS", async () => {
             await WaitUntil.ElementIsVisible(2)
             await reuseButtons.clickSaveButton1()
             await ReusablesComponents.checkSuccessNotification(constant.SuccessMessage)
-            console.log("Validation for Asset Information is successful")
+            console.log("Validation for Manufacturer Asset Information is successful")
             await reuseButtons.clickAddNewButton()
 
 
@@ -160,7 +161,7 @@ describe("Creating a full flow for FEMS", async () => {
             await WaitUntil.ElementIsVisible(2)
             await reuseButtons.clickSaveButton1()
             await ReusablesComponents.checkSuccessNotification(constant.SuccessMessage)
-            console.log("Validation for Asset Information is successful")
+            console.log("Validation for Make Asset Information is successful")
             await reuseButtons.clickAddNewButton()
 
             //Brand
@@ -169,7 +170,7 @@ describe("Creating a full flow for FEMS", async () => {
             await WaitUntil.ElementIsVisible(2)
             await reuseButtons.clickSaveButton1()
             await ReusablesComponents.checkSuccessNotification(constant.SuccessMessage)
-            console.log("Validation for Asset Information is successful")
+            console.log("Validation for Brand Asset Information is successful")
             await reuseButtons.clickAddNewButton()
 
             //Model
@@ -178,7 +179,7 @@ describe("Creating a full flow for FEMS", async () => {
             await WaitUntil.ElementIsVisible(2)
             await reuseButtons.clickSaveButton1()
             await ReusablesComponents.checkSuccessNotification(constant.SuccessMessage)
-            console.log("Validation for Asset Information is successful")
+            console.log("Validation for Model Asset Information is successful")
         })
 
         it("Creating Asset Standardization Details", async () => {
