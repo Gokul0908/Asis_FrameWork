@@ -58,6 +58,23 @@ export const config = {
         browserName: 'chrome' // or "firefox", "microsoftedge", "safari"
     }],
 
+
+
+    capabilities: [
+        {
+            maxInstances: 1,
+            browserName: 'chrome',
+            'goog:chromeOptions': {
+                args: [
+                    '--disable-gpu', // Disable GPU acceleration
+                    '--window-size=1920,1080' // Set a specific window size
+                ] // Remove '--headless' if it exists
+            }
+        }
+    ],
+
+
+
     //
     // ===================
     // Test Configurations
@@ -114,7 +131,7 @@ export const config = {
     // Make sure you have the wdio adapter package for the specific framework installed
     // before running any tests.
     framework: 'mocha',
-    
+
     //
     // The number of times to retry the entire specfile when it fails as a whole
     // specFileRetries: 1,
