@@ -34,17 +34,44 @@ class ReusablesComponents {
 
 
 
+    // async checkSuccessNotification(successMessage) {
+    //     await this.succesLabel.waitForDisplayed({ timeout: 20000 })
+    //     const status = await this.waitAndGetText(this.succesLabel)
+    //     await expect(status).toBe(successMessage)
+
+    //     if (!status === successMessage) {
+    //         console.log("Success Notification is not displayed")
+    //     }
+
+    //     return status
+    // }
+
     async checkSuccessNotification(successMessage) {
-        await this.succesLabel.waitForDisplayed({ timeout: 20000 })
-        const status = await this.waitAndGetText(this.succesLabel)
-        await expect(status).toBe(successMessage)
+        try {
 
-        if (!status === successMessage) {
-            console.log("Success Notification is not displayed")
+            await this.succesLabel.waitForDisplayed({ timeout: 20000 })
+
+            await browser.waitUntil(
+                async () => (await this.waitAndGetText(this.succesLabel)) === successMessage,
+                {
+                    timeout: 20000,
+                    timeoutMsg: `Expected success message was not displayed within 20 seconds`,
+
+                    //`Expected success message "${successMessage}" was not displayed within 20 seconds`,
+                }
+            )
+
+            const status = await this.waitAndGetText(this.succesLabel);
+            await expect(status).toBe(successMessage);
+
+            return status;
+
+        } catch (error) {
+            console.error("Success Notification is not displayed");
+            // throw error; // Re-throw to fail the test if necessary
         }
-
-        return status
     }
+
 
     async waitForPleaseWaitNotificationToDisappear() {
         await this.pleaseWaitLabel.waitForDisplayed({ timeout: 20000 })
