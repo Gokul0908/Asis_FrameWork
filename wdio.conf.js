@@ -60,7 +60,7 @@ export const config = {
 
 
 
-    capabilities: [
+  capabilities: [
         {
             maxInstances: 1,
             browserName: 'chrome',
