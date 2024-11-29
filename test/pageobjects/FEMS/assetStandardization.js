@@ -25,8 +25,6 @@ class assetStandardization {
         // }
         await browser.keys(['Control', 'a']);
         await browser.keys('Backspace');
-
-        await browser.pause(2)
         await ReusablesComponents.waitAndSetValue(this.assetTypeCode, assetTypeCode)
         await this.getAssetTypeCodeDropDown(concatAssetTypeCode).click()
     }
