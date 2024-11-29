@@ -63,7 +63,7 @@ class ReusablesComponents {
 
             const status = await this.waitAndGetText(this.succesLabel);
             await expect(status).toBe(successMessage);
-
+            console.error("Success Notification is displayed");
             return status;
 
         } catch (error) {
