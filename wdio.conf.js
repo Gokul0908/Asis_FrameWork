@@ -1,3 +1,6 @@
+import Hooks from "./Hooks.js"
+
+
 export const config = {
     //
     // ====================
@@ -60,7 +63,7 @@ export const config = {
 
 
 
-  capabilities: [
+    capabilities: [
         {
             maxInstances: 1,
             browserName: 'chrome',
@@ -74,7 +77,50 @@ export const config = {
     ],
 
 
+    //baseUrl: 'http://172.16.0.60:7500/Account/Login?ReturnUrl=%2f', // or dynamically with environment variables
 
+
+
+    baseUrl: 'http://172.16.0.60:7500/Account/Login?ReturnUrl=%2f',
+    jenkinsURL: process.env.JENKINS_URL || 'http://localhost:8080/job/ASIS_CI/',
+
+    // Hooks
+    hooks: {
+        beforeSuite: Hooks.beforeSuite,
+        beforeTest: Hooks.beforeTest,
+        afterTest: Hooks.afterTest,
+        afterSuite: Hooks.afterSuite,
+        after: Hooks.afterAll,
+    },
+
+    framework: 'mocha',
+    mochaOpts: {
+        timeout: 60000,
+    },
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // Test Framework Configuration
+    framework: 'mocha',
     //
     // ===================
     // Test Configurations
