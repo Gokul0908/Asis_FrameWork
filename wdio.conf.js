@@ -97,19 +97,27 @@ export const config = {
     // },
 
     // Hook: After each test
-    afterTest: async function (error) {
-        // If the test fails, set the status to 'Failed'
-
+    afterTest: async function (test, context, { error }) {
         if (error) {
+            const screenshotDir = path.resolve('./failureScreenshots');  // Use absolute path
+
+            // Ensure the 'failureScreenshots' directory exists, if not create it
+            if (!fs.existsSync(screenshotDir)) {
+                fs.mkdirSync(screenshotDir, { recursive: true });  // Ensure the directory is created
+            }
+
+            // Take screenshot if test fails
             const screenshot = await browser.takeScreenshot();
-            fs.writeFileSync(`./failureScreenshots/${Date.now()}.png`, screenshot, 'base64'); // Save the screenshot
+
+            // Save the screenshot with a timestamped filename
+            const screenshotPath = path.join(screenshotDir, `${Date.now()}.png`);
+            fs.writeFileSync(screenshotPath, screenshot, 'base64');
+
+            // console.log(`Screenshot saved at: ${screenshotPath}`);
 
         }
-
-        // if (error) {
-        //     global.testStatus = 'Failed';
-        // }
     },
+
 
     // Hook: After the suite finishes
     afterSuite: async function (suite) {
