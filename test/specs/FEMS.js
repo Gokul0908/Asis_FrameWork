@@ -1,5 +1,4 @@
 import reuseButtons from '../../test/pageobjects/button.js'
-import reuse from '../../with_Cursor/reuse.js'
 import LoginPage from '../../test/pageobjects/loginPage.js'
 import asisHomePage from '../../test/pageobjects/asisHomePage.js'
 import sideNavBar from '../../test/pageobjects/sideNavBar.js'
@@ -19,18 +18,26 @@ import fMSModule from '../pageobjects/LLS/fMSModule.js'
 import userAreaMaster from '../pageobjects/FEMS/userAreaMaster.js'
 import userLocationMaster from '../pageobjects/FEMS/userLocationMaster.js'
 import serviceRequest from '../pageobjects/FEMS/serviceRequest.js'
+import hooks from '../../hooks.js'
 
 describe("Creating a full flow for FEMS", async () => {
 
+    // before(async () => {
+    //     await browser.url(constant.asisURL)
+    //     await browser.maximizeWindow()
+    // })
+
+    // after(async () => {
+    //     await reuseButtons.asisuserLogoutToTheApplication()
+    // })
+
     before(async () => {
-        await browser.url(constant.asisURL)
-        await browser.maximizeWindow()
+        await hooks.beforeTest()
     })
 
     after(async () => {
-        await reuseButtons.asisuserLogoutToTheApplication()
+        await hooks.afterSuite()
     })
-
 
     describe("Asis User Login to the Application and Creating User Area Master and User Location Master", async () => {
 
@@ -318,7 +325,7 @@ describe("Creating a full flow for FEMS", async () => {
         })
 
 
-        xit("Service Request For FEMS", async () => {
+        it("Service Request For FEMS", async () => {
 
             await asisHomePage.clickasisHeartIcon()
             await asisHomePage.selectServicesIcon(constant.serviceRequest)
@@ -326,8 +333,12 @@ describe("Creating a full flow for FEMS", async () => {
             await WaitUntil.ElementIsVisible(2)
             await sideNavBar.clickServiceRequestDropDown(constant.addServiceRequest)
             await WaitUntil.ElementIsVisible(2)
-            await serviceRequest.selectServiceRequest(constant.serviceType)            
-            await serviceRequest.selectRequestorName(constant.requestorName,constant.concatRequestorName)
+            await serviceRequest.selectServiceRequest(constant.serviceType)
+            await serviceRequest.selectRequestorName(constant.requestorName, constant.concatRequestorName)
+            await serviceRequest.selectUserLocationCode(constant.userLocationCode, constant.concatUserLocationCode)
+            await serviceRequest.enterDetails(constant.details)
+            await ReusablesComponents.checkSuccessNotification(constant.SuccessMessage)
+
         })
     })
 })

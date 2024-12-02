@@ -270,3 +270,6 @@ export const serviceType = "FEMS"
 export const requestorName = "Asisuser"
 export const requestorDesignation = "Hospital Director"
 export const concatRequestorName = requestorName + ' ' + '-' + ' ' + requestorDesignation
+export const userLocationCode = fmsUserLocationCode
+export const concatUserLocationCode = fmsUserLocationCode + ' ' + '-' + fmsUserLocationName
+export const details = "Demo Details"

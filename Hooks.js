@@ -1,39 +1,28 @@
-import { config }from './wdio.conf.js'
+import { config } from "./wdio.conf";
+import fs from 'fs';
 
-class Hooks {
-    // This hook runs before the entire suite starts
-    static async beforeSuite(suite) {
-        console.log(`Starting Suite: ${suite.title}`);
+
+class hooks {
+
+
+    async beforeTest() {
+
+        // await browser.deleteCookies()
+        await browser.url(config.baseUrl);
+        await browser.maximizeWindow()
     }
 
-    // This hook runs before each individual test
-    static async beforeTest(test, context) {
-        console.log(`Starting Test: ${test.title}`);
-        // Make sure the browser session is open before trying to navigate
-        await browser.url(config.baseUrl);  // This will navigate to the base URL before each test
+    // async beforeSuite() {
+    //     await config.beforeSuite()
+    // }
+    
+    async afterTest() {
+        await config.afterTest()
     }
 
-    // This hook runs after each individual test
-    static async afterTest(test, context, { error }) {
-        if (error) {
-            const screenshotPath = `./screenshots/${test.title.replace(/ /g, '_')}.png`;
-            await browser.saveScreenshot(screenshotPath);
-            console.log(`Screenshot captured for failed test: ${screenshotPath}`);
-        } else {
-            console.log(`Test Passed: ${test.title}`);
-        }
-    }
-
-    // This hook runs after the entire suite finishes
-    static async afterSuite(suite) {
-        console.log(`Finished Suite: ${suite.title}`);
-    }
-
-    // This hook runs after all tests finish
-    static async afterAll() {
-        console.log('All tests finished, closing the browser.');
-        await browser.deleteSession();
+    async afterSuite() {
+        await config.afterSuite()
     }
 }
 
-export default new Hooks()
+export default new hooks()

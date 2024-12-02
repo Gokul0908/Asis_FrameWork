@@ -1,5 +1,5 @@
-import Hooks from "./Hooks.js"
-
+import reportGeneration from "./reportGeneration.js";
+import fs from 'fs'
 
 export const config = {
     //
@@ -77,35 +77,45 @@ export const config = {
     ],
 
 
-    //baseUrl: 'http://172.16.0.60:7500/Account/Login?ReturnUrl=%2f', // or dynamically with environment variables
 
 
 
-    baseUrl: 'http://172.16.0.60:7500/Account/Login?ReturnUrl=%2f',
-    jenkinsURL: process.env.JENKINS_URL || 'http://localhost:8080/job/ASIS_CI/',
 
-    // Hooks
-    hooks: {
-        beforeSuite: Hooks.beforeSuite,
-        beforeTest: Hooks.beforeTest,
-        afterTest: Hooks.afterTest,
-        afterSuite: Hooks.afterSuite,
-        after: Hooks.afterAll,
-    },
+    baseUrl: 'http://172.16.0.60:7500/home/',
 
-    framework: 'mocha',
-    mochaOpts: {
-        timeout: 60000,
+    "paths": {
+        "utils/*": ["utils/*"]
     },
 
 
 
 
 
+    // beforeSuite: async function () {
+    //     // Set initial status as 'Success' before tests run
+    //     global.testStatus = 'Success';
+    // },
 
+    // Hook: After each test
+    afterTest: async function (error) {
+        // If the test fails, set the status to 'Failed'
 
+        if (error) {
+            const screenshot = await browser.takeScreenshot();
+            fs.writeFileSync(`./failureScreenshots/${Date.now()}.png`, screenshot, 'base64'); // Save the screenshot
 
+        }
 
+        // if (error) {
+        //     global.testStatus = 'Failed';
+        // }
+    },
+
+    // Hook: After the suite finishes
+    afterSuite: async function (suite) {
+        // Finalize the report after the suite finishes
+        await reportGeneration.finalizeReport()
+    },
 
 
 
