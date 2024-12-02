@@ -1,5 +1,6 @@
 import reportGeneration from "./reportGeneration.js";
 import fs from 'fs'
+import path from 'path';
 
 export const config = {
     //
@@ -120,7 +121,7 @@ export const config = {
 
 
     // Hook: After the suite finishes
-    afterSuite: async function (suite) {
+    afterSuite: async function () {
         // Finalize the report after the suite finishes
         await reportGeneration.finalizeReport()
     },
