@@ -8,16 +8,17 @@ class hooks {
     async beforeTest() {
 
         // await browser.deleteCookies()
-        await browser.url(config.baseUrl);
+        await browser.url(config.QA_Url)
         await browser.maximizeWindow()
     }
 
     // async beforeSuite() {
     //     await config.beforeSuite()
     // }
-    
+
     async afterTest() {
         await config.afterTest()
+        await browser.closeWindow()
     }
 
     async afterSuite() {

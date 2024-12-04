@@ -264,12 +264,21 @@ export const masterLocations = "Locations"
 export const addServiceRequest = "Add Service Request"
 export const FEMSLocationSubModule1 = "User Area Master"
 export const FEMSLocationSubModule2 = "User Location Master"
+
+
+
+//Service Request
 export const serviceRequest = "SR"
-export const requestType = "T&C "
+export const serviceRequest1 = "Service Request"
 export const serviceType = "FEMS"
+export const requestType = "T&C "
 export const requestorName = "Asisuser"
 export const requestorDesignation = "Hospital Director"
 export const concatRequestorName = requestorName + ' ' + '-' + ' ' + requestorDesignation
 export const userLocationCode = fmsUserLocationCode
 export const concatUserLocationCode = fmsUserLocationCode + ' ' + '-' + fmsUserLocationName
 export const details = "Demo Details"
+export const TandC = 'T&C'
+export const TestingandCommissioning = "Testing and Commissioning"
+export const filter1 = "User Location Code"
+export const filter2 = "equal"

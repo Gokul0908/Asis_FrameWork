@@ -133,7 +133,10 @@ describe("Creating a full flow for FEMS", async () => {
         })
 
         it("Creating HEPPM Register Details and Asset Information", async () => {
+
+
             await sideNavBar.clickSubModulesDropDown(constant.heppmRegister)
+            await ReusablesComponents.refreshPage()
             await reuseButtons.clickAddButton()
             await heppmRegister.enterAssetTypeCode(constant.assetTypeDesc, constant.concatAssetTypeCode)
             await heppmRegister.enterTaskCode(constant.taskDesc, constant.concatTaskCode)
@@ -151,7 +154,6 @@ describe("Creating a full flow for FEMS", async () => {
             //Asset Information
             await sideNavBar.clickSubModulesDropDown(constant.assetInformation)
             await reuseButtons.clickAddButton()
-
             //Manufacturer
             await assetInformation.selectType(constant.TypeManufacturer)
             await assetInformation.enterManufacturerName(constant.ManufacturerName)
@@ -160,8 +162,7 @@ describe("Creating a full flow for FEMS", async () => {
             await ReusablesComponents.checkSuccessNotification(constant.SuccessMessage)
             console.log("Validation for Manufacturer Asset Information is successful")
             await reuseButtons.clickAddNewButton()
-
-
+            
             //Make
             await assetInformation.selectType(constant.TypeMake)
             await assetInformation.enterManufacturerName(constant.MakeName)
@@ -213,7 +214,7 @@ describe("Creating a full flow for FEMS", async () => {
             await WaitUntil.ElementIsVisible(2)
             await assetStandardization.enterModel(constant.ModelName, constant.Model)
             await assetStandardization.selectStatus(constant.selectStatus)
-            await WaitUntil.ElementIsVisible(2)
+            await WaitUntil.ElementIsVisible(5)
             await assetStandardization.clickServiceLabel()
             await reuseButtons.clickSaveButton1()
             await WaitUntil.ElementIsVisible(2)
@@ -325,20 +326,37 @@ describe("Creating a full flow for FEMS", async () => {
         })
 
 
-        it("Service Request For FEMS", async () => {
+        it("Creating Service Request For FEMS", async () => {
 
             await asisHomePage.clickasisHeartIcon()
-            await asisHomePage.selectServicesIcon(constant.serviceRequest)
-            await serviceRequest.selectRequestType(constant.requestType)
+            await asisHomePage.selectServicesIcon(constant.serviceRequest)            
             await WaitUntil.ElementIsVisible(2)
             await sideNavBar.clickServiceRequestDropDown(constant.addServiceRequest)
             await WaitUntil.ElementIsVisible(2)
             await serviceRequest.selectServiceRequest(constant.serviceType)
+            await serviceRequest.selectRequestType(constant.requestType)
             await serviceRequest.selectRequestorName(constant.requestorName, constant.concatRequestorName)
             await serviceRequest.selectUserLocationCode(constant.userLocationCode, constant.concatUserLocationCode)
             await serviceRequest.enterDetails(constant.details)
             await ReusablesComponents.checkSuccessNotification(constant.SuccessMessage)
+            await sideNavBar.clickSubModulesDropDown(constant.serviceRequest1)
+            await ReusablesComponents.clickRestIcon()
+            await serviceRequest.selectFilter(constant.filter1)
+            await serviceRequest.selectFilter2(constant.filter2)
+            await ReusablesComponents.enterText(constant.fmsUserLocationCode)
+            await ReusablesComponents.clickFindButton()
+            await serviceRequest.getRequestNo()
 
+
+            it("Creating Testing and Commissioning in FEMS", async () => {
+
+                await asisHomePage.clickasisHeartIcon()
+                await asisHomePage.selectServicesIcon(constant.FEMSServiceIcon)
+                await WaitUntil.ElementIsVisible(2)
+                await sideNavBar.clickTransactionDropDown(constant.TandC)
+                await sideNavBar.clickSubModulesDropDown(constant.TestingandCommissioning)
+                await reuseButtons.clickAddButton()
+            })
         })
     })
 })

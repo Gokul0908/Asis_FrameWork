@@ -4,6 +4,11 @@ class ReusablesComponents {
 
     get succesLabel() { return $("//div[@class='notify success']") }
     get pleaseWaitLabel() { return $("(//h4[@class='modal-title'])[1]") }
+    get searchicon() { return $("(//a[@id='advanceSearch'])[1]") }
+    get resetIcon() { return $("//a[@id='fbox_grid_reset']") }
+    get enterText() { return $("(//input[@role='textbox'])[1]") }
+    get findButton() { return $ / ("//a[@id='fbox_grid_search']") }
+
 
     async waitAndClick(selector) {
         await selector.waitForDisplayed({ timeout: 60000 })
@@ -81,6 +86,23 @@ class ReusablesComponents {
 
     async refreshPage() {
         await browser.refresh()
+    }
+
+
+    async clickSearchIcon() {
+        await ReusablesComponents.waitAndClick(this.searchicon)
+    }
+
+    async clickRestIcon() {
+        await ReusablesComponents.waitAndClick(this.resetIcon)
+    }
+
+    async enterValue(entertext) {
+        await ReusablesComponents.waitAndSetValue(this.enterText, entertext)
+    }
+
+    async clickFindButton(){ 
+        await ReusablesComponents.waitAndClick(this.findButton)
     }
 }
 export default new ReusablesComponents()

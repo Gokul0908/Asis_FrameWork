@@ -10,19 +10,22 @@ class serviceRequest {
     get userLocationCode() { return $("//input[@id='UserLocationCode']") }
     getUserLocationDD(userLocation) { return $(`//ul[@id='UlFetchUserLocationCode']/li[@class='table-responsive tableFixedHeight']/div/a[contains(.,'${userLocation}')`) }
     get details() { return $("//textarea[@name='Details']") }
-
+    getFilterDD(filterdd) { return $(`//select/option[.='${filterdd}']`) }
+    getFilterDD2(filter2) { return $(`//select[@class='selectopts']/option[.='${filter2}']`) }
+    get editIcon() { return $("//a[@class='ui-icon ui-icon-pencil']") }
+    get requestNo() { return $("//td[@aria-describedby='grid_RequestNo']") }
 
 
     async selectService(SelectService) {
         await ReusablesComponents.waitAndClick(this.getSelectService(SelectService))
     }
 
-    async selectRequestType(RequestType) {
-        await ReusablesComponents.waitAndClick(this.getRequestType(RequestType))
-    }
-
     async selectServiceRequest(serviceRequest) {
         await ReusablesComponents.waitAndClick(this.getServiceRequest(serviceRequest))
+    }
+
+    async selectRequestType(RequestType) {
+        await ReusablesComponents.waitAndClick(this.getRequestType(RequestType))
     }
 
     async selectRequestorName(RequestorName, concatRequestorName) {
@@ -41,7 +44,21 @@ class serviceRequest {
         await ReusablesComponents.waitAndSetValue(this.details, details)
     }
 
+    async selectFilter(filterdd) {
 
+        await ReusablesComponents.waitAndClick(this.getFilterDD(filterdd))
+    }
+    async selectFilter2(filter2) {
+        await ReusablesComponents.waitAndClick(this.getFilterDD2(filter2))
+    }
 
+    async clickEditIcon() {
+        await ReusablesComponents.waitAndClick(this.editIcon)
+    }
+
+    async getRequestNo() {
+        const requestNo = await ReusablesComponents.waitAndGetText(this.requestNo)
+        console.log("RequestNo Printed Successfully" + requestNo)
+    }
 
 } export default new serviceRequest()

@@ -1,6 +1,13 @@
 import reportGeneration from "./reportGeneration.js";
 import fs from 'fs'
 import path from 'path';
+import allure from 'allure-commandline';
+
+
+
+
+
+
 
 export const config = {
     //
@@ -30,6 +37,10 @@ export const config = {
         // "./test/specs/*"
         // "./test/specs/LLS.js"
         "./test/specs/FEMS.js"
+
+        //Mysql Test
+
+        // './Sql_Test/spec/Mysqltest.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -82,7 +93,8 @@ export const config = {
 
 
 
-    baseUrl: 'http://172.16.0.60:7500/home/',
+    QA_Url: 'http://172.16.0.60:7500/home/',
+    Staging_Url: "http://172.20.200.170/Account/Login?ReturnUrl=%2f",
 
     "paths": {
         "utils/*": ["utils/*"]
@@ -120,11 +132,78 @@ export const config = {
     },
 
 
+
+
+    onComplete: function () {
+        const reportError = new Error('Could not generate Allure report');
+        const generation = allure(['generate', './allure-reports', '--clean']);
+        return new Promise((resolve, reject) => {
+            const generationTimeout = setTimeout(() => reject(reportError), 5000);
+            generation.on('exit', function (exitCode) {
+                clearTimeout(generationTimeout);
+                if (exitCode !== 0) {
+                    return reject(reportError);
+                }
+                console.log('Allure report successfully generated');
+                resolve();
+            });
+        });
+    },
+
+
+
+
     // Hook: After the suite finishes
     afterSuite: async function () {
         // Finalize the report after the suite finishes
         await reportGeneration.finalizeReport()
     },
+
+
+
+
+
+
+    reporters: [
+        'spec',
+        ['allure', {
+            outputDir: './allure-reports',   // Directory where allure results will be stored
+            disableWebdriverStepsReporting: true,   // Optional: Disable reporting webdriver commands
+            disableWebdriverScreenshotsReporting: false,  // Optional: Enable screenshot reporting
+        }]
+    ],
+
+
+    //   host: process.env.DB_HOST,
+    //   user: process.env.DB_USER,
+    //   password: process.env.DB_PASSWORD,
+    //   database: process.env.DB_NAME
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
