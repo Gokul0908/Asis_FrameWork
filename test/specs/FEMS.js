@@ -36,7 +36,7 @@ describe("Creating a full flow for FEMS", async () => {
     })
 
     after(async () => {
-        await hooks.afterSuite()
+        await hooks.afterTest()
     })
 
     describe("Asis User Login to the Application and Creating User Area Master and User Location Master", async () => {
@@ -162,7 +162,7 @@ describe("Creating a full flow for FEMS", async () => {
             await ReusablesComponents.checkSuccessNotification(constant.SuccessMessage)
             console.log("Validation for Manufacturer Asset Information is successful")
             await reuseButtons.clickAddNewButton()
-            
+
             //Make
             await assetInformation.selectType(constant.TypeMake)
             await assetInformation.enterManufacturerName(constant.MakeName)
@@ -292,7 +292,7 @@ describe("Creating a full flow for FEMS", async () => {
             console.log("Validation for User Location Master in FMS is successful")
         })
 
-        it("Mapping  user Area Master and User Location Master in FEMS  ", async () => {
+        it("Mapping user Area Master and User Location Master in FEMS  ", async () => {
 
             //User Area Master 
             await asisHomePage.clickasisHeartIcon()

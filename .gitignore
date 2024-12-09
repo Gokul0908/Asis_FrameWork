@@ -2,4 +2,6 @@ node_modules
 allure-results
 allure-report
 allure-reports
+allure_reports
 failureScreenshots
+report
