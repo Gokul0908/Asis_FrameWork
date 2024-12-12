@@ -1,19 +1,44 @@
-const mysql = require('mysql2/promise');
-// import mysql from './mysql2/promise'
+import mysql from 'mysql2'
+
+class MySQLHelper {
 
 
-export const dbConfig = {
-    host: 'localhost:3306',     // Replace with your DB host
-    user: 'root',          // Replace with your DB user
-    password: 'Database@123',  // Replace with your DB password
-    database: 'jdbcdemo'    // Replace with your DB name
-};
+    constructor() {
+        this.connection = mysql.createConnection({
+            host: 'localhost',
+            port: '3306',
+            user: 'root',
+            password: 'Database@123',
+            database: 'sakila'
+        })
+    }
 
-export async function executeQuery(query, params = []) {
-    const connection = await mysql.createConnection(dbConfig);
-    const [results] = await connection.execute(query, params);
-    await connection.end();
-    return results;
+    connect() {
+        return new Promise((resolve, reject) => {
+            this.connection.connect((err) => {
+                if (err) reject(err)
+                resolve('Connected!')
+            })
+        })
+    }
+
+    executeQuery(query) {
+        return new Promise((resolve, reject) => {
+            this.connection.query(query, (err, results) => {
+                if (err) reject(err)
+                resolve(results)
+            })
+        })
+    }
+
+    closeConnection() {
+        return new Promise((resolve, reject) => {
+            this.connection.end((err) => {
+                if (err) reject(err)
+                resolve('Connection closed!')
+            })
+        })
+    }
 }
 
-module.exports = { executeQuery };
+export default MySQLHelper;

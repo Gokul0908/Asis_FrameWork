@@ -36,12 +36,14 @@ export const config = {
 
         // "./test/specs/*"
         // "./test/specs/LLS.js"
-        "./test/specs/FEMS.js"
+        // "./test/specs/FEMS.js"
 
         //Mysql Test
 
-        // './Sql_Test/spec/Mysqltest.js'
+        './SQL_Connectivity_Test/mysql_spec/mysql.js'
     ],
+
+    
     // Patterns to exclude.
     exclude: [
         // 'path/to/excluded/files'

@@ -1,19 +1,24 @@
-import { executeQuery } from "../../utils/mysqlHelper";
+import MySQLHelper from '../../utils/mysqlHelper.js';
+// import { expect } from 'chai'
 
-describe('Database Interaction Test',async () => {
-
-
-
-    it('should fetch data from the database', async () => {
+describe('SQL Connectivity Test', async () => {
 
 
-        const query = 'SELECT * FROM jdbcdemo';
-        const results = await executeQuery(query);  // Fetch user with id 1
-        console.log(results);  // Output the result
+    let db = new MySQLHelper()
 
-        // Assert the data from DB
-        // expect(results[0].name).toBe('John Doe');
-    });
+    before(async () => {        
+        await db.connect()
+    })
 
+    after(async () => {
+        await  db.closeConnection()
+    })
 
-});
+    it('should connect to the database and fetch data', async () => {
+
+        const result = await db.executeQuery('select * from actor');
+        // expect(result).to.be.an('array');
+
+        console.log( result)
+    })
+})
