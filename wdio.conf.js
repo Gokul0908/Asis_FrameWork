@@ -1,7 +1,6 @@
 import reportGeneration from "./reportGeneration.js";
 import fs from 'fs'
 import path from 'path';
-import allure from 'allure-commandline';
 
 
 
@@ -34,7 +33,7 @@ export const config = {
     specs: [
         // ToDo: define location for spec files here
 
-        "./test/specs/*.js"
+        "./test/specs/FEMS/*.js"
         // "./test/specs/LLS.js"
         // "./test/specs/FEMS.js"
         // './test/specs/FEMS/ValidateTheAsisLoginWithValidCredentials.js'
