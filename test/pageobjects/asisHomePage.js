@@ -1,4 +1,5 @@
 import ReusablesComponents from './reuse'
+import WaitUntil from './waitUntil'
 
 class asisHomePage {
 
@@ -13,6 +14,7 @@ class asisHomePage {
    getcompanys(selectCompany) { return $(`//select[@id='Company']/option[.='${selectCompany}']`) }
    getlocation(selectLocation) { return $(`//select[@id='Hospital']/option[.='${selectLocation}']`) }
    get asisHeartIcon() { return $("//img[@alt='Ministry of Health']") }
+   get asisheader() { return $("//header[@id='dashboard-header']") }
 
 
    async hoverOnServiceIcon(serviceName) {
@@ -40,6 +42,13 @@ class asisHomePage {
       await ReusablesComponents.waitAndClick(this.chooseLocationDropDown);
       await ReusablesComponents.waitAndClick(this.getlocation(selectLocation));
    }
+   async headerVisible(){
+      await WaitUntil.ElementIsVisible(5)
+      const header = await this.asisheader.isDisplayed()
+      expect(header).toBe(true)
+   }
+
+   
 }
 
 export default new asisHomePage()

@@ -9,7 +9,7 @@ class MySQLHelper {
             port: '3306',
             user: 'root',
             password: 'Database@123',
-            database: 'sakila'
+            database: 'asis'   
         })
     }
 
@@ -39,6 +39,4 @@ class MySQLHelper {
             })
         })
     }
-}
-
-export default MySQLHelper;
+}   export default MySQLHelper

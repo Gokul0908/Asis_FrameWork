@@ -1,9 +1,10 @@
 import hooks from "../../../hooks"
 import LoginPage from '../../pageobjects/loginPage.js'
 import * as constant from "../../../Constants/const.js"
+import asisHomePage from "../../pageobjects/asisHomePage"
 
 
-describe("Validate the asis login with valid credentials", async () => {
+describe("Validate the asis login to the Application  with valid credentials", async () => {
 
 
 
@@ -17,9 +18,9 @@ describe("Validate the asis login with valid credentials", async () => {
 
 
 
-    it("Validate the asis login with valid credentials", async () => {
+    it("Validate the asis login to the Application with valid credentials", async () => {
 
         await LoginPage.asisUserLoginToTheApplication(constant.aUserName, constant.aPassword)
-
+        await asisHomePage.headerVisible()
     })
 })

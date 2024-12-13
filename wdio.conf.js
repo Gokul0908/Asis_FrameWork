@@ -34,16 +34,19 @@ export const config = {
     specs: [
         // ToDo: define location for spec files here
 
-        // "./test/specs/*"
+        "./test/specs/*.js"
         // "./test/specs/LLS.js"
         // "./test/specs/FEMS.js"
+        // './test/specs/FEMS/ValidateTheAsisLoginWithValidCredentials.js'
+        // './test/specs/FEMS/ValidateTheAsisLoginWithInvalidCredentials.js'
 
         //Mysql Test
 
-        './SQL_Connectivity_Test/mysql_spec/mysql.js'
+        // './SQL_Connectivity_Test/mysql_spec/mysql.js'
+       
     ],
 
-    
+
     // Patterns to exclude.
     exclude: [
         // 'path/to/excluded/files'
@@ -112,7 +115,7 @@ export const config = {
     // },
 
     // Hook: After each test
-    afterTest: async function (test, context, { error }) {
+    afterTest: async function (error ) {
         if (error) {
             const screenshotDir = path.resolve('./failureScreenshots');  // Use absolute path
 
@@ -136,21 +139,21 @@ export const config = {
 
 
 
-    onComplete: function () {
-        const reportError = new Error('Could not generate Allure report');
-        const generation = allure(['generate', './allure-reports', '--clean']);
-        return new Promise((resolve, reject) => {
-            const generationTimeout = setTimeout(() => reject(reportError), 5000);
-            generation.on('exit', function (exitCode) {
-                clearTimeout(generationTimeout);
-                if (exitCode !== 0) {
-                    return reject(reportError);
-                }
-                console.log('Allure report successfully generated');
-                resolve();
-            });
-        });
-    },
+    // onComplete: function () {
+    //     const reportError = new Error('Could not generate Allure report');
+    //     const generation = allure(['generate', 'allure-results', '--clean']);
+    //     return new Promise((resolve, reject) => {
+    //         const generationTimeout = setTimeout(() => reject(reportError), 5000);
+    //         generation.on('exit', function (exitCode) {
+    //             clearTimeout(generationTimeout);
+    //             if (exitCode !== 0) {
+    //                 return reject(reportError);
+    //             }
+    //             console.log('Report successfully generated to allure-report');
+    //             resolve();
+    //         });
+    //     });
+    // },
 
 
 
@@ -181,7 +184,7 @@ export const config = {
     //   password: process.env.DB_PASSWORD,
     //   database: process.env.DB_NAME
 
-    
+
 
 
 
