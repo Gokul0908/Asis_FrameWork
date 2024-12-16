@@ -134,16 +134,13 @@ export const config = {
         }
     },
 
-
-    reporters: [
-        'spec',  // For detailed console logs of tests
-        ['junit', {
+    reporters: ['junit'],
+    reporterOptions: {
+        junit: {
             outputDir: './reports/junit',
-            outputFileFormat: function (opts) {
-                return `test-results-${opts.cid}.xml`;
-            }
-        }]
-    ],
+            outputFileFormat: (opts) => `results-${opts.cid}.xml`
+        }
+    },
 
 
     // onComplete: function () {
