@@ -41,7 +41,7 @@ export const config = {
         //Mysql Test
 
         // './SQL_Connectivity_Test/mysql_spec/mysql.js'
-       
+
     ],
 
 
@@ -113,7 +113,7 @@ export const config = {
     // },
 
     // Hook: After each test
-    afterTest: async function (error ) {
+    afterTest: async function (error) {
         if (error) {
             const screenshotDir = path.resolve('./failureScreenshots');  // Use absolute path
 
@@ -135,6 +135,15 @@ export const config = {
     },
 
 
+    reporters: [
+        'spec',  // For detailed console logs of tests
+        ['junit', {
+            outputDir: './reports/junit',
+            outputFileFormat: function (opts) {
+                return `test-results-${opts.cid}.xml`;
+            }
+        }]
+    ],
 
 
     // onComplete: function () {
@@ -278,7 +287,7 @@ export const config = {
     // Make sure you have the wdio adapter package for the specific framework installed
     // before running any tests.
     framework: 'mocha',
-
+    retry: 2,
     //
     // The number of times to retry the entire specfile when it fails as a whole
     // specFileRetries: 1,
