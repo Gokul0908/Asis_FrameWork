@@ -1,4 +1,3 @@
-import reportGeneration from "./reportGeneration.js";
 import fs from 'fs'
 import path from 'path';
 
@@ -66,7 +65,7 @@ export const config = {
     // and 30 processes will get spawned. The property handles how many capabilities
     // from the same test should run tests.
     //
-    maxInstances: 10,
+    maxInstances: 1,
     //
     // If you have trouble getting all important capabilities together, check out the
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
@@ -158,24 +157,24 @@ export const config = {
 
 
     // Hook: After the suite finishes
-    afterSuite: async function () {
-        // Finalize the report after the suite finishes
-        await reportGeneration.finalizeReport()
-    },
+    // afterSuite: async function () {
+    //     // Finalize the report after the suite finishes
+    //     await reportGeneration.finalizeReport()
+    // },
 
 
 
 
 
 
-    reporters: [
-        'spec',
-        ['allure', {
-            outputDir: './allure-reports',   // Directory where allure results will be stored
-            disableWebdriverStepsReporting: true,   // Optional: Disable reporting webdriver commands
-            disableWebdriverScreenshotsReporting: false,  // Optional: Enable screenshot reporting
-        }]
-    ],
+    // reporters: [
+    //     'spec',
+    //     ['allure', {
+    //         outputDir: './allure-reports',   // Directory where allure results will be stored
+    //         disableWebdriverStepsReporting: true,   // Optional: Disable reporting webdriver commands
+    //         disableWebdriverScreenshotsReporting: false,  // Optional: Enable screenshot reporting
+    //     }]
+    // ],
 
 
     //   host: process.env.DB_HOST,
