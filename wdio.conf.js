@@ -134,13 +134,14 @@ export const config = {
         }
     },
 
-    reporters: ['junit'],
+    reporters: ['spec', 'junit'],
     reporterOptions: {
-        junit: {
-            outputDir: './reports/junit',
-            outputFileFormat: (opts) => `results-${opts.cid}.xml`
-        }
-    },
+      junit: {
+        outputDir: './reports/junit', // Path where the report will be saved
+        outputFileFormat: ({ format, platform }) => `results.${format}` // Naming convention for the file
+      }
+    }
+    ,
 
 
     // onComplete: function () {
