@@ -9,8 +9,9 @@ import workGrpDetails from '../../pageobjects/FEMS/workGrpDetails.js'
 import assetGroupDetails from '../../pageobjects/FEMS/assetGroupDetails.js'
 import ReusablesComponents from '../../pageobjects/reuse.js'
 import hooks from '../../../hooks.js'
+import standardTaskDetails from "../../pageobjects/FEMS/standardTaskDetails.js"
 
-describe("Creating a full flow for FEMS", async () => {
+describe("Validating Standard Task Code Details in General Master", async () => {
 
     // before(async () => {
     //     await browser.url(constant.asisURL)

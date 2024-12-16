@@ -16,11 +16,11 @@ export const locationSubModule1 = "User Area Master"
 export const locationSubModule2 = "User Location Master"
 
 // Add User Area Master 
-export const userDepartmentCode = "AM" + utils.getRandomNumbers(4)
-export const userDepartmentName = "AMRIScan" + utils.getRandomNumbers(4)
+export const userDepartmentCode = "ACT" + utils.getRandomNumbers(4)
+export const userDepartmentName = "ACTScan" + utils.getRandomNumbers(4)
 export const concatCodeName = userDepartmentCode + ' ' + '-' + ' ' + userDepartmentName
-export const fmsUserAreaCode = "AMARIScan" + utils.getRandomNumbers(4)
-export const fmsUserAreaName = "AM" + utils.getRandomNumbers(4)
+export const fmsUserAreaCode = "ACT" + utils.getRandomNumbers(4)
+export const fmsUserAreaName = "ACTScann" + utils.getRandomNumbers(4)
 export const concatfmsUserAreaCode = fmsUserAreaCode + ' ' + '-' + ' ' + fmsUserAreaName
 export const fmsMySpaCode = "ASPA" + utils.getRandomNumbers(4)
 export const fmsCategoryOfArea = "General Area"
@@ -41,8 +41,8 @@ export const remarks = " Data Saved"
 
 
 //Add User Location Master 
-export const fmsUserLocationCode = "AScan" + utils.getRandomNumbers(4)
-export const fmsUserLocationName = "ABodyScan" + utils.getRandomString(4)
+export const fmsUserLocationCode = "ACT" + utils.getRandomNumbers(4)
+export const fmsUserLocationName = "ACTScan" + utils.getRandomString(4)
 export const concatfmsUserLocationCode = fmsUserLocationCode + ' ' + '-' + ' ' + fmsUserLocationName
 export const status = "Active"  //  Inactive  Active
 export const locationSpecificName = "ANearICU"
@@ -58,11 +58,11 @@ export const ULMSuccessMessage = "Data saved successfully"
 //LinenGroup
 export const masterSubModulesLLS = "LLS"
 export const subModuleLinenGroup = "Linen Group"
-export const linenGrpCode = "AWC" + utils.getRandomString(4)
-export const linenGrpDescription = "AWasteCloth" + utils.getRandomString(4)
+export const linenGrpCode = "AGL" + utils.getRandomString(4)
+export const linenGrpDescription = "AGoatLeather" + utils.getRandomString(4)
 export const concatlinen = linenGrpCode + ' ' + '-' + ' ' + linenGrpDescription + ' '
-export const linenCode = "AWC" + utils.getRandomString(4)
-export const linenDescription = "AWasteCloth" + utils.getRandomString(4)
+export const linenCode = "AGl" + utils.getRandomString(4)
+export const linenDescription = "AGoatLeather" + utils.getRandomString(4)
 
 //Linen Item detail
 export const subModuleLinenItemDetail = "Linen Item Details"
@@ -202,13 +202,13 @@ export const workGroupCode = "AMF" + utils.getRandomNumbers(4)
 export const WorkGroupDesc = "AMotorFitting" + utils.getRandomNumbers(4)
 
 
-export const assetGroupCode = "A100WM" + utils.getRandomNumbers(4)
-export const assetGroupDesc = "APowerMotor" + utils.getRandomNumbers(4)
+export const assetGroupCode = "A5A" + utils.getRandomNumbers(4)
+export const assetGroupDesc = "A5AmpSwitch" + utils.getRandomNumbers(4)
 export const assetGroupDetails = "Asset Group Details"
 
 export const standardTaskDetails = "Standard Task Details"
-export const taskCode = "AF" + utils.getRandomNumbers(4)
-export const taskDesc = "AFitting" + utils.getRandomNumbers(4)
+export const taskCode = "AR" + utils.getRandomNumbers(4)
+export const taskDesc = "AReleasing" + utils.getRandomNumbers(4)
 export const standardStatus = "Active"
 export const standardEffectiveFrom = getTodayDate()
 export const typeCodeDetails = "Type Code Details"
@@ -241,13 +241,13 @@ export const effectiveFrom = getTodayDate()
 //Asset Information
 export const assetInformation = "Asset Information"
 export const TypeManufacturer = "Manufacturer"
-export const ManufacturerName = "Steel" + utils.getRandomNumbers(4)
+export const ManufacturerName = "Cable" + utils.getRandomNumbers(4)
 export const TypeMake = "Make"
-export const MakeName = "Delphi" + utils.getRandomNumbers(4)
+export const MakeName = "DoorCable" + utils.getRandomNumbers(4)
 export const TypeBrand = "Brand"
-export const BrandName = "TVS" + utils.getRandomNumbers(4)
+export const BrandName = "Normal" + utils.getRandomNumbers(4)
 export const TypeModel = "Model"
-export const ModelName = "A79" + utils.getRandomNumbers(4)
+export const ModelName = "FirstClass" + utils.getRandomNumbers(4)
 export const selectStatus = "Active"
 
 

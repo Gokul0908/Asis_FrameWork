@@ -10,7 +10,7 @@ import assetGroupDetails from '../../pageobjects/FEMS/assetGroupDetails.js'
 import ReusablesComponents from '../../pageobjects/reuse.js'
 import hooks from '../../../hooks.js'
 
-describe("Creating a full flow for FEMS", async () => {
+describe("Validating Asset Group Details in General Master", async () => {
 
     // before(async () => {
     //     await browser.url(constant.asisURL)
