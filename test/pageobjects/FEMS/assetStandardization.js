@@ -1,4 +1,5 @@
 import ReusablesComponents from '../reuse'
+import WaitUntil from '../waitUntil'
 
 class assetStandardization {
 
@@ -32,6 +33,7 @@ class assetStandardization {
     async enterManufacturer(manufacturer, concatManufacturer) {
         await ReusablesComponents.waitAndSetValue(this.manufacturer, manufacturer)
         await this.getManufacturerDropDown(concatManufacturer).click()
+        await WaitUntil.ElementIsVisible(2)
     }
 
     async enterMake(make, concatMake) {
