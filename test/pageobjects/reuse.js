@@ -90,19 +90,19 @@ class ReusablesComponents {
 
 
     async clickSearchIcon() {
-        await ReusablesComponents.waitAndClick(this.searchicon)
+        await this.waitAndClick(this.searchicon)
     }
 
     async clickRestIcon() {
-        await ReusablesComponents.waitAndClick(this.resetIcon)
+        await this.waitAndClick(this.resetIcon)
     }
 
     async enterValue(entertext) {
-        await ReusablesComponents.waitAndSetValue(this.enterText, entertext)
+        await this.waitAndSetValue(this.enterText, entertext)
     }
 
     async clickFindButton(){ 
-        await ReusablesComponents.waitAndClick(this.findButton)
+        await this.waitAndClick(this.findButton)
     }
 }
 export default new ReusablesComponents()

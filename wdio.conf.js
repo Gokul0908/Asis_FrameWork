@@ -32,9 +32,9 @@ export const config = {
     specs: [
         // ToDo: define location for spec files here
 
-        "./test/specs/FEMS/*.js"
-        // "./test/specs/LLS.js"
-        // "./test/specs/FEMS.js"
+        // "./test/specs/FEMS/*.js"
+        "./test/specs/LLS/LLS.js"
+        // "./test/specs/FEMS/FEMS.js"
         // './test/specs/FEMS/ValidateTheAsisLoginWithValidCredentials.js'
         // './test/specs/FEMS/ValidateTheAsisLoginWithInvalidCredentials.js'
 
@@ -134,14 +134,14 @@ export const config = {
         }
     },
 
-    reporters: ['spec', 'junit'],
-    reporterOptions: {
-      junit: {
-        outputDir: './reports/junit', // Path where the report will be saved
-        outputFileFormat: ({ format, platform }) => `results.${format}` // Naming convention for the file
-      }
-    }
-    ,
+    // reporters: ['spec', 'junit'],
+    // reporterOptions: {
+    //   junit: {
+    //     outputDir: './reports/junit', // Path where the report will be saved
+    //     outputFileFormat: ({ format, platform }) => `results.${format}` // Naming convention for the file
+    //   }
+    // }
+    // ,
 
 
     // onComplete: function () {

@@ -21,6 +21,8 @@ class reuseButtons {
    get attachmentSaveButton() { return $("(//button[@id='saveUpdate'])[2]") }
    get attachmentSaveButton2() { return $("(//button[@id='saveTab'])[2]") }
    get addNewButton() { return $("//button[.='Add New']") }
+   get backButton() { return $("(//button[.='Back'])[1]") }
+   get toggleSearchButton() { return $("(//a[@id='advanceSearch'])[1]") }
 
 
    async asisuserLogoutToTheApplication() {
@@ -93,6 +95,16 @@ class reuseButtons {
 
    async clickAddNewButton() {
       await ReusablesComponents.waitAndClick(this.addNewButton)
+   }
+
+   async clickBackButton() {
+
+      await this.waitAndClick(this.backButton)
+   }
+
+   async clickToggleSearchBtn(){
+
+      await this.waitAndClick(this.toggleSearchButton)
    }
 
 } export default new reuseButtons()
