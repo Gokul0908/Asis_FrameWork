@@ -19,6 +19,7 @@ import userAreaMaster from '../../pageobjects/FEMS/userAreaMaster.js'
 import userLocationMaster from '../../pageobjects/FEMS/userLocationMaster.js'
 import serviceRequest from '../../pageobjects/FEMS/serviceRequest.js'
 import hooks from '../../../hooks.js'
+import testingAndCommissioning from '../../pageobjects/FEMS/testingAndCommissioning.js'
 
 
 
@@ -70,7 +71,7 @@ describe("Creating a full flow for FEMS", async () => {
             await asisHomePage.clickasisHeartIcon()
         })
 
-        xit("Creating Work Group Details and Asset Group Details", async () => {
+        it("Creating Work Group Details and Asset Group Details", async () => {
             await asisHomePage.selectServicesIcon(constant.gmServices)
             await sideNavBar.clickMasterDropDown(constant.femsSubModule)
             await sideNavBar.clickSubModulesDropDown(constant.workGrpDetails)
@@ -92,7 +93,7 @@ describe("Creating a full flow for FEMS", async () => {
             console.log("Validation for Asset Group Details is successful")
         })
 
-        xit("Creating Standard Task Details and Type Code Details", async () => {
+        it("Creating Standard Task Details and Type Code Details", async () => {
             await sideNavBar.clickSubModulesDropDown(constant.standardTaskDetails)
             await reuseButtons.clickAddButton()
             await standardTaskDetails.enterWorkGroupCode(constant.workGroupCode)
@@ -143,7 +144,7 @@ describe("Creating a full flow for FEMS", async () => {
             console.log("Validation for Type Code Details is successful")
         })
 
-        xit("Creating HEPPM Register Details and Asset Information", async () => {
+        it("Creating HEPPM Register Details and Asset Information", async () => {
 
 
             await sideNavBar.clickSubModulesDropDown(constant.heppmRegister)
@@ -201,7 +202,7 @@ describe("Creating a full flow for FEMS", async () => {
             console.log("Validation for Model Asset Information is successful")
         })
 
-        xit("Creating Asset Standardization Details", async () => {
+        it("Creating Asset Standardization Details", async () => {
 
             //Asset Standardization Details            
             await asisHomePage.clickasisHeartIcon()
@@ -234,7 +235,7 @@ describe("Creating a full flow for FEMS", async () => {
         })
 
 
-        xit("Creating User Area Master in FMS", async () => {
+        it("Creating User Area Master in FMS", async () => {
 
             await asisHomePage.clickasisHeartIcon()
             await asisHomePage.hoverOnServiceIcon(constant.fmsServices)
@@ -277,7 +278,7 @@ describe("Creating a full flow for FEMS", async () => {
         })
 
         //User Location Master
-        xit("Creating User Location Master in FMS", async () => {
+        it("Creating User Location Master in FMS", async () => {
 
             await sideNavBar.clickSubModulesDropDown(constant.locationSubModule2)
             await reuseButtons.clickAddButton()
@@ -303,7 +304,7 @@ describe("Creating a full flow for FEMS", async () => {
             console.log("Validation for User Location Master in FMS is successful")
         })
 
-        xit("Mapping user Area Master and User Location Master in FEMS  ", async () => {
+        it("Mapping user Area Master and User Location Master in FEMS  ", async () => {
 
             //User Area Master 
             await asisHomePage.clickasisHeartIcon()
@@ -361,7 +362,7 @@ describe("Creating a full flow for FEMS", async () => {
 
 
 
-            it("Creating Testing and Commissioning in FEMS", async () => {
+            xit("Creating Testing and Commissioning in FEMS", async () => {
 
                 await asisHomePage.clickasisHeartIcon()
                 await asisHomePage.selectServicesIcon(constant.FEMSServiceIcon)
@@ -369,6 +370,12 @@ describe("Creating a full flow for FEMS", async () => {
                 await sideNavBar.clickTransactionDropDown(constant.TandC)
                 await sideNavBar.clickSubModulesDropDown(constant.TestingandCommissioning)
                 await reuseButtons.clickAddButton()
+                await testingAndCommissioning.enterServiceRequestNo(requestno)
+                await testingAndCommissioning.selectTandCType(constant.type)
+                await testingAndCommissioning.selectTandCDate(constant.currentDate)
+
+                await testingAndCommissioning.ClickNewTypeCodeRequest()
+
             })
         })
     })

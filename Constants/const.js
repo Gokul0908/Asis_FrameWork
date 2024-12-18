@@ -283,3 +283,5 @@ export const TandC = 'T&C'
 export const TestingandCommissioning = "Testing and Commissioning"
 export const filter1 = "User Location Code"
 export const filter2 = "equal"
+export const type ='Asset'
+export const currentDate = getTodayDate()

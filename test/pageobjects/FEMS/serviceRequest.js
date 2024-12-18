@@ -14,6 +14,7 @@ class serviceRequest {
     getFilterDD2(filter2) { return $(`//select[@class='selectopts']/option[.='${filter2}']`) }
     get editIcon() { return $("//a[@class='ui-icon ui-icon-pencil']") }
     get requestNo() { return $("//td[@aria-describedby='grid_RequestNo']") }
+    get resetIcon() { return $("//a[.='Reset']") }
 
 
     async selectService(SelectService) {
@@ -46,6 +47,10 @@ class serviceRequest {
 
     async selectFilter(filterdd) {
 
+        const icon = await this.resetIcon.isDisplayed()
+        if (icon == true) {
+            await ReusablesComponents.waitAndClick(this.resetIcon)
+        }
         await ReusablesComponents.waitAndClick(this.getFilterDD(filterdd))
     }
     async selectFilter2(filter2) {
