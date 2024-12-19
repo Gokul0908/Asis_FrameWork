@@ -92,7 +92,7 @@ describe("Creating a full flow for Linen and Laundry Services", async () => {
             await reuseButtons.clickSaveButton1()
             await WaitUntil.ElementIsVisible(2)
             await ReusablesComponents.checkSuccessNotification(constant.SuccessMessage)
-            console.log("Validation for User Area Master is SuccessFull")
+            console.log("Validation for User Area Master is SuccessFull in FMS")
 
         })
 
@@ -103,7 +103,7 @@ describe("Creating a full flow for Linen and Laundry Services", async () => {
             await reuseButtons.clickAddButton()
             await fmsUserLocationMaster.enterUserLocationCode(constant.fmsUserLocationCode)
             await fmsUserLocationMaster.enterUserLocationName(constant.fmsUserLocationName)
-            await fmsUserLocationMaster.selectUserAreaCodeDropDown(constant.fmsUserAreaCode)
+            await fmsUserLocationMaster.selectUserAreaCodeDropDown(constant.fmsUserAreaCode, constant.concatfmsUserAreaCode)
             await fmsUserLocationMaster.clickLabelUDC()
             await WaitUntil.ElementIsVisible(2)
             await fmsUserLocationMaster.setStartServiceDate(constant.fmsStartServiceDate)
@@ -121,7 +121,7 @@ describe("Creating a full flow for Linen and Laundry Services", async () => {
             await reuseButtons.clickfmsSaveButton()
             await WaitUntil.ElementIsVisible(2)
             await ReusablesComponents.checkSuccessNotification(constant.SuccessMessage)
-            console.log("Validation For User Location Master is successfull")
+            console.log("Validation For User Location Master is successfull in FMS")
         });
     })
 

@@ -50,7 +50,7 @@ class cleanLinenOrderLLS {
 
     async getCLONo() {
         const gridCLONo = await ReusablesComponents.waitAndGetText(this.gridCLONo)
-        console.log(":::::::::Grid Clean Linen Order Number1:::::::::" + gridCLONo)
+        // console.log(":::::::::Grid Clean Linen Order Number1:::::::::" + gridCLONo)
         return gridCLONo
     }
 
