@@ -16,6 +16,10 @@ class sideNavBar {
         await ReusablesComponents.waitAndClick(this.getMasterSubModules(MasterSubModules))
     }
 
+    async clickSubModulesDropDown(subModuleValues) {
+        await ReusablesComponents.waitAndClick(this.getSubModuleDropDown(subModuleValues))
+    }
+
     async clickServiceRequestDropDown(ServiceRequestSubModules) {
         await ReusablesComponents.waitAndClick(this.serviceRequestDropDown)
         await ReusablesComponents.waitAndClick(this.getServiceRequestSubModules(ServiceRequestSubModules))
@@ -23,10 +27,6 @@ class sideNavBar {
 
     async clickMasterSubModules(MasterSubModules) {
         await ReusablesComponents.waitAndClick(this.getMasterSubModules(MasterSubModules))
-    }
-
-    async clickSubModulesDropDown(subModuleValues) {
-        await ReusablesComponents.waitAndClick(this.getSubModuleDropDown(subModuleValues))
     }
 
     async clickTransactionDropDown(TransactionSubModules) {

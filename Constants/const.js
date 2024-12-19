@@ -283,5 +283,15 @@ export const TandC = 'T&C'
 export const TestingandCommissioning = "Testing and Commissioning"
 export const filter1 = "User Location Code"
 export const filter2 = "equal"
-export const type ='Asset'
+export const type = 'Asset'
 export const currentDate = getTodayDate()
+
+
+
+//ContractorAndVendorMaster Page
+export const contractndContractor = 'Contract & Contractor'
+export const contractorndVendor = 'Contractor and Vendor Master'
+export const contractType = 'Sub-Contractor/Non-Specialised'
+export const registrationcode = 'RC' + utils.getRandomAlphaNumericString(4)
+export const contractorStatus = 'Bumi '
+export const vendorStatus = 'Active'

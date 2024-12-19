@@ -47,6 +47,9 @@ describe("Creating a full flow for Linen and Laundry Services", async () => {
             await GeneralMaster.enterUserDepartmentCode(constant.userDepartmentCode)
             await GeneralMaster.enterUserDepartmentName(constant.userDepartmentName)
             await reuseButtons.clickSaveButton()
+            await WaitUntil.ElementIsVisible(2)
+            await ReusablesComponents.checkSuccessNotification(constant.SuccessMessage)
+            console.log("Validation for Standard User Department Code is successful")
             await GeneralMaster.clickasisHeartIcon()
         })
 
@@ -87,8 +90,9 @@ describe("Creating a full flow for Linen and Laundry Services", async () => {
             await fMSModule.clickLabelLevel()
             await WaitUntil.ElementIsVisible(2)
             await reuseButtons.clickSaveButton1()
-            await ReusablesComponents.checkSuccessNotification(constant.SuccessMessage)
             await WaitUntil.ElementIsVisible(2)
+            await ReusablesComponents.checkSuccessNotification(constant.SuccessMessage)
+            console.log("Validation for User Area Master is SuccessFull")
 
         })
 
@@ -115,7 +119,9 @@ describe("Creating a full flow for Linen and Laundry Services", async () => {
             await fmsUserLocationMaster.selectInstalledFacility(constant.installedFacility)
             await fmsUserLocationMaster.clickLabelDiscipline()
             await reuseButtons.clickfmsSaveButton()
+            await WaitUntil.ElementIsVisible(2)
             await ReusablesComponents.checkSuccessNotification(constant.SuccessMessage)
+            console.log("Validation For User Location Master is successfull")
         });
     })
 
@@ -133,6 +139,7 @@ describe("Creating a full flow for Linen and Laundry Services", async () => {
             await reuseButtons.clickSaveButton()
             await WaitUntil.ElementIsVisible(2)
             await ReusablesComponents.checkSuccessNotification(constant.SuccessMessage)
+            console.log("Validation for Linen Group Code is successfull in GM ")
 
             //Creating Linen Item Details
             await sideNavBar.clickSubModulesDropDown(constant.subModuleLinenItemDetail)
@@ -155,8 +162,9 @@ describe("Creating a full flow for Linen and Laundry Services", async () => {
             await linenItemDetails.clickLabelRemarks()
             await WaitUntil.ElementIsVisible(2)
             await reuseButtons.clickLIDSaveButton()
-            await ReusablesComponents.checkSuccessNotification(constant.SuccessMessage)
             await WaitUntil.ElementIsVisible(2)
+            await ReusablesComponents.checkSuccessNotification(constant.SuccessMessage)
+            console.log("Validation for Linen Item Details is successfull in GM ")
 
         })
     })
@@ -180,8 +188,9 @@ describe("Creating a full flow for Linen and Laundry Services", async () => {
             await WaitUntil.ElementIsVisible(2)
             // await lls.clickAttachmentSaveButton()
             await reuseButtons.clickAttachmentSaveButton2()
-            await ReusablesComponents.checkSuccessNotification(constant.SuccessMessage)
             await WaitUntil.ElementIsVisible(2)
+            await ReusablesComponents.checkSuccessNotification(constant.SuccessMessage)
+            console.log("Validation for Linen Item Details is Successfull")
         })
 
         it("Linen Unit Price in LLS ", async () => {
@@ -190,6 +199,8 @@ describe("Creating a full flow for Linen and Laundry Services", async () => {
             await lls.enterUnitPriceRM(constant.linenUnitPrice)
             await lls.clickLinenUnitPriceSaveButton()
             await WaitUntil.ElementIsVisible(2)
+            await ReusablesComponents.checkSuccessNotification(constant.SuccessMessage)
+            console.log("Validation for Linen Unit Price is Successfull")
         })
 
         it("Create UserDepartment and Area Details in lls", async () => {
@@ -223,6 +234,7 @@ describe("Creating a full flow for Linen and Laundry Services", async () => {
             await lls.clickUserDepartSaveButton()
             await WaitUntil.ElementIsVisible(2)
             await ReusablesComponents.checkSuccessNotification(constant.SuccessMessage)
+            console.log("Validation for  Department/AreaDetails is successfull")
             await sideNavBar.clickSubModulesDropDown(constant.submoduleUserDepartmentArea)
             await WaitUntil.ElementIsVisible(2)
         })
@@ -244,7 +256,9 @@ describe("Creating a full flow for Linen and Laundry Services", async () => {
             await cleanLinenOrderLLS.enterRequestedQuantity(constant.requestedQuantity)
             await cleanLinenOrderLLS.clickStatusLabel()
             await reuseButtons.clickSaveButton1()
+            await WaitUntil.ElementIsVisible(2)
             await ReusablesComponents.checkSuccessNotification(constant.SuccessMessage)
+            console.log("Validation for Clean linen order is Successful")
             await WaitUntil.ElementIsVisible(2)
             await sideNavBar.clickSubModulesDropDown(constant.linenShipmentSubModule)
             clono = await cleanLinenOrderLLS.getCLONo()
@@ -348,6 +362,7 @@ describe("Creating a full flow for Linen and Laundry Services", async () => {
             await reuseButtons.clickSaveButton1()
             await WaitUntil.ElementIsVisible(2)
             await ReusablesComponents.checkSuccessNotification(constant.SuccessMessage)
+            console.log("Validation for Clean linen Despatch is successfull in Laundry Location ")
         })
 
 
@@ -374,6 +389,7 @@ describe("Creating a full flow for Linen and Laundry Services", async () => {
             await reuseButtons.clickCLRSaveButton()
             await WaitUntil.ElementIsVisible(2)
             await ReusablesComponents.checkSuccessNotification(constant.SuccessMessage)
+            console.log("Validation for Clean Linen Request is Successfull ")
             await cleanLinenRequest.clickAttachmentTab()
             await cleanLinenRequest.selectFileType(constant.clrFiletype)
             await cleanLinenRequest.enterFileName(constant.fileName)
@@ -397,7 +413,9 @@ describe("Creating a full flow for Linen and Laundry Services", async () => {
             await WaitUntil.ElementIsVisible(2)
             await cleanLinenIssue.enterFirstDeliveryQuantity(constant.selectQuantity)
             await reuseButtons.clickCLISavebutton()
+            await WaitUntil.ElementIsVisible(2)
             await ReusablesComponents.checkSuccessNotification(constant.SuccessMessage)
+            console.log("Validation for Clean Linen Issue is Successfull")
             await reuseButtons.clickCLISubmitButton()
             await WaitUntil.ElementIsVisible(2)
             await cleanLinenIssue.clickYesPopUp()

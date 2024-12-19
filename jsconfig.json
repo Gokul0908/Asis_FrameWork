@@ -1,8 +1,6 @@
 {
     "compilerOptions": {
-
         // "baseUrl": "./",
-
         // "paths": {
         //     "common/*": [
         //         "./test/pageobjects/*"
@@ -14,11 +12,19 @@
         //         "./test/pageobjects/FEMS/*"
         //     ]
         // },
-        
+        "sourceMap": true,
+        "baseUrl": "./",
+        "paths": {
+            "*": [
+                "node_modules/*"
+            ]
+        },
+
         "types": [
             "node",
             "@wdio/globals/types",
-            "@wdio/mocha-framework"
+            "@wdio/mocha-framework",
+            "@wdio/globals"
         ],
     },
     "exclude": [

@@ -17,6 +17,17 @@ class utils {
   }
 
 
+  getRandomAlphaNumericString(length = 16, upperCase = false) {
+    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXTZabcdefghiklmnopqrstuvwxyz0123456789'.split('');
+    let value = '';
+
+    for (let i = 0; i < length; i++) {
+        const char = chars[Math.floor(Math.random() * chars.length)];
+        value += upperCase ? char.toUpperCase() : char;
+    }
+    return value;
+}
+
   /**
    * Generates a random string of numbers.
    * @param {number} length How long the string should be.

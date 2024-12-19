@@ -26,6 +26,8 @@ class ReusablesComponents {
         await selector.click()
     }
 
+    
+
     async waitAndGetText(selector) {
         await selector.waitForDisplayed({ timeout: 60000 })
         return await selector.getText()

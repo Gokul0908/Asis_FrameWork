@@ -8,6 +8,7 @@ class TestingandCommissioning {
     get newTypeCodeRequest() { return $("//button[contains(.,'New Type Code Request')]") }
     gettndcType(type) { return $(`//select[@id='ddlTCType']/option[.='${type}']`) }
     get tndcDate() { return $("//input[@id='txtTCDate']") }
+    get requestorDate() { return $("//input[@id='txtRequestorDate']") }
 
     async enterServiceRequestNo(requestno) {
         await ReusablesComponents.waitAndSetValue(this.serviceRequestNo, requestno)
@@ -23,9 +24,14 @@ class TestingandCommissioning {
         await ReusablesComponents.waitAndClick(this.gettndcType(type))
     }
 
-    async selectTandCDate(TodayDate){
+    async selectTandCDate(TodayDate) {
 
         await ReusablesComponents.waitAndSetValue(this.tndcDate, TodayDate)
+    }
+
+    async EnterRequestorDate(requestordate){
+
+        await ReusablesComponents.waitAndSetValue(this.requestorDate, requestordate)
     }
 
 }

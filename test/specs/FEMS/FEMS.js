@@ -20,6 +20,7 @@ import userLocationMaster from '../../pageobjects/FEMS/userLocationMaster.js'
 import serviceRequest from '../../pageobjects/FEMS/serviceRequest.js'
 import hooks from '../../../hooks.js'
 import testingAndCommissioning from '../../pageobjects/FEMS/testingAndCommissioning.js'
+import contractorAndVendorMaster from '../../pageobjects/FEMS/contractorAndVendorMaster.js'
 
 
 
@@ -50,7 +51,7 @@ describe("Creating a full flow for FEMS", async () => {
         await hooks.afterTest()
     })
 
-    
+
     describe("Asis User Login to the Application and Creating User Area Master and User Location Master", async () => {
 
 
@@ -341,7 +342,7 @@ describe("Creating a full flow for FEMS", async () => {
         it("Creating Service Request For FEMS", async () => {
 
             await asisHomePage.clickasisHeartIcon()
-            await asisHomePage.selectServicesIcon(constant.serviceRequest)            
+            await asisHomePage.selectServicesIcon(constant.serviceRequest)
             await WaitUntil.ElementIsVisible(2)
             await sideNavBar.clickServiceRequestDropDown(constant.addServiceRequest)
             await WaitUntil.ElementIsVisible(2)
@@ -358,25 +359,40 @@ describe("Creating a full flow for FEMS", async () => {
             // await serviceRequest.selectFilter2(constant.filter2)
             await ReusablesComponents.enterValue(constant.fmsUserLocationCode)
             await ReusablesComponents.clickFindButton()
-            requestno =await serviceRequest.getRequestNo()
+            requestno = await serviceRequest.getRequestNo()
 
 
-
-            xit("Creating Testing and Commissioning in FEMS", async () => {
-
-                await asisHomePage.clickasisHeartIcon()
-                await asisHomePage.selectServicesIcon(constant.FEMSServiceIcon)
-                await WaitUntil.ElementIsVisible(2)
-                await sideNavBar.clickTransactionDropDown(constant.TandC)
-                await sideNavBar.clickSubModulesDropDown(constant.TestingandCommissioning)
-                await reuseButtons.clickAddButton()
-                await testingAndCommissioning.enterServiceRequestNo(requestno)
-                await testingAndCommissioning.selectTandCType(constant.type)
-                await testingAndCommissioning.selectTandCDate(constant.currentDate)
-
-                await testingAndCommissioning.ClickNewTypeCodeRequest()
-
-            })
         })
+
+        it("Creating SSM Registration code for T and C ", async () => {
+
+            await asisHomePage.clickasisHeartIcon()
+            await asisHomePage.selectServicesIcon(constant.fmsServices)
+            await sideNavBar.clickMasterDropDown(constant.contractndContractor)
+            await sideNavBar.clickSubModulesDropDown(constant.contractorndVendor)
+            await contractorAndVendorMaster.selectContractorType(constant.contractType)
+            await contractorAndVendorMaster.enterRegistrationCode(constant.registrationcode)
+            await contractorAndVendorMaster.selectContratorStatus(constant.contractorStatus)
+            await contractorAndVendorMaster.selectStatus(constant.vendorStatus)
+            await contractorAndVendorMaster.selectSpecializationDetails()
+        })
+
+        it("Creating Testing and Commissioning in FEMS", async () => {
+
+            await asisHomePage.clickasisHeartIcon()
+            await asisHomePage.selectServicesIcon(constant.FEMSServiceIcon)
+            await WaitUntil.ElementIsVisible(2)
+            await sideNavBar.clickTransactionDropDown(constant.TandC)
+            await sideNavBar.clickSubModulesDropDown(constant.TestingandCommissioning)
+            await reuseButtons.clickAddButton()
+            await testingAndCommissioning.enterServiceRequestNo(requestno)
+            await testingAndCommissioning.selectTandCType(constant.type)
+            await testingAndCommissioning.selectTandCDate(constant.currentDate)
+
+            await testingAndCommissioning.ClickNewTypeCodeRequest()
+            await testingAndCommissioning.EnterRequestorDate(constant.currentDate)
+
+        })
+
     })
 })
