@@ -407,6 +407,7 @@ describe("Creating a full flow for Linen and Laundry Services", async () => {
             await reuseButtons.clickAddButton()
             await WaitUntil.ElementIsVisible(2)
             await cleanLinenIssue.enterCLRDocumentNo(clrDocumentNo)
+            await WaitUntil.ElementIsVisible(2)
             await cleanLinenIssue.clickRequestLabel()
             await cleanLinenIssue.selectQCTimeliness(constant.QCTimeliness)
             await cleanLinenIssue.enterissuedQuantity(constant.issuedQuantity)
