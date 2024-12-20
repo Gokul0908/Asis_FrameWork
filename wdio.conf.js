@@ -32,8 +32,8 @@ export const config = {
     specs: [
         // ToDo: define location for spec files here
 
-        "./test/specs/FEMS/*.js",
-        // "./test/specs/LLS/LLS.js"
+        // "./test/specs/FEMS/*.js",
+        "./test/specs/LLS/LLS.js"
         // "./test/specs/FEMS/FEMS.js"
         // './test/specs/FEMS/ValidateTheAsisLoginWithValidCredentials.js'
         // './test/specs/FEMS/ValidateTheAsisLoginWithInvalidCredentials.js'
