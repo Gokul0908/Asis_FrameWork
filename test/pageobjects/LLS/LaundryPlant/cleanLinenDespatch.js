@@ -24,16 +24,16 @@ class cleanLinenDespatch {
     get despatchTimeDropDown() { return $("(//div[@class='xdsoft_datetimepicker xdsoft_noselect xdsoft_'])[1]") }
     gettime(despatchTime) { return $(`(//div[@class='xdsoft_time_box xdsoft_scroller_box'])[1]/div/div[.='${despatchTime}']`) }
     get noOfTrolleys() { return $("//input[@name='NoofTrolley']") }
-    get checkedByLabel(){ return $("//label[text()='Checked By ']") }
+    get checkedByLabel() { return $("//label[text()='Checked By ']") }
 
 
     async selectOrderType(orderType) {
         await ReusablesComponents.waitAndClick(this.getordertype(orderType))
     }
 
-    async enterCLONo(CLONo) {        
+    async enterCLONo(CLONo) {
         await ReusablesComponents.waitAndSetValue(this.CLONo, CLONo)
-        console.log(":::::::::CLONo in Clean Linen Despatch:::::::::" + CLONo)
+        // console.log(":::::::::CLONo in Clean Linen Despatch:::::::::" + CLONo)
         await this.getCLONoDropdown(CLONo).click()
     }
 
@@ -98,11 +98,11 @@ class cleanLinenDespatch {
     //     await this.gettime(DespatchTime).click()
     // }
 
-    async enterDespatchDate (DespatchDate, DespatchTime) {
+    async enterDespatchDate(DespatchDate, DespatchTime) {
         await ReusablesComponents.waitAndClick(this.despatchDateAndTime)
         await this.verifyDespatchTimeDropDown()
         await ReusablesComponents.waitAndSetValue(this.despatchDateAndTime, DespatchDate)
-        await this.gettime(DespatchTime).click()      
+        await this.gettime(DespatchTime).click()
     }
 
     async enterNoOfTrolleys(NoofTrolley) {
