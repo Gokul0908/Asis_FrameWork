@@ -1,5 +1,6 @@
 import * as Constant from "../../../Constants/const"
 import ReusablesComponents from '../reuse'
+import WaitUntil from "../waitUntil"
 
 
 class FMSModule {
@@ -128,7 +129,7 @@ class FMSModule {
         // await this.hospitalrep.selectByVisibleText(hospitalRepresentative).click()
         await ReusablesComponents.waitAndSetValue(this.hospitalRepresentative, selectHospital)
         // await this.gethospitalDropDown(Constant.concatHospitalRep).waitForDisplayed()
-        await this.gethospitalDropDown(Constant.concatHospitalRep).click()
+        await this.gethospitalDropDown(Constant.concatHospitalRep).click()        
     }
 
     async selectHospitalRepresentative(hospitalRepresentative) {

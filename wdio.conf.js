@@ -29,14 +29,17 @@ export const config = {
     // The path of the spec files will be resolved relative from the directory of
     // of the config file unless it's absolute.
     //
+    "type": "module",
+    
     specs: [
         // ToDo: define location for spec files here
 
         // "./test/specs/FEMS/*.js",
-        "./test/specs/LLS/LLS.js"
-        // "./test/specs/FEMS/FEMS.js"
+        // "./test/specs/LLS/LLS.js"
+        "./test/specs/FEMS/FEMS.js"
         // './test/specs/FEMS/ValidateTheAsisLoginWithValidCredentials.js'
         // './test/specs/FEMS/ValidateTheAsisLoginWithInvalidCredentials.js'
+        // './SQL_Connectivity_Test/controller/excelTest1.js'
 
         //Mysql Test
 

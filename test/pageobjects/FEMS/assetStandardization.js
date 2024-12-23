@@ -20,13 +20,10 @@ class assetStandardization {
 
     async enterAssetTypeCode(assetTypeCode, concatAssetTypeCode) {
         await ReusablesComponents.waitAndSetValue(this.assetTypeCode, assetTypeCode)
-
-        // for (let i = 0; i <2 ; i++) {
-        //     await browser.keys('Backspace');
-        // }
-        await browser.keys(['Control', 'a']);
-        await browser.keys('Backspace');
-        await ReusablesComponents.waitAndSetValue(this.assetTypeCode, assetTypeCode)
+        // await WaitUntil.ElementIsVisible(2)
+        // await browser.keys(['Control', 'a']);
+        // await browser.keys('Backspace');
+        // await ReusablesComponents.waitAndSetValue(this.assetTypeCode, assetTypeCode)
         await this.getAssetTypeCodeDropDown(concatAssetTypeCode).click()
     }
 
