@@ -2,19 +2,19 @@ import ReusablesComponents from '../../reuse.js'
 
 class vehicle {
 
-    get vehicleNo() { return $("//input[@id='txtVehicleNo']") }
-    get manufacturer() { return $("//input[@name='Manufacturer']") }
-    get effectiveDate() { return $("(//input[@name='EffectiveFrom'])[1]") }
-    get licenseCode() { return $("//input[@id='grdLicenseCode0']") }
-    getLicenseDropDown(licenseCode) { return $(`//ul[@id='UlFetchLicenseCode']/li/div/a[.='${licenseCode}']`) }
-    get LicenseNo() { return $("//input[@id='txtLicenseNo']") }
-    getClassGrade(Grade) { return $(`//select[@id='txtClassGrade']/option[.='${Grade}']`) }
-    getIssuedBy(IssuedBy) { return $(`//select[@id='txtIssuedBy']/option[.='${IssuedBy}']`) }
-    get issuedDate() { return $("//input[@name='IssuedDate']") }
-    get expiryDate() { return $("//input[@ng-model='Position.ExpiryDate']") }
-    get remarksField() { return $("//textarea[@name='Remarks']") }
-    get loadLabel() { return $("//label[.='Load Weight BDM (Kg)']") }
-    get ExpiryBox() { return $("(//div[@class='xdsoft_datepicker active'])[9]") }
+    get vehicleNo() { return ("//input[@id='txtVehicleNo']") }
+    get manufacturer() { return ("//input[@name='Manufacturer']") }
+    get effectiveDate() { return ("(//input[@name='EffectiveFrom'])[1]") }
+    get licenseCode() { return ("//input[@id='grdLicenseCode0']") }
+    getLicenseDropDown(licenseCode) { return (`//ul[@id='UlFetchLicenseCode']/li/div/a[.='${licenseCode}']`) }
+    get LicenseNo() { return ("//input[@id='txtLicenseNo']") }
+    getClassGrade(Grade) { return (`//select[@id='txtClassGrade']/option[.='${Grade}']`) }
+    getIssuedBy(IssuedBy) { return (`//select[@id='txtIssuedBy']/option[.='${IssuedBy}']`) }
+    get issuedDate() { return ("//input[@name='IssuedDate']") }
+    get expiryDate() { return ("//input[@ng-model='Position.ExpiryDate']") }
+    get remarksField() { return ("//textarea[@name='Remarks']") }
+    get loadLabel() { return ("//label[.='Load Weight BDM (Kg)']") }
+    get ExpiryBox() { return ("(//div[@class='xdsoft_datepicker active'])[9]") }
 
 
     async setVehicleNo(vehicleNo) {

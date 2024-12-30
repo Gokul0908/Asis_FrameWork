@@ -1,44 +1,51 @@
+import * as Constants from '../../Constants/const.js'
 
 class ReusablesComponents {
 
 
-    get succesLabel() { return $("//div[@class='notify success']") }
-    get pleaseWaitLabel() { return $("(//h4[@class='modal-title'])[1]") }
-    get searchicon() { return $("(//a[@id='advanceSearch'])[1]") }
-    get resetIcon() { return $("//a[@id='fbox_grid_reset']") }
-    get enterText() { return $("(//input[@role='textbox'])[1]") }
-    get findButton() { return $ / ("//a[@id='fbox_grid_search']") }
-
+    get succesLabel() { return ("//div[@class='notify success']") }
+    get pleaseWaitLabel() { return ("(//h4[@class='modal-title'])[1]") }
+    get searchicon() { return ("(//a[@id='advanceSearch'])[1]") }
+    get resetIcon() { return ("//a[@id='fbox_grid_reset']") }
+    get enterText() { return ("(//input[@role='textbox'])[1]") }
+    get findButton() { return ("//a[@id='fbox_grid_search']") }
+    get UnSavedChanges() { return ("//div[@class='bootbox-body']") }
+    get noButton() { return ("//div[@class='modal-footer']/button[.='No']") }
 
     async waitAndClick(selector) {
-        await selector.waitForDisplayed({ timeout: 60000 })
-        await selector.click()
+        await $(selector).waitForDisplayed({ timeout: 60000 })
+        await $(selector).click()
     }
 
     async waitAndSetValue(selector, value) {
-        await selector.waitForDisplayed({ timeout: 60000 })
-        await selector.setValue(value)
+        await $(selector).waitForDisplayed({ timeout: 60000 })
+        await $(selector).setValue(value)
     }
 
     async waitScrollAndClick(selector) {
-        await selector.scrollIntoView({ block: 'end' })
-        await selector.waitForDisplayed({ timeout: 60000 })
-        await selector.click()
+        await $(selector).scrollIntoView({ block: 'end' })
+        await $(selector).waitForDisplayed({ timeout: 60000 })
+        await $(selector).click()
     }
-
-    
 
     async waitAndGetText(selector) {
-        await selector.waitForDisplayed({ timeout: 60000 })
-        return await selector.getText()
+        await $(selector).waitForDisplayed({ timeout: 60000 })
+        return await $(selector).getText()
     }
-
 
     async waitAndGetValue(selector) {
-        await selector.waitForDisplayed({ timeout: 60000 })
-        return await selector.getValue()
+        await $(selector).waitForDisplayed({ timeout: 60000 })
+        return await $(selector).getValue()
     }
 
+    async waitUnSavedChanges() {
+
+        const Text = await this.waitAndGetText(this.UnSavedChanges)
+        if (Text == Constants.OriginalText) {
+
+            await this.waitAndClick(this.noButton)
+        }
+    }
 
 
     // async checkSuccessNotification(successMessage) {
@@ -103,7 +110,7 @@ class ReusablesComponents {
         await this.waitAndSetValue(this.enterText, entertext)
     }
 
-    async clickFindButton(){ 
+    async clickFindButton() {
         await this.waitAndClick(this.findButton)
     }
 }

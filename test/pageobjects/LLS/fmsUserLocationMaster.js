@@ -4,29 +4,29 @@ import * as Constant from "../../../Constants/const"
 
 class fmsAddUserLocationMaster {
 
-    get UserLocationCode() { return $("//input[@id='txtUserLocationCode']") }
-    get UserLocationName() { return $("//input[@id='txtUserLocationName']") }
-    get LabelUDC() { return $("//label[.='User Department Code']") }
-    get startServiceDate() { return $("//input[@name='EffectiveFrom']") }
-    get userAreaCode() { return $("//input[@id='UserAreaCode']") }
-    getUserAreaCodeDropDown(concatUserAreaCode) { return $(`//ul[@id='UlFetchUserAreaCode']/li/div/a[.='${concatUserAreaCode}']`) }
-    getStatus(status) { return $(`//select[@ng-model='UserLocation.Status']/option[.='${status}']`) }
-    get locationSpecificName() { return $("//input[@ng-model='UserLocation.LocationSpecificName']") }
-    get LocationOperatingHours() { return $("//select[@ng-model='UserLocation.LocationOperatingHours']") }
-    getLocationOperatingHours(operatingHours) { return $(`//select[@ng-model='UserLocation.LocationOperatingHours']/option[.='${operatingHours}']`) }
-    get floorArea() { return $("//input[@ng-model='UserLocation.FloorArea']") }
-    get airCondArea() { return $("//input[@ng-model='UserLocation.AircondArea']") }
-    get cleansingCategory() { $("//select[@ng-model='UserLocation.CleansingCategory']") }
-    getcleansingCategory(selectCategory) { return $(`//select[@ng-model='UserLocation.CleansingCategory']/option[.='${selectCategory}']`) }
-    get selectcritical() { return $("//select[@ng-model='UserLocation.Criticality']") }
-    getcriticality(selectCriticality) { return $(`//select[@ng-model='UserLocation.Criticality']/option[.='${selectCriticality}']`) }
-    get installedFacility() { return $("//select[@ng-model='UserLocation.InstalledFacility']") }
-    getInstalledFacility(selectFacility) { return $(`//select[@ng-model='UserLocation.InstalledFacility']/option[.='${selectFacility}']`) }
-    get labelUDC() { return $("//label[text()='User Department Code']") }
-    get labelAuthorized() { return $("//label[text()='Authorized Person ']") }
-    get labelDiscipline() { return $("//label[text()='Discipline']") }
-    get addNewButton() { return $("//button[@title='Add New']") }
-    get backButton() { return $("//button[@title='Back']") }
+    get UserLocationCode() { return ("//input[@id='txtUserLocationCode']") }
+    get UserLocationName() { return ("//input[@id='txtUserLocationName']") }
+    get LabelUDC() { return ("//label[.='User Department Code']") }
+    get startServiceDate() { return ("//input[@name='EffectiveFrom']") }
+    get userAreaCode() { return ("//input[@id='UserAreaCode']") }
+    getUserAreaCodeDropDown(concatUserAreaCode) { return (`//ul[@id='UlFetchUserAreaCode']/li/div/a[.='${concatUserAreaCode}']`) }
+    getStatus(status) { return (`//select[@ng-model='UserLocation.Status']/option[.='${status}']`) }
+    get locationSpecificName() { return ("//input[@ng-model='UserLocation.LocationSpecificName']") }
+    get LocationOperatingHours() { return ("//select[@ng-model='UserLocation.LocationOperatingHours']") }
+    getLocationOperatingHours(operatingHours) { return (`//select[@ng-model='UserLocation.LocationOperatingHours']/option[.='${operatingHours}']`) }
+    get floorArea() { return ("//input[@ng-model='UserLocation.FloorArea']") }
+    get airCondArea() { return ("//input[@ng-model='UserLocation.AircondArea']") }
+    get cleansingCategory() { ("//select[@ng-model='UserLocation.CleansingCategory']") }
+    getcleansingCategory(selectCategory) { return (`//select[@ng-model='UserLocation.CleansingCategory']/option[.='${selectCategory}']`) }
+    get selectcritical() { return ("//select[@ng-model='UserLocation.Criticality']") }
+    getcriticality(selectCriticality) { return (`//select[@ng-model='UserLocation.Criticality']/option[.='${selectCriticality}']`) }
+    get installedFacility() { return ("//select[@ng-model='UserLocation.InstalledFacility']") }
+    getInstalledFacility(selectFacility) { return (`//select[@ng-model='UserLocation.InstalledFacility']/option[.='${selectFacility}']`) }
+    get labelUDC() { return ("//label[text()='User Department Code']") }
+    get labelAuthorized() { return ("//label[text()='Authorized Person ']") }
+    get labelDiscipline() { return ("//label[text()='Discipline']") }
+    get addNewButton() { return ("//button[@title='Add New']") }
+    get backButton() { return ("//button[@title='Back']") }
 
     async clickLabelDiscipline() {
         await ReusablesComponents.waitAndClick(this.labelDiscipline)

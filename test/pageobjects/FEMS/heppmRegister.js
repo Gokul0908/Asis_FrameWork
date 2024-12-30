@@ -2,15 +2,15 @@ import ReusablesComponents from '../reuse'
 
 class heppmRegister {
 
-    get assetTypeCode() { return $("//input[@id='AssetTypeCode']") }
-    getAssetTypeCodeDropDown(assetTypeCode) { return $(`//ul[@id='UlFetchAssetTypeCode']/li/div/a[.='${assetTypeCode}']`) }
+    get assetTypeCode() { return ("//input[@id='AssetTypeCode']") }
+    getAssetTypeCodeDropDown(assetTypeCode) { return (`//ul[@id='UlFetchAssetTypeCode']/li/div/a[.='${assetTypeCode}']`) }
     get taskCode() { return $("//input[@id='TaskCode']") }
-    getTaskCodeDropDown(taskCode) { return $(`//ul[@id='UlFetchTaskCode']/li/div/a[.='${taskCode}']`) }
-    getppmFrequency(selectfrequency) { return $(`//select[@id='PPMFrequency']/option[.='${selectfrequency}']`) }
-    get version() { return $("//input[@ng-model='HEPPMRegister.Version']") }
-    get effectiveFrom() { return $("//input[@name='EffectiveDate']") }
-    get chooseFile() { return $("//input[@id='fileAttached']") }
-    get addIcon() { return $("//a[@ng-click='VersionHistory()']") }
+    getTaskCodeDropDown(taskCode) { return (`//ul[@id='UlFetchTaskCode']/li/div/a[.='${taskCode}']`) }
+    getppmFrequency(selectfrequency) { return (`//select[@id='PPMFrequency']/option[.='${selectfrequency}']`) }
+    get version() { return ("//input[@ng-model='HEPPMRegister.Version']") }
+    get effectiveFrom() { return ("//input[@name='EffectiveDate']") }
+    get chooseFile() { return ("//input[@id='fileAttached']") }
+    get addIcon() { return ("//a[@ng-click='VersionHistory()']") }
 
     async enterAssetTypeCode(assetTypeCode, concatAssetTypeCode) {
         await ReusablesComponents.waitAndSetValue(this.assetTypeCode, assetTypeCode)

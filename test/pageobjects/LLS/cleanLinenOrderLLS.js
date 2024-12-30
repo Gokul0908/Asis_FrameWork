@@ -3,21 +3,21 @@ import ReusablesComponents from '../reuse'
 
 class cleanLinenOrderLLS {
 
-    getpriority(Priority) { return $(`//select[@id='Priority']/option[.='${Priority}']`) }
-    getLinenCodeDropdown(concatLinenCode) { return $(`//ul[@id='UlFetch']/li/div/a[.='${concatLinenCode}']`) }
-    get linenCode() { return $("//input[@id='txtLinenCode0']") }
-    get requestedQuantity() { return $("//input[@ng-required='Clean.Quantity']") }
-    get storeBalance() { return $("//input[@id='Stockbalance']") }
-    get remarks() { return $("//textarea[@ng-model='CleanOrder.Remarks']") }
-    get CLONo() { return $("//input[@name='CLONO']") }
-    get gridCLONo() { return $("(//tr[@role='row']/td[@aria-describedby='grid_CLONO'])[1]") }
-    getCLONoEditIcon(CLONo) { return $(`(//tr[@role='row']/td[.='${CLONo}']/following-sibling::td/following-sibling::td/following-sibling::td)[4]`) }
-    getCLONoApproveIcon(CLONo) { return $(`(//tr[@role='row']/td[.='${CLONo}']/following-sibling::td/following-sibling::td/following-sibling::td)[5]`) }    
-    get statusLabel() { return $("//label[.='Status ']") }
-    getorderType(orderType) { return $(`//select[@id='OrderType']/option[.='${orderType}']`) }
-    get CLONoInput() { return $("//input[@id='txtCLONo']") }
-    getCLONoDropdown(CLONo) { return $(`//ul[@id='UlFetchStaff']/li/div/a[.='${CLONo}']`) }
-    get disabledField() { return $("//input[@id='Stockbalance' and @disabled='true']") }
+    getpriority(Priority) { return (`//select[@id='Priority']/option[.='${Priority}']`) }
+    getLinenCodeDropdown(concatLinenCode) { return (`//ul[@id='UlFetch']/li/div/a[.='${concatLinenCode}']`) }
+    get linenCode() { return ("//input[@id='txtLinenCode0']") }
+    get requestedQuantity() { return ("//input[@ng-required='Clean.Quantity']") }
+    get storeBalance() { return ("//input[@id='Stockbalance']") }
+    get remarks() { return ("//textarea[@ng-model='CleanOrder.Remarks']") }
+    get CLONo() { return ("//input[@name='CLONO']") }
+    get gridCLONo() { return ("(//tr[@role='row']/td[@aria-describedby='grid_CLONO'])[1]") }
+    getCLONoEditIcon(CLONo) { return (`(//tr[@role='row']/td[.='${CLONo}']/following-sibling::td/following-sibling::td/following-sibling::td)[4]`) }
+    getCLONoApproveIcon(CLONo) { return (`(//tr[@role='row']/td[.='${CLONo}']/following-sibling::td/following-sibling::td/following-sibling::td)[5]`) }    
+    get statusLabel() { return ("//label[.='Status ']") }
+    getorderType(orderType) { return (`//select[@id='OrderType']/option[.='${orderType}']`) }
+    get CLONoInput() { return ("//input[@id='txtCLONo']") }
+    getCLONoDropdown(CLONo) { return (`//ul[@id='UlFetchStaff']/li/div/a[.='${CLONo}']`) }
+    get disabledField() { return ("//input[@id='Stockbalance' and @disabled='true']") }
 
 
     async selectPriority(Priority) {

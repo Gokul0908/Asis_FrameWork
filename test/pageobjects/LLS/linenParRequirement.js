@@ -2,9 +2,9 @@ import ReusablesComponents from '../reuse'
 
 class linenParRequire {
 
-    get pageSizeDropDown() { return $("//select[@ng-model='pageSize']") }
-    get saveButton() { return $("(//button[.='Save'])[1]") }
-    get parRequireField() { return $("//input[@name='ParRequirement']") }
+    get pageSizeDropDown() { return ("//select[@ng-model='pageSize']") }
+    get saveButton() { return ("(//button[.='Save'])[1]") }
+    get parRequireField() { return ("//input[@name='ParRequirement']") }
 
     async selectPageSize(pagesize) {
         await ReusablesComponents.waitAndSetValue(this.pageSizeDropDown, pagesize)

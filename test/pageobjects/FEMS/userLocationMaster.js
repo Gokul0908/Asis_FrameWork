@@ -3,8 +3,8 @@ import ReusablesComponents from '../reuse'
 class userLocationMaster {
 
 
-    get userLocationCode() { return $("//input[@id='UserLocationCode']") }
-    getUserLocationCodeDD(userLocationCode) { return $(`//ul[@id='UlFetch']/li/div/a[.='${userLocationCode}']`) }
+    get userLocationCode() { return ("//input[@id='UserLocationCode']") }
+    getUserLocationCodeDD(userLocationCode) { return (`//ul[@id='UlFetch']/li/div/a[.='${userLocationCode}']`) }
 
 
     async enterUserLocationCode(userLocationCode, concatfmsUserLocationCode) {

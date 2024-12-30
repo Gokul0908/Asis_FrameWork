@@ -4,26 +4,22 @@ import WaitUntil from '../waitUntil'
 class assetStandardization {
 
 
-    get assetTypeCode() { return $("//input[@id='AssetTypeCode']") }
-    getAssetTypeCodeDropDown(assetTypeCode) { return $(`//ul[@id='UlFetchAssetTypeCode']/li/div/a[contains(.,'${assetTypeCode}')]`) }
-    get manufacturer() { return $("//input[@id='Manufacturer']") }
-    getManufacturerDropDown(manufacturer) { return $(`//ul[@id='UlFetchManufacturer']/li/div/a[contains(.,'${manufacturer}')]`) }
-    get make() { return $("//input[@id='Make']") }
-    getMakeDropDown(make) { return $(`//ul[@id='UlFetchMake']/li/div/a[contains(.,'${make}')]`) }
-    get brand() { return $("//input[@id='Brand']") }
-    getBrandDropDown(brand) { return $(`//ul[@id='UlFetchBrand']/li/div/a[contains(.,'${brand}')]`) }
-    get model() { return $("//input[@id='Model']") }
-    getModelDropDown(model) { return $(`//ul[@id='UlFetchModel']/li/div/a[contains(.,'${model}')]`) }
-    getStatus(selectStatus) { return $(`//select[@id='Service']/option[.='${selectStatus}']`) }
-    get serviceLabel() { return $("//label[.='Service ']") }
+    get assetTypeCode() { return ("//input[@id='AssetTypeCode']") }
+    getAssetTypeCodeDropDown(assetTypeCode) { return (`//ul[@id='UlFetchAssetTypeCode']/li/div/a[contains(.,'${assetTypeCode}')]`) }
+    get manufacturer() { return ("//input[@id='Manufacturer']") }
+    getManufacturerDropDown(manufacturer) { return (`//ul[@id='UlFetchManufacturer']/li/div/a[contains(.,'${manufacturer}')]`) }
+    get make() { return ("//input[@id='Make']") }
+    getMakeDropDown(make) { return (`//ul[@id='UlFetchMake']/li/div/a[contains(.,'${make}')]`) }
+    get brand() { return ("//input[@id='Brand']") }
+    getBrandDropDown(brand) { return (`//ul[@id='UlFetchBrand']/li/div/a[contains(.,'${brand}')]`) }
+    get model() { return ("//input[@id='Model']") }
+    getModelDropDown(model) { return (`//ul[@id='UlFetchModel']/li/div/a[contains(.,'${model}')]`) }
+    getStatus(selectStatus) { return (`//select[@id='Service']/option[.='${selectStatus}']`) }
+    get serviceLabel() { return ("//label[.='Service ']") }
 
 
     async enterAssetTypeCode(assetTypeCode, concatAssetTypeCode) {
         await ReusablesComponents.waitAndSetValue(this.assetTypeCode, assetTypeCode)
-        // await WaitUntil.ElementIsVisible(2)
-        // await browser.keys(['Control', 'a']);
-        // await browser.keys('Backspace');
-        // await ReusablesComponents.waitAndSetValue(this.assetTypeCode, assetTypeCode)
         await this.getAssetTypeCodeDropDown(concatAssetTypeCode).click()
     }
 

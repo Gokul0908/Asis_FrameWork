@@ -4,8 +4,8 @@ import WaitUntil from './waitUntil'
 
 class LoginPage {
 
-    get asisUsername() { return $("//input[@id='LoginName']") }
-    get asisPassword() { return $("//input [@id='Password']") }
+    get asisUsername() { return ("//input[@id='LoginName']") }
+    get asisPassword() { return ("//input [@id='Password']") }
     get forgotPasswordLink() { return $("//a[.='Forgot Password?']") }
     get signUpLink() { return $("//a[.='Sign Up!']") }
     get abiText() { return $("//p[.='ASIS Business Intelligence']") }
@@ -15,7 +15,7 @@ class LoginPage {
     async asisUserLoginToTheApplication(aUserName, aPassword) {
         await ReusablesComponents.waitAndSetValue(this.asisUsername, aUserName)
         await ReusablesComponents.waitAndSetValue(this.asisPassword, aPassword)
-        await reuseButtons.AsislogInButton()
+        await reuseButtons.ClicklogInButton()
     }
 
 

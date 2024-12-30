@@ -2,19 +2,19 @@ import ReusablesComponents from '../reuse'
 
 class cleanLinenRequest {
 
-    get userDepartCode() { return $("//input[@id='txtUserDepartmentCode']") }
-    getuserDepartCodeDropDown(userDepartCode) { return $(`//ul[@id='UlUserAreaFetch']/li/div/a[contains(.,'${userDepartCode}')]`) }
-    get requestedBy() { return $("//input[@id='txtRequestedBy']") }
-    getRequestedByDD(RequestedBy) { return $(`//a[.='${RequestedBy}']`) }
-    get requestedQuantity() { return $("//input[@id='txtRequestedQuantity']") }
-    getPriority(priority) { return $(`//select[@id='ddlPriority']/option[.='${priority}']`) }
-    get clrDocumentNo() { return $("(//td[@aria-describedby='grid_CliDocumentNo'])[1]") }
-    get remarkInput() { return $("//textarea[@id='txtRemarks']") }
-    get attachmentTab() { return $("//a[@id='AttachmentTab']") }
-    get chooseFile() { return $("//input[@type='file']") }
-    get attachmentSavebutton() { return $("//button[@id='saveUpdate']") }
-    getFiletype(filetype) { return $(`//select[@name='FileType']/option[.='${filetype}']`) }
-    get fileName() { return $("//input[@id='fileName0']") }
+    get userDepartCode() { return ("//input[@id='txtUserDepartmentCode']") }
+    getuserDepartCodeDropDown(userDepartCode) { return (`//ul[@id='UlUserAreaFetch']/li/div/a[contains(.,'${userDepartCode}')]`) }
+    get requestedBy() { return ("//input[@id='txtRequestedBy']") }
+    getRequestedByDD(RequestedBy) { return (`//a[.='${RequestedBy}']`) }
+    get requestedQuantity() { return ("//input[@id='txtRequestedQuantity']") }
+    getPriority(priority) { return (`//select[@id='ddlPriority']/option[.='${priority}']`) }
+    get clrDocumentNo() { return ("(//td[@aria-describedby='grid_CliDocumentNo'])[1]") }
+    get remarkInput() { return ("//textarea[@id='txtRemarks']") }
+    get attachmentTab() { return ("//a[@id='AttachmentTab']") }
+    get chooseFile() { return ("//input[@type='file']") }
+    get attachmentSavebutton() { return ("//button[@id='saveUpdate']") }
+    getFiletype(filetype) { return (`//select[@name='FileType']/option[.='${filetype}']`) }
+    get fileName() { return ("//input[@id='fileName0']") }
 
 
     async enterUserDepartCode(userDepartCode) {

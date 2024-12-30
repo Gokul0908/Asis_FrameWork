@@ -3,13 +3,13 @@ import ReusablesComponents from '../reuse'
 
 class CleanLinenIssue {
 
-    get CLRDocumentNo() { return $("//input[@id='txtCliDocumentNo']") }
-    getCLRDDropdown(CLRDocumentNo) { return $(`//ul[@id='UlCliDocNoFetch']/li/div/a[.='${CLRDocumentNo}']`) }
-    getQCTimelinesss(selectQCTime) { return $(`//select[@ng-model='LinenIssues.QcTimeliness']/option[.='${selectQCTime}']`) }
-    get issuedQuantity() { return $("//input[@id='txtIssuesIssuedQuantity']") }
-    get firstDelivertQuantity() { return $("//input[@id='txtIssues1stDeliveryIssuedQty0']") }
-    get yesPopUp() { return $("//button[@data-bb-handler='confirm']") }
-    get requestLabel() { return $("//label[.='Requested By']") }
+    get CLRDocumentNo() { return ("//input[@id='txtCliDocumentNo']") }
+    getCLRDDropdown(CLRDocumentNo) { return (`//ul[@id='UlCliDocNoFetch']/li/div/a[.='${CLRDocumentNo}']`) }
+    getQCTimelinesss(selectQCTime) { return (`//select[@ng-model='LinenIssues.QcTimeliness']/option[.='${selectQCTime}']`) }
+    get issuedQuantity() { return ("//input[@id='txtIssuesIssuedQuantity']") }
+    get firstDelivertQuantity() { return ("//input[@id='txtIssues1stDeliveryIssuedQty0']") }
+    get yesPopUp() { return ("//button[@data-bb-handler='confirm']") }
+    get requestLabel() { return ("//label[.='Requested By']") }
 
 
     async enterCLRDocumentNo(CLIDocumentNo) {

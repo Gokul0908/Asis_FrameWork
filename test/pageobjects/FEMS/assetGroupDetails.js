@@ -2,8 +2,8 @@ import ReusablesComponents from '../reuse'
 
 class assetGroupDetails {
 
-    get assetGroupCode() { return $("//input[@id='AssetGroupCode']") }
-    get assetGroupDesc() { return $("//input[@id='AssetGroupDescription']") }
+    get assetGroupCode() { return ("//input[@id='AssetGroupCode']") }
+    get assetGroupDesc() { return ("//input[@id='AssetGroupDescription']") }
 
 
     async enterAssetGroupCode(assetGroupCode) {

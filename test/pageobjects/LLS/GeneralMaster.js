@@ -2,13 +2,13 @@ import ReusablesComponents from '../reuse.js'
 
 class generalmaster {
 
-    get standardUserDeptRefreshIcon() { return $("//span[@class='ui-icon ui-icon-refresh']") }
-    get standardUserDeptUserAreaCodeaddButton() { return $("//td[@id='Add']") }
-    get userDepartmentCode() { return $("//input[@name='UserDepartmentCode']") }
-    get userDepartmentName() { return $("//input[@name='UserDepartmentName']") }
-    get addNewButton() { return $("//button[@id='addnew']") }
-    get backButton() { return $("(//button[.='Back'])[1]") }
-    get asisHeartIcon() { return $("//img[@alt='Ministry of Health']") }
+    get standardUserDeptRefreshIcon() { return ("//span[@class='ui-icon ui-icon-refresh']") }
+    get standardUserDeptUserAreaCodeaddButton() { return ("//td[@id='Add']") }
+    get userDepartmentCode() { return ("//input[@name='UserDepartmentCode']") }
+    get userDepartmentName() { return ("//input[@name='UserDepartmentName']") }
+    get addNewButton() { return ("//button[@id='addnew']") }
+    get backButton() { return ("(//button[.='Back'])[1]") }
+    get asisHeartIcon() { return ("//img[@alt='Ministry of Health']") }
 
 
     async clickasisHeartIcon() {

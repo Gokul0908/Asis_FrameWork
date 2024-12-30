@@ -6,25 +6,25 @@ class cleanLinenDespatch {
 
 
     // CLONo = cleanLinenOrderLLS.getCLONo()
-    getordertype(orderType) { return $(`//select[@name='OrderType']/option[.='${orderType}']`) }
-    get CLONo() { return $("//input[@id='txtCLONo']") }
-    getCLONoDropdown(CLONo) { return $(`//ul[@id='UlFetchStaff']/li/div/a[contains(.,'${CLONo}')]`) }
-    get driverCode() { return $("//input[@ng-model='CleanDispatch.DriverCode']") }
-    getdriverCodeDD(driverCode) { return $(`//ul[@id='UlDriverFetch']/li/div/a[.='${driverCode}']`) }
-    get vehicleRegisterNo() { return $("//input[@id='VehicleRegistrationNo']") }
-    getvehicleRegisterNoDD(VehicleRegister) { return $(`//ul[@id='UlvehicleFetch']/li/div/a[.='${VehicleRegister}']`) }
-    get ReceiverCode() { return $("//input[@ng-model='CleanDispatch.ReceiverCode']") }
-    getReceiverCodeDD(ReceiverCode) { return $(`//ul[@id='UlReceiverFetch']/li/div/a[.='${ReceiverCode}']`) }
-    get CheckedBy() { return $("//input[@id='StaffName']") }
-    getCheckedByDD(CheckedBy) { return $(`//div[@class='ng-scope']/a[.='${CheckedBy}']`) }
-    get totalWeight() { return $("//input[@id='TotalWeight']") }
-    get remarksLabel() { return $("//label[.='Remarks']") }
-    get despatchQuantity() { return $("//input[@id='DespatchedQuantity0']") }
-    get despatchDateAndTime() { return $("//input[@id='DateDespatch']") }
-    get despatchTimeDropDown() { return $("(//div[@class='xdsoft_datetimepicker xdsoft_noselect xdsoft_'])[1]") }
-    gettime(despatchTime) { return $(`(//div[@class='xdsoft_time_box xdsoft_scroller_box'])[1]/div/div[.='${despatchTime}']`) }
-    get noOfTrolleys() { return $("//input[@name='NoofTrolley']") }
-    get checkedByLabel() { return $("//label[text()='Checked By ']") }
+    getordertype(orderType) { return (`//select[@name='OrderType']/option[.='${orderType}']`) }
+    get CLONo() { return ("//input[@id='txtCLONo']") }
+    getCLONoDropdown(CLONo) { return (`//ul[@id='UlFetchStaff']/li/div/a[contains(.,'${CLONo}')]`) }
+    get driverCode() { return ("//input[@ng-model='CleanDispatch.DriverCode']") }
+    getdriverCodeDD(driverCode) { return (`//ul[@id='UlDriverFetch']/li/div/a[.='${driverCode}']`) }
+    get vehicleRegisterNo() { return ("//input[@id='VehicleRegistrationNo']") }
+    getvehicleRegisterNoDD(VehicleRegister) { return (`//ul[@id='UlvehicleFetch']/li/div/a[.='${VehicleRegister}']`) }
+    get ReceiverCode() { return ("//input[@ng-model='CleanDispatch.ReceiverCode']") }
+    getReceiverCodeDD(ReceiverCode) { return (`//ul[@id='UlReceiverFetch']/li/div/a[.='${ReceiverCode}']`) }
+    get CheckedBy() { return ("//input[@id='StaffName']") }
+    getCheckedByDD(CheckedBy) { return (`//div[@class='ng-scope']/a[.='${CheckedBy}']`) }
+    get totalWeight() { return ("//input[@id='TotalWeight']") }
+    get remarksLabel() { return ("//label[.='Remarks']") }
+    get despatchQuantity() { return ("//input[@id='DespatchedQuantity0']") }
+    get despatchDateAndTime() { return ("//input[@id='DateDespatch']") }
+    get despatchTimeDropDown() { return ("(//div[@class='xdsoft_datetimepicker xdsoft_noselect xdsoft_'])[1]") }
+    gettime(despatchTime) { return (`(//div[@class='xdsoft_time_box xdsoft_scroller_box'])[1]/div/div[.='${despatchTime}']`) }
+    get noOfTrolleys() { return ("//input[@name='NoofTrolley']") }
+    get checkedByLabel() { return ("//label[text()='Checked By ']") }
 
 
     async selectOrderType(orderType) {

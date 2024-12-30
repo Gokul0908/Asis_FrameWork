@@ -2,44 +2,44 @@ import ReusablesComponents from '../reuse'
 
 class lls {
 
-    get linenGrpCode() { return $("//input[@id='GmLinenCode']") }
-    getLinenCodeDropDown(concatLinenCode) { return $(`//ul[@id='UlFetchGmLinenCode']/li/div/a[.='${concatLinenCode}']`) }
-    get attachmentsTab() { return $("//a[.='Attachments']") }
-    getFileType(filetype) { return $(`//select[@name='FileType']/option[.='${filetype}']`) }
-    get fileName() { return $("//input[@ng-model='fileAttach.FileName']") }
-    get chooseFile() { return $("//input[@type='file']") }
-    get linenItemCode() { return $("//input[@name='LinenCode']") }
-    get unitPricerm() { return $("//input[@name='UnitPriceRM']") }
-    get linenUnitPriceSaveBtn() { return $("//button[@id='saveWorkOrderbtn']") }
-    getpagesize(pagesize) { return $(`//select[@ng-model='pageSize']/option[.='${pagesize}']`) }
-    get userDepartmentCode() { return $("//input[@name='UserDepartmentCode']") }
-    get hospitalRepresentative() { return $("//input[@name='HospitalRepresentative']") }
-    getoperatingDays(noofDays) { return $(`//select[@ng-model='UserDepartment.OperatingDays']/option[.='${noofDays}']`) }
-    get effectiveDate() { return $("//input[@name='EffectiveFromDate']") }
-    getbag(count) { return $(`//input[@id='rentalSpace_${count}']`) }
-    getdropDown(concatCodeName) { return $(`//ul[@id='UlUserAreaFetch']/li/div/a[.='${concatCodeName}']`) }
-    get labelOperatiingDays() { return $("//label[text()='Operating Days ']") }
-    gethospitalDropDown(concatHospitalRep) { return $(`//ul[@id='UlFetchHospital']/li/div/a[.= '${concatHospitalRep}']`) }
-    get deliveryTime() { return $("//input[@ng-change='timeCalculate()']") }
-    get deliveryTimeDropDown() { return $("(//div[@class='xdsoft_datetimepicker xdsoft_noselect xdsoft_'])[1]") }
-    gettime(deliveryTime) { return $(`(//div[@class='xdsoft_time_box xdsoft_scroller_box'])[1]/div/div[.='${deliveryTime}']`) }
-    get collectionTime() { return $("//input[@id='txtC1stWindowCollectionStartTime']") }
-    get collectionTimeDropDown() { return $("(//div[@class='xdsoft_datetimepicker xdsoft_noselect xdsoft_'])[7]") }
-    getCollectionTime(collectionTime) { return $(`(//div[@class='xdsoft_time_box xdsoft_scroller_box'])[7]/div/div[.='${collectionTime}']`) }
-    get linenArrangement() { return $("//input[@id='txtArrangementStartTime']") }
-    get linenArrangementTimeDropDown() { return $("(//div[@class='xdsoft_datetimepicker xdsoft_noselect xdsoft_'])[13]") }
-    getLinenArrangementTime(linenTime) { return $(`(//div[@class='xdsoft_time_box xdsoft_scroller_box'])[13]/div/div[.='${linenTime}']`) }
-    getfurnishingItem(furnishingItem) { return $(`//select[@id='txtFrequency']/option[.='${furnishingItem}']`) }
-    getCleansingAndSantizingDay(SantizingDay) { return $(`//select[@id='ddlCleaningSanitizing']/option[.='${SantizingDay}']`) }
-    getStartingMonth(startingMonth) { return $(`//select[@id='ddlMonth']/option[.='${startingMonth}']`) }
-    getWeekDay(weekDay) { return $(`//select[@id='ddlweek']/option[.='${weekDay}']`) }
-    get linencode() { return $("//input[@name='LinenCode']") }
-    getUserDepartLinenCodeDropDown(concatLinenCode) { return $(`//ul[@id='UlFetch1']/li/div/a[.='${concatLinenCode}']`) }
-    get par1Require() { return $("//input[@id='rentalSpace_8']") }
-    get par2require() { return $("//input[@id='rentalSpace_9']") }
-    getDefaultIssue(defaultIssue) { return $(`//select[@id='ddlDefaultIssue']/option[.='${defaultIssue}']`) }
-    get userDepartSaveButton() { return $("(//button[.='Save'])[1]") }
-    get succesLabel() { return $("//div[@class='notify success']") }
+    get linenGrpCode() { return ("//input[@id='GmLinenCode']") }
+    getLinenCodeDropDown(concatLinenCode) { return (`//ul[@id='UlFetchGmLinenCode']/li/div/a[.='${concatLinenCode}']`) }
+    get attachmentsTab() { return ("//a[.='Attachments']") }
+    getFileType(filetype) { return (`//select[@name='FileType']/option[.='${filetype}']`) }
+    get fileName() { return ("//input[@ng-model='fileAttach.FileName']") }
+    get chooseFile() { return ("//input[@type='file']") }
+    get linenItemCode() { return ("//input[@name='LinenCode']") }
+    get unitPricerm() { return ("//input[@name='UnitPriceRM']") }
+    get linenUnitPriceSaveBtn() { return ("//button[@id='saveWorkOrderbtn']") }
+    getpagesize(pagesize) { return (`//select[@ng-model='pageSize']/option[.='${pagesize}']`) }
+    get userDepartmentCode() { return ("//input[@name='UserDepartmentCode']") }
+    get hospitalRepresentative() { return ("//input[@name='HospitalRepresentative']") }
+    getoperatingDays(noofDays) { return (`//select[@ng-model='UserDepartment.OperatingDays']/option[.='${noofDays}']`) }
+    get effectiveDate() { return ("//input[@name='EffectiveFromDate']") }
+    getbag(count) { return (`//input[@id='rentalSpace_${count}']`) }
+    getdropDown(concatCodeName) { return (`//ul[@id='UlUserAreaFetch']/li/div/a[.='${concatCodeName}']`) }
+    get labelOperatiingDays() { return ("//label[text()='Operating Days ']") }
+    gethospitalDropDown(concatHospitalRep) { return (`//ul[@id='UlFetchHospital']/li/div/a[.= '${concatHospitalRep}']`) }
+    get deliveryTime() { return ("//input[@ng-change='timeCalculate()']") }
+    get deliveryTimeDropDown() { return ("(//div[@class='xdsoft_datetimepicker xdsoft_noselect xdsoft_'])[1]") }
+    gettime(deliveryTime) { return (`(//div[@class='xdsoft_time_box xdsoft_scroller_box'])[1]/div/div[.='${deliveryTime}']`) }
+    get collectionTime() { return ("//input[@id='txtC1stWindowCollectionStartTime']") }
+    get collectionTimeDropDown() { return ("(//div[@class='xdsoft_datetimepicker xdsoft_noselect xdsoft_'])[7]") }
+    getCollectionTime(collectionTime) { return (`(//div[@class='xdsoft_time_box xdsoft_scroller_box'])[7]/div/div[.='${collectionTime}']`) }
+    get linenArrangement() { return ("//input[@id='txtArrangementStartTime']") }
+    get linenArrangementTimeDropDown() { return ("(//div[@class='xdsoft_datetimepicker xdsoft_noselect xdsoft_'])[13]") }
+    getLinenArrangementTime(linenTime) { return (`(//div[@class='xdsoft_time_box xdsoft_scroller_box'])[13]/div/div[.='${linenTime}']`) }
+    getfurnishingItem(furnishingItem) { return (`//select[@id='txtFrequency']/option[.='${furnishingItem}']`) }
+    getCleansingAndSantizingDay(SantizingDay) { return (`//select[@id='ddlCleaningSanitizing']/option[.='${SantizingDay}']`) }
+    getStartingMonth(startingMonth) { return (`//select[@id='ddlMonth']/option[.='${startingMonth}']`) }
+    getWeekDay(weekDay) { return (`//select[@id='ddlweek']/option[.='${weekDay}']`) }
+    get linencode() { return ("//input[@name='LinenCode']") }
+    getUserDepartLinenCodeDropDown(concatLinenCode) { return (`//ul[@id='UlFetch1']/li/div/a[.='${concatLinenCode}']`) }
+    get par1Require() { return ("//input[@id='rentalSpace_8']") }
+    get par2require() { return ("//input[@id='rentalSpace_9']") }
+    getDefaultIssue(defaultIssue) { return (`//select[@id='ddlDefaultIssue']/option[.='${defaultIssue}']`) }
+    get userDepartSaveButton() { return ("(//button[.='Save'])[1]") }
+    get succesLabel() { return ("//div[@class='notify success']") }
 
 
     async clickLinenUnitPriceSaveButton() {

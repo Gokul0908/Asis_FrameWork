@@ -3,19 +3,19 @@ import ReusablesComponents from '../../reuse.js'
 
 class DriverDetails {
 
-    get drivercode() { return $("//input[@id='txtDriverCode']") }
-    get driverName() { return $("//input[@name='DriverName']") }
-    get effectiveFrom() { return $("//input[@ng-model='Driver.EffectiveFrom']") }
-    get licenseCode() { return $("//input[@id='grdLicenseCode0']") }
-    getLicenseDropDown(licenseCode) { return $(`//ul[@id='UlFetchLicenseCode']/li/div/a[.='${licenseCode}']`) }
-    get LicenseNo() { return $("//input[@id='txtLicenseNo']") }
-    getClassGrade(Grade) { return $(`//select[@id='txtClassGrade']/option[.='${Grade}']`) }
-    getIssuedBy(IssuedBy) { return $(`//select[@id='txtIssuedBy']/option[.='${IssuedBy}']`) }
-    get issuedDate() { return $("//input[@name='IssuedDate']") }
-    get expiryDate() { return $("//input[@ng-model='Position.ExpiryDate']") }
-    get remarksField() { return $("//textarea[@name='Remarks']") }
-    get loadLabel() { return $("//label[.='Load Weight BDM (Kg)']") }
-    get ExpiryBox() { return $("(//div[@class='xdsoft_datetimepicker xdsoft_noselect xdsoft_'])[9]") }
+    get drivercode() { return ("//input[@id='txtDriverCode']") }
+    get driverName() { return ("//input[@name='DriverName']") }
+    get effectiveFrom() { return ("//input[@ng-model='Driver.EffectiveFrom']") }
+    get licenseCode() { return ("//input[@id='grdLicenseCode0']") }
+    getLicenseDropDown(licenseCode) { return (`//ul[@id='UlFetchLicenseCode']/li/div/a[.='${licenseCode}']`) }
+    get LicenseNo() { return ("//input[@id='txtLicenseNo']") }
+    getClassGrade(Grade) { return (`//select[@id='txtClassGrade']/option[.='${Grade}']`) }
+    getIssuedBy(IssuedBy) { return (`//select[@id='txtIssuedBy']/option[.='${IssuedBy}']`) }
+    get issuedDate() { return ("//input[@name='IssuedDate']") }
+    get expiryDate() { return ("//input[@ng-model='Position.ExpiryDate']") }
+    get remarksField() { return ("//textarea[@name='Remarks']") }
+    get loadLabel() { return ("//label[.='Load Weight BDM (Kg)']") }
+    get ExpiryBox() { return ("(//div[@class='xdsoft_datetimepicker xdsoft_noselect xdsoft_'])[9]") }
 
 
     async setDriverCode(driverCode) {

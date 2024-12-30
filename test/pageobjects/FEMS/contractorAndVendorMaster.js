@@ -1,13 +1,13 @@
 import Reusablecomponents from '../reuse.js'
 
 class contractorVendorMaster {
-    getcontractorType(Contractortype) { return $(`//select[@id='ddlContractorType']/option[.='${Contractortype}']`) }
-    get ssmRegistrationCode() { return $("(//input[@id='txtSSMRegistrationCode'])[1]") }
-    get vendorName() { return $("//input[@id='Contractor/Vendor Name']") }
-    getcontractorStatus(status) { return $(`//select[@id='ddlContractorStatus']/option[.='${status}']`) }
-    getStatus(status) { return $(`//select[@id='ddlStatus']/option[.='${status}']`) }
-    get specializationDetails() { return $("//button[@title='Select']") }
-    get selectall() { return $("//input[@value='multiselect-all']") }
+    getcontractorType(Contractortype) { return (`//select[@id='ddlContractorType']/option[.='${Contractortype}']`) }
+    get ssmRegistrationCode() { return ("(//input[@id='txtSSMRegistrationCode'])[1]") }
+    get vendorName() { return ("//input[@id='Contractor/Vendor Name']") }
+    getcontractorStatus(status) { return (`//select[@id='ddlContractorStatus']/option[.='${status}']`) }
+    getStatus(status) { return (`//select[@id='ddlStatus']/option[.='${status}']`) }
+    get specializationDetails() { return ("//button[@title='Select']") }
+    get selectall() { return ("//input[@value='multiselect-all']") }
 
     async selectContractorType(contractrtype) {
 

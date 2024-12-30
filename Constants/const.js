@@ -16,11 +16,11 @@ export const locationSubModule1 = "User Area Master"
 export const locationSubModule2 = "User Location Master"
 
 // Add User Area Master 
-export const userDepartmentCode = "ACT" + utils.getRandomNumbers(4)
-export const userDepartmentName = "ACTScan" + utils.getRandomNumbers(4)
+export const userDepartmentCode = "AS" + utils.getRandomNumbers(4)
+export const userDepartmentName = "AScanning" + utils.getRandomNumbers(4)
 export const concatCodeName = userDepartmentCode + ' ' + '-' + ' ' + userDepartmentName
-export const fmsUserAreaCode = "ACT" + utils.getRandomNumbers(4)
-export const fmsUserAreaName = "ACTScann" + utils.getRandomNumbers(4)
+export const fmsUserAreaCode = "AS" + utils.getRandomNumbers(4)
+export const fmsUserAreaName = "AScanning" + utils.getRandomNumbers(4)
 export const concatfmsUserAreaCode = fmsUserAreaCode + ' ' + '-' + ' ' + fmsUserAreaName
 export const fmsMySpaCode = "ASPA" + utils.getRandomNumbers(4)
 export const fmsCategoryOfArea = "General Area"
@@ -41,8 +41,8 @@ export const remarks = " Data Saved"
 
 
 //Add User Location Master 
-export const fmsUserLocationCode = "ACT" + utils.getRandomNumbers(4)
-export const fmsUserLocationName = "ACTScan" + utils.getRandomString(4)
+export const fmsUserLocationCode = "AS" + utils.getRandomNumbers(4)
+export const fmsUserLocationName = "AScanning" + utils.getRandomString(4)
 export const concatfmsUserLocationCode = fmsUserLocationCode + ' ' + '-' + ' ' + fmsUserLocationName
 export const status = "Active"  //  Inactive  Active
 export const locationSpecificName = "ANearICU"
@@ -58,11 +58,11 @@ export const ULMSuccessMessage = "Data saved successfully"
 //LinenGroup
 export const masterSubModulesLLS = "LLS"
 export const subModuleLinenGroup = "Linen Group"
-export const linenGrpCode = "AGL" + utils.getRandomString(4)
-export const linenGrpDescription = "AGoatLeather" + utils.getRandomString(4)
+export const linenGrpCode = "AD" + utils.getRandomString(4)
+export const linenGrpDescription = "ADespatch" + utils.getRandomString(4)
 export const concatlinen = linenGrpCode + ' ' + '-' + ' ' + linenGrpDescription + ' '
-export const linenCode = "AGl" + utils.getRandomString(4)
-export const linenDescription = "AGoatLeather" + utils.getRandomString(4)
+export const linenCode = "AD" + utils.getRandomString(4)
+export const linenDescription = "ADespatch" + utils.getRandomString(4)
 
 //Linen Item detail
 export const subModuleLinenItemDetail = "Linen Item Details"
@@ -198,17 +198,17 @@ export const selectQuantity = requestedQuantity
 ///FEMS
 export const femsSubModule = "FEMS"
 export const workGrpDetails = "Work Group Details"
-export const workGroupCode = "AMF" + utils.getRandomNumbers(4)
-export const WorkGroupDesc = "AMotorFitting" + utils.getRandomNumbers(4)
+export const workGroupCode = "AA" + utils.getRandomNumbers(4)
+export const WorkGroupDesc = "AAttaching" + utils.getRandomNumbers(4)
 
 
-export const assetGroupCode = "A5A" + utils.getRandomNumbers(4)
-export const assetGroupDesc = "A5AmpSwitch" + utils.getRandomNumbers(4)
+export const assetGroupCode = "AB" + utils.getRandomNumbers(4)
+export const assetGroupDesc = "ABoard" + utils.getRandomNumbers(4)
 export const assetGroupDetails = "Asset Group Details"
 
 export const standardTaskDetails = "Standard Task Details"
-export const taskCode = "AR" + utils.getRandomNumbers(4)
-export const taskDesc = "AReleasing" + utils.getRandomNumbers(4)
+export const taskCode = "AG" + utils.getRandomNumbers(4)
+export const taskDesc = "AGluing" + utils.getRandomNumbers(4)
 export const standardStatus = "Active"
 export const standardEffectiveFrom = getTodayDate()
 export const typeCodeDetails = "Type Code Details"
@@ -241,13 +241,13 @@ export const effectiveFrom = getTodayDate()
 //Asset Information
 export const assetInformation = "Asset Information"
 export const TypeManufacturer = "Manufacturer"
-export const ManufacturerName = "Cable" + utils.getRandomNumbers(4)
+export const ManufacturerName = "CompanyA" + utils.getRandomNumbers(4)
 export const TypeMake = "Make"
-export const MakeName = "DoorCable" + utils.getRandomNumbers(4)
+export const MakeName = "CompanyB" + utils.getRandomNumbers(4)
 export const TypeBrand = "Brand"
-export const BrandName = "Normal" + utils.getRandomNumbers(4)
+export const BrandName = "CompanyC" + utils.getRandomNumbers(4)
 export const TypeModel = "Model"
-export const ModelName = "FirstClass" + utils.getRandomNumbers(4)
+export const ModelName = "CompanyD" + utils.getRandomNumbers(4)
 export const selectStatus = "Active"
 
 
@@ -262,14 +262,15 @@ export const Model = ModelName
 //FEMS
 export const FEMSServiceIcon = "FEMS"
 export const masterLocations = "Locations"
-export const addServiceRequest = "Add Service Request"
+// export const addServiceRequest = "Add Service Request"
+export const serviceRequest = 'Service Request'
 export const FEMSLocationSubModule1 = "User Area Master"
 export const FEMSLocationSubModule2 = "User Location Master"
 
 
 
 //Service Request
-export const serviceRequest = "SR"
+export const serviceRequestIcon = "SR"
 export const serviceRequest1 = "Service Request"
 export const serviceType = "FEMS"
 export const requestType = "T&C "
@@ -295,3 +296,7 @@ export const contractType = 'Sub-Contractor/Non-Specialised'
 export const registrationcode = 'RC' + utils.getRandomAlphaNumericString(4)
 export const contractorStatus = 'Bumi '
 export const vendorStatus = 'Active'
+
+
+
+export const OriginalText = 'You have unsaved changes on this page. Do you want to continue?'

@@ -25,7 +25,6 @@ import contractorAndVendorMaster from '../../pageobjects/FEMS/contractorAndVendo
 
 
 
-
 let requestno;
 
 
@@ -264,6 +263,7 @@ describe("Creating a full flow for FEMS", async () => {
             await fMSModule.clickLabelSSD()
             //await fMSModule.selectHospitalRepresentative(constant.fmshospitalRepresentative)
             await fMSModule.selecthospital(constant.fmshospitalRepresentative)
+            await WaitUntil.ElementIsVisible(2)
             await fMSModule.selectCompanyRepresentative(constant.fmsCompanyRep)
             await fMSModule.enterRemarks(constant.remarks)
             // await browser.pause()
@@ -341,11 +341,13 @@ describe("Creating a full flow for FEMS", async () => {
         it("Creating Service Request For FEMS", async () => {
 
             await asisHomePage.clickasisHeartIcon()
-            await asisHomePage.selectServicesIcon(constant.serviceRequest)
+            await asisHomePage.selectServicesIcon(constant.serviceRequestIcon)
             await WaitUntil.ElementIsVisible(2)
-            await sideNavBar.clickServiceRequestDropDown(constant.addServiceRequest)
-            await ReusablesComponents.refreshPage()
-            await serviceRequest.selectService(constant.serviceType)
+            await sideNavBar.clickServiceRequestDD()
+            await reuseButtons.clickAddButton()
+            // await serviceRequest.selectService(constant.serviceType)
+            await WaitUntil.ElementIsVisible(3)
+            await serviceRequest.selectServiceRequest(constant.serviceType)
             await serviceRequest.selectRequestType(constant.requestType)
             await serviceRequest.selectRequestorName(constant.requestorName, constant.concatRequestorName)
             await serviceRequest.selectUserLocationCode(constant.userLocationCode, constant.concatUserLocationCode)

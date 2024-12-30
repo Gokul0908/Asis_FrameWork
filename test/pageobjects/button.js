@@ -2,27 +2,27 @@ import ReusablesComponents from './reuse'
 
 class reuseButtons {
 
-   get logOutButton() { return $("//a[.='Log Out']") }
-   get profileIcon() { return $("//span[.='mohadmin']") }
-   get loginButton() { return $("//button[@id='btnlogin']") }
-   get addButton() { return $("//td[@id='Add']") }
-   get saveButton() { return $("//button[@id='insert']") }
-   get fmssaveButton() { return $("//button[@title='Save']") }
-   get lidsaveButton() { return $("(//button[@id='saveTab'])[1]") }
-   get vehicleSaveButton() { return $("(//button[@type='submit'])[1]") }
-   get saveButton1() { return $("(//button[.='Save'])[1]") }
-   get saveButton2() { return $("(//button[.='Save'])[2]") }
-   get fms1saveButton() { return $("//button[@id='Add']") }
-   get submitButton() { return $("//button[.='Submit']") }
-   get approvedButton() { return $("//button[.='Approved']") }
-   get clrsaveButton() { return $("//button[@id='AddRequest']") }
-   get clisaveButton() { return $("//button[@id='Issuesave']") }
-   get clisubmitButton() { return $("//button[@id='Issuesavesubmit']") }
-   get attachmentSaveButton() { return $("(//button[@id='saveUpdate'])[2]") }
-   get attachmentSaveButton2() { return $("(//button[@id='saveTab'])[2]") }
-   get addNewButton() { return $("//button[.='Add New']") }
-   get backButton() { return $("(//button[.='Back'])[1]") }
-   get toggleSearchButton() { return $("(//a[@id='advanceSearch'])[1]") }
+   get logOutButton() { return ("//a[.='Log Out']") }
+   get profileIcon() { return ("//span[.='mohadmin']") }
+   get loginButton() { return ("//button[@id='btnlogin']") }
+   get addButton() { return ("//td[@id='Add']") }
+   get saveButton() { return ("//button[@id='insert']") }
+   get fmssaveButton() { return ("//button[@title='Save']") }
+   get lidsaveButton() { return ("(//button[@id='saveTab'])[1]") }
+   get vehicleSaveButton() { return ("(//button[@type='submit'])[1]") }
+   get saveButton1() { return ("(//button[.='Save'])[1]") }
+   get saveButton2() { return ("(//button[.='Save'])[2]") }
+   get fms1saveButton() { return ("//button[@id='Add']") }
+   get submitButton() { return ("//button[.='Submit']") }
+   get approvedButton() { return ("//button[.='Approved']") }
+   get clrsaveButton() { return ("//button[@id='AddRequest']") }
+   get clisaveButton() { return ("//button[@id='Issuesave']") }
+   get clisubmitButton() { return ("//button[@id='Issuesavesubmit']") }
+   get attachmentSaveButton() { return ("(//button[@id='saveUpdate'])[2]") }
+   get attachmentSaveButton2() { return ("(//button[@id='saveTab'])[2]") }
+   get addNewButton() { return ("//button[.='Add New']") }
+   get backButton() { return ("(//button[.='Back'])[1]") }
+   get toggleSearchButton() { return ("(//a[@id='advanceSearch'])[1]") }
 
 
    async asisuserLogoutToTheApplication() {
@@ -30,7 +30,7 @@ class reuseButtons {
       await ReusablesComponents.waitAndClick(this.logOutButton)
    }
 
-   async AsislogInButton() {
+   async ClicklogInButton() {
       await ReusablesComponents.waitAndClick(this.loginButton)
    }
    async clickAddButton() {

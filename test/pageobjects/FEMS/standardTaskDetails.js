@@ -2,11 +2,11 @@ import ReusablesComponents from '../reuse'
 
 class standardTaskDetails {
 
-    getWorkGroupCode(workGroupCode) { return $(`//select[@id='WorkGroupCode']/option[.='${workGroupCode}']`) }
-    get taskCode() { return $("//input[@id='TaskCode']") }
-    get taskDescription() { return $("//input[@name='TaskDescription']") }
-    getStatus(Status){ return $(`//select[@id='Status']/option[.='${Status}']`) }
-    get effectiveFrom() { return $("//input[@id='EffectiveFrom']") }
+    getWorkGroupCode(workGroupCode) { return (`//select[@id='WorkGroupCode']/option[.='${workGroupCode}']`) }
+    get taskCode() { return ("//input[@id='TaskCode']") }
+    get taskDescription() { return ("//input[@name='TaskDescription']") }
+    getStatus(Status){ return (`//select[@id='Status']/option[.='${Status}']`) }
+    get effectiveFrom() { return ("//input[@id='EffectiveFrom']") }
 
     async enterWorkGroupCode(workGroupCode) {
         await ReusablesComponents.waitAndClick(this.getWorkGroupCode(workGroupCode))

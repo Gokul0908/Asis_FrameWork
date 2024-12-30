@@ -2,9 +2,9 @@ import ReusablesComponents from '../reuse'
 
 class WorkGrpDetails {
 
-    get addicon() { return $("//a[@ng-click='addNewRow()']") }
-    get workGroupCode() { return $("(//input[@aria-required='true'])[1]") }
-    get workGroupDescription() { return $("(//input[@aria-required='true'])[1]") }
+    get addicon() { return ("//a[@ng-click='addNewRow()']") }
+    get workGroupCode() { return ("(//input[@aria-required='true'])[1]") }
+    get workGroupDescription() { return ("(//input[@aria-required='true'])[1]") }
 
 
 

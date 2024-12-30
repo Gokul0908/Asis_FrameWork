@@ -2,23 +2,23 @@ import ReusablesComponents from '../reuse'
 class linenItemDetails {
 
     // getHospitalSpecific(selectSpecification) { return $(`//select[@name='hospitalspecific']/option[.='${selectSpecification}']`) }
-    get linenGrpCode() { return $("//input[@id='LinenGroup']") }
-    getlinengrpCodeDropDown(grpCode) { return $(`//ul[@id='UlFetch']/li/div/a[.='${grpCode}']`) }
-    get linenCode() { return $("//input[@name='LinenCode']") }
-    get linenDescription() { return $("//input[@name='LinenDescription']") }
-    getSelectStatus(status) { return $(`//select[@id='ddlStatus']/option[.='${status}']`) }    
-    getHospitalSpecific(hospitalSpecific) { return $(`//select[@name='hospitalspecific']/option[.='${hospitalSpecific}']`) }
-    getHospitalMaster(hospitalMaster){ return $(`//select[@name='HospitalMaster']/option[.='${hospitalMaster}']`)}
-    getLinenCategory(selectLinenCategory){ return $(`//select[@name='linenCategory']/option[.='${selectLinenCategory}']`)}
-    getLinenStatus(linenStatus) { return $(`//select[@ng-model='LinenItem.Status']/option[.='${linenStatus}']`) }
-    getLinenColor(linencolor){ return $(`//select[@name='Color']/option[.='${linencolor}']`)}
-    get dimensionInput(){ return $("//input[@name='Dimension']")}
-    get effectiveDate(){ return $("//input[@name='Effectivedate']")}
-    getMaterial(selectMaterial){ return $(`//select[@name='material']/option[.='${selectMaterial}']`)}
-    getStandard(selectStandard){ return $(`//select[@name='standard']/option[.='${selectStandard}']`)}
-    get standardWeight(){ return $("//input[@name='standardWeight']")}
-    get labelRemark(){ return $("//label[.='Remarks ']")}
-    get labelInput(){ return $("//textarea[@name='Remarks']")}
+    get linenGrpCode() { return ("//input[@id='LinenGroup']") }
+    getlinengrpCodeDropDown(grpCode) { return (`//ul[@id='UlFetch']/li/div/a[.='${grpCode}']`) }
+    get linenCode() { return ("//input[@name='LinenCode']") }
+    get linenDescription() { return ("//input[@name='LinenDescription']") }
+    getSelectStatus(status) { return (`//select[@id='ddlStatus']/option[.='${status}']`) }    
+    getHospitalSpecific(hospitalSpecific) { return (`//select[@name='hospitalspecific']/option[.='${hospitalSpecific}']`) }
+    getHospitalMaster(hospitalMaster){ return (`//select[@name='HospitalMaster']/option[.='${hospitalMaster}']`)}
+    getLinenCategory(selectLinenCategory){ return (`//select[@name='linenCategory']/option[.='${selectLinenCategory}']`)}
+    getLinenStatus(linenStatus) { return (`//select[@ng-model='LinenItem.Status']/option[.='${linenStatus}']`) }
+    getLinenColor(linencolor){ return (`//select[@name='Color']/option[.='${linencolor}']`)}
+    get dimensionInput(){ return ("//input[@name='Dimension']")}
+    get effectiveDate(){ return ("//input[@name='Effectivedate']")}
+    getMaterial(selectMaterial){ return (`//select[@name='material']/option[.='${selectMaterial}']`)}
+    getStandard(selectStandard){ return (`//select[@name='standard']/option[.='${selectStandard}']`)}
+    get standardWeight(){ return ("//input[@name='standardWeight']")}
+    get labelRemark(){ return ("//label[.='Remarks ']")}
+    get labelInput(){ return ("//textarea[@name='Remarks']")}
 
     async enterLinenGrpCode(linenGrpCode, concatlinen) {
         await ReusablesComponents.waitAndSetValue(this.linenGrpCode,linenGrpCode)
