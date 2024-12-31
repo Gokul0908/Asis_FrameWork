@@ -2,7 +2,7 @@ import ReusablesComponents from '../reuse'
 
 class serviceRequest {
 
-    // getSelectService(SelectService) { return $(`//select[@ng-model='ServiceRequestMst.Service']/option[.='${SelectService}']`) }
+    getSelectService(SelectService) { return $(`//select[@ng-model='ServiceRequestMst.Service']/option[.='${SelectService}']`) }
     getRequestType(RequestType) { return (`//select[@name='TypeOfRequestname']/option[.='${RequestType}']`) }
     getServiceRequest(serviceRequest) { return (`//select[@name='Service']/option[.='${serviceRequest}']`) }
     get requestorName() { return (`//input[@name='RequestorName']`) }
@@ -22,7 +22,7 @@ class serviceRequest {
     }
 
     async selectServiceRequest(serviceRequest) {
-        await this.getServiceRequest(serviceRequest).click()
+        await ReusablesComponents.waitAndClick(this.getServiceRequest(serviceRequest))
     }
 
     async selectRequestType(RequestType) {
@@ -31,13 +31,13 @@ class serviceRequest {
 
     async selectRequestorName(RequestorName, concatRequestorName) {
         await ReusablesComponents.waitAndSetValue(this.requestorName, RequestorName)
-        await this.getRequestorDD(concatRequestorName).click()
+        await ReusablesComponents.spotClick(this.getRequestorDD(concatRequestorName))
     }
 
     async selectUserLocationCode(userLocationCode, concatuserLocationCode) {
 
         await ReusablesComponents.waitAndSetValue(this.userLocationCode, userLocationCode)
-        await this.getUserLocationDD(concatuserLocationCode).click()
+        await ReusablesComponents.spotClick(this.getUserLocationDD(concatuserLocationCode))
     }
 
     async enterDetails(details) {
@@ -51,14 +51,14 @@ class serviceRequest {
         if (icon == true) {
             await ReusablesComponents.waitAndClick(this.resetIcon)
         }
-        await ReusablesComponents.waitAndClick(this.getFilterDD(filterdd))
+        await ReusablesComponents.spotClick(this.getFilterDD(filterdd))
     }
     async selectFilter2(filter2) {
         await ReusablesComponents.waitAndClick(this.getFilterDD2(filter2))
     }
 
     async clickEditIcon() {
-        await ReusablesComponents.waitAndClick(this.editIcon)
+        await ReusablesComponents.spotClick(this.editIcon)
     }
 
     async getRequestNo() {

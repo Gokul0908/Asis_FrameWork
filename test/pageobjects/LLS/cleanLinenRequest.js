@@ -19,12 +19,12 @@ class cleanLinenRequest {
 
     async enterUserDepartCode(userDepartCode) {
         await ReusablesComponents.waitAndSetValue(this.userDepartCode, userDepartCode)
-        await this.getuserDepartCodeDropDown(userDepartCode).click()
+        await ReusablesComponents.spotClick(this.getuserDepartCodeDropDown(userDepartCode))
     }
 
     async selectRequestedBy(RequestedBy) {
         await ReusablesComponents.waitAndSetValue(this.requestedBy, RequestedBy)
-        await this.getRequestedByDD(RequestedBy).click()
+        await ReusablesComponents.spotClick(this.getRequestedByDD(RequestedBy))
     }
 
     async enterRequestedQuantity(value) {
@@ -52,7 +52,7 @@ class cleanLinenRequest {
     }
 
     async getCLRDocumentNo() {
-        return await this.clrDocumentNo.getText()
+        return ReusablesComponents.waitAndGetText(this.clrDocumentNo)
     }
 
     async enterRemarks(remarks) {
@@ -61,16 +61,16 @@ class cleanLinenRequest {
 
 
     async clickAttachmentTab() {
-        await this.attachmentTab.waitForDisplayed();
-        await this.attachmentTab.waitForClickable();
+        await ReusablesComponents.waitForDisplay(this.attachmentTab)
+        await ReusablesComponents.waitForElementIsClickable(this.attachmentTab)
         await ReusablesComponents.waitAndClick(this.attachmentTab);
     }
 
     async uploadFile(filepath) {
 
         const remoteFilePath = await browser.uploadFile(filepath)
-        await this.chooseFile.waitForDisplayed()
-        await this.chooseFile.setValue(remoteFilePath)
+        await ReusablesComponents.waitForDisplay((this.chooseFile))
+        await ReusablesComponents.waitAndSetValue(this.chooseFile, remoteFilePath)
     }
 
     async clickAttachmentSaveButton() {

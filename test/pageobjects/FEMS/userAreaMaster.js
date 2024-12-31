@@ -10,7 +10,7 @@ class userAreaMaster {
 
     async enterUserAreaCode(userAreaCode, concatfmsUserAreaCode) {
         await ReusablesComponents.waitAndSetValue(this.userAreaCode, userAreaCode)        
-        await this.getUserAreaCodeDD(concatfmsUserAreaCode).click()
+        await ReusablesComponents.spotClick(this.getUserAreaCodeDD(concatfmsUserAreaCode))
     }
 
     async enterStartServiceDate(startServiceDate) {

@@ -20,28 +20,28 @@ class assetStandardization {
 
     async enterAssetTypeCode(assetTypeCode, concatAssetTypeCode) {
         await ReusablesComponents.waitAndSetValue(this.assetTypeCode, assetTypeCode)
-        await this.getAssetTypeCodeDropDown(concatAssetTypeCode).click()
+        await ReusablesComponents.spotClick(this.getAssetTypeCodeDropDown(concatAssetTypeCode))
     }
 
     async enterManufacturer(manufacturer, concatManufacturer) {
         await ReusablesComponents.waitAndSetValue(this.manufacturer, manufacturer)
-        await this.getManufacturerDropDown(concatManufacturer).click()
+        await ReusablesComponents.spotClick(this.getManufacturerDropDown(concatManufacturer))
         await WaitUntil.ElementIsVisible(2)
     }
 
     async enterMake(make, concatMake) {
         await ReusablesComponents.waitAndSetValue(this.make, make)
-        await this.getMakeDropDown(concatMake).click()
+        await ReusablesComponents.spotClick(this.getMakeDropDown(concatMake))
     }
 
     async enterBrand(brand, concatBrand) {
         await ReusablesComponents.waitAndSetValue(this.brand, brand)
-        await this.getBrandDropDown(concatBrand).click()
+        await ReusablesComponents.spotClick(this.getBrandDropDown(concatBrand))
     }
 
     async enterModel(model, concatModel) {
         await ReusablesComponents.waitAndSetValue(this.model, model)
-        await this.getModelDropDown(concatModel).click()
+        await ReusablesComponents.spotClick(this.getModelDropDown(concatModel))
     }
 
     async selectStatus(selectStatus) {

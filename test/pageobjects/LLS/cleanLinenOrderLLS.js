@@ -25,7 +25,7 @@ class cleanLinenOrderLLS {
     }
     async selectLinenCode(concatLinenCode, linenCode) {
         await ReusablesComponents.waitAndSetValue(this.linenCode, linenCode)
-        await this.getLinenCodeDropdown(concatLinenCode).click()
+        await ReusablesComponents.spotClick(this.getLinenCodeDropdown(concatLinenCode))
     }
 
     async getStoreBalance() {
@@ -75,7 +75,7 @@ class cleanLinenOrderLLS {
     async enterCLONo() {
         const cloNo = await this.getCLONo()
         await ReusablesComponents.waitAndSetValue(this.CLONoInput, cloNo)
-        await this.getCLONoDropdown(cloNo).click()
+        await ReusablesComponents.spotClick(this.getCLONoDropdown(cloNo))
     }
 
 } export default new cleanLinenOrderLLS()

@@ -14,7 +14,7 @@ class CleanLinenIssue {
 
     async enterCLRDocumentNo(CLIDocumentNo) {
         await ReusablesComponents.waitAndSetValue(this.CLRDocumentNo, CLIDocumentNo)
-        await this.getCLRDDropdown(CLIDocumentNo).click()
+        await ReusablesComponents.spotClick(this.getCLRDDropdown(CLIDocumentNo))
 
     }
 
@@ -24,7 +24,7 @@ class CleanLinenIssue {
 
     async enterissuedQuantity(issuedQuantity) {
 
-        let IssuedQuantityTextBox = this.issuedQuantity.getSize()
+        let IssuedQuantityTextBox = ReusablesComponents.getSize(this.issuedQuantity)
         for (let i = 0; i <= IssuedQuantityTextBox; i++) {
             await ReusablesComponents.waitAndSetValue(IssuedQuantityTextBox, issuedQuantity)
         }

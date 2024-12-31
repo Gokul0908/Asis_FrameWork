@@ -1,11 +1,7 @@
 import * as Constant from "../../../Constants/const"
 import ReusablesComponents from '../reuse'
-import WaitUntil from "../waitUntil"
-
 
 class FMSModule {
-
-
     
     getCategoryofArea(AreaName) { return (`//select[@name='CategoryofArea']/option[.='${AreaName}']`) }
     //get companyMasterAddButton() { return $("//span[@class='ui-icon ui-icon-refresh']") }
@@ -58,28 +54,28 @@ class FMSModule {
         await ReusablesComponents.waitAndClick(this.unsavedChangePopup)
     }
     async clickLabelSSD() {
-        await this.labelSSD.waitForDisplayed()
-        await this.labelSSD.click()
+        await ReusablesComponents.waitForDisplay(this.labelSSD)
+        await ReusablesComponents.spotClick(this.labelSSD)
     }
     async clickLabelDesignaton() {
-        await this.labelDesignation.waitForDisplayed()
-        await this.labelDesignation.click()
+        await ReusablesComponents.waitForDisplay(this.labelDesignation)
+        await ReusablesComponents.spotClick(this.labelDesignation)
     }
     async clickLabelLevel() {
-        await this.labelLevel.waitForDisplayed()
-        await this.labelLevel.click()
+        await ReusablesComponents.waitForDisplay(this.labelLevel)
+        await ReusablesComponents.spotClick(this.labelLevel)
     }
     async clickLabelUDC() {
-        await this.labelUDC.waitForDisplayed()
-        await this.labelUDC.click()
+        await ReusablesComponents.waitForDisplay(this.labelUDC)
+        await ReusablesComponents.spotClick(this.labelUDC)
     }
     async clickRemarks() {
-        await this.labelRemarks.waitForDisplayed()
-        await this.labelRemarks.click()
+        await ReusablesComponents.waitForDisplay(this.labelRemarks)
+        await ReusablesComponents.spotClick(this.labelRemarks)
     }
     async clickasisHeartIcon() {
-        await this.asisHeartIcon.waitForDisplayed()
-        await this.asisHeartIcon.click()
+        await ReusablesComponents.waitForDisplay(this.asisHeartIcon)
+        await ReusablesComponents.spotClick(this.asisHeartIcon)
     }
     async enterFMSUserAreaCode(fmsUserAreaCode) {
         await ReusablesComponents.waitAndSetValue(this.uamUserAreaCode, fmsUserAreaCode)
@@ -119,7 +115,7 @@ class FMSModule {
         // selectvalue.selectByVisibleText(userDepartmentCode)
         await ReusablesComponents.waitAndSetValue(this.userDepartmentCode, userDepartmentCode)
         // await this.getdropDown(Constant.concatCodeName).waitForDisplayed({timeout:20000})
-        await this.getdropDown(Constant.concatCodeName).click()
+        await ReusablesComponents.spotClick(this.getdropDown(Constant.concatCodeName))
     }
 
 
@@ -129,7 +125,7 @@ class FMSModule {
         // await this.hospitalrep.selectByVisibleText(hospitalRepresentative).click()
         await ReusablesComponents.waitAndSetValue(this.hospitalRepresentative, selectHospital)
         // await this.gethospitalDropDown(Constant.concatHospitalRep).waitForDisplayed()
-        await this.gethospitalDropDown(Constant.concatHospitalRep).click()        
+        await ReusablesComponents.spotClick(this.gethospitalDropDown(Constant.concatHospitalRep))        
     }
 
     async selectHospitalRepresentative(hospitalRepresentative) {
@@ -139,7 +135,7 @@ class FMSModule {
     async selectCompanyRepresentative(companyRepresentative) {
         await ReusablesComponents.waitAndSetValue(this.companyRepresentative, companyRepresentative)
         // await this.getCompanyDropDown(Constant.concatCompanyRep).waitForDisplayed()
-        await this.getCompanyDropDown(Constant.concatCompanyRep).click()
+        await ReusablesComponents.spotClick(this.getCompanyDropDown(Constant.concatCompanyRep))
     }
 
 

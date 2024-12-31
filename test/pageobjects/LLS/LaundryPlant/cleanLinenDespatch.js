@@ -59,22 +59,22 @@ class cleanLinenDespatch {
 
     async enterDriverCode(driverCode) {
         await ReusablesComponents.waitAndSetValue(this.driverCode, driverCode)
-        await this.getdriverCodeDD(driverCode).click()
+        await ReusablesComponents.spotClick(this.getdriverCodeDD(driverCode))
     }
 
     async enterVehicleRegisterNo(VehicleRegister) {
         await ReusablesComponents.waitAndSetValue(this.vehicleRegisterNo, VehicleRegister)
-        await this.getvehicleRegisterNoDD(VehicleRegister).click()
+        await ReusablesComponents.spotClick(this.getvehicleRegisterNoDD(VehicleRegister))
     }
 
     async enterReceiverCode(ReceiverCode) {
         await ReusablesComponents.waitAndSetValue(this.ReceiverCode, ReceiverCode)
-        await this.getReceiverCodeDD(ReceiverCode).click()
+        await ReusablesComponents.spotClick(this.getReceiverCodeDD(ReceiverCode))
     }
 
     async enterCheckedBy(CheckedBy) {
         await ReusablesComponents.waitAndSetValue(this.CheckedBy, CheckedBy)
-        await this.getCheckedByDD(CheckedBy).click()
+        await ReusablesComponents.spotClick(this.getCheckedByDD(CheckedBy))
     }
 
     async enterTotalWeight(TotalWeight) {
@@ -102,7 +102,7 @@ class cleanLinenDespatch {
         await ReusablesComponents.waitAndClick(this.despatchDateAndTime)
         await this.verifyDespatchTimeDropDown()
         await ReusablesComponents.waitAndSetValue(this.despatchDateAndTime, DespatchDate)
-        await this.gettime(DespatchTime).click()
+        await ReusablesComponents.spotClick(this.gettime(DespatchTime))
     }
 
     async enterNoOfTrolleys(NoofTrolley) {

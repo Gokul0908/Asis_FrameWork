@@ -10,7 +10,7 @@ class linenParRequire {
         await ReusablesComponents.waitAndSetValue(this.pageSizeDropDown, pagesize)
     }
 
-    async selectparRequire(parvalue,) {
+    async selectparRequire(parvalue, pagesize) {
 
         const parrequire = await ReusablesComponents.waitAndGetValue(this.parRequireField)
         if (parrequire == 0) {
@@ -19,7 +19,5 @@ class linenParRequire {
             }
         }
     }
-
-
 
 } export default new linenParRequire()

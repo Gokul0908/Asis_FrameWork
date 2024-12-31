@@ -9,7 +9,7 @@ class userLocationMaster {
 
     async enterUserLocationCode(userLocationCode, concatfmsUserLocationCode) {
         await ReusablesComponents.waitAndSetValue(this.userLocationCode, userLocationCode)        
-        await this.getUserLocationCodeDD(concatfmsUserLocationCode).click()
+        await ReusablesComponents.spotClick(this.getUserLocationCodeDD(concatfmsUserLocationCode))
     }
 }
 export default new userLocationMaster()

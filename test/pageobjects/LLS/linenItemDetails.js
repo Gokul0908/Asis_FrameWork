@@ -22,7 +22,7 @@ class linenItemDetails {
 
     async enterLinenGrpCode(linenGrpCode, concatlinen) {
         await ReusablesComponents.waitAndSetValue(this.linenGrpCode,linenGrpCode)
-        await this.getlinengrpCodeDropDown(concatlinen).click()
+        await ReusablesComponents.spotClick(this.getlinengrpCodeDropDown(concatlinen))
     }
 
     async enterLinenCode(linenCode) {

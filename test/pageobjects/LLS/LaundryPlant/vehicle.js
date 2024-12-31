@@ -32,7 +32,7 @@ class vehicle {
 
     async clickLicenseDropDown(licenseCode, concatLicense) {
         await ReusablesComponents.waitAndSetValue(this.licenseCode, licenseCode)
-        await this.getLicenseDropDown(concatLicense).click()
+        await ReusablesComponents.spotClick(this.getLicenseDropDown(concatLicense))
     }
 
     async setLicenseNo(licenseNo) {
@@ -55,7 +55,7 @@ class vehicle {
     
 
     async checkExpiryBox() {
-        await this.ExpiryBox.waitForDisplayed()
+        await ReusablesComponents.waitForDisplay(this.ExpiryBox)
     }
 
     async enterExpiryDate(expiryDate) {

@@ -6,10 +6,10 @@ class LoginPage {
 
     get asisUsername() { return ("//input[@id='LoginName']") }
     get asisPassword() { return ("//input [@id='Password']") }
-    get forgotPasswordLink() { return $("//a[.='Forgot Password?']") }
-    get signUpLink() { return $("//a[.='Sign Up!']") }
-    get abiText() { return $("//p[.='ASIS Business Intelligence']") }
-    get errorMsg() { return $("//span[@id='errMsgContent']") }
+    get forgotPasswordLink() { return ("//a[.='Forgot Password?']") }
+    get signUpLink() { return ("//a[.='Sign Up!']") }
+    get abiText() { return ("//p[.='ASIS Business Intelligence']") }
+    get errorMsg() { return ("//span[@id='errMsgContent']") }
 
 
     async asisUserLoginToTheApplication(aUserName, aPassword) {
@@ -23,7 +23,7 @@ class LoginPage {
     async errormsgVisible(){
 
         await WaitUntil.ElementIsVisible(4)
-        const ErrorMsg =await this.errorMsg.isDisplayed()
+        const ErrorMsg =await ReusablesComponents.isDisplayed(this.errorMsg)
 
         expect(ErrorMsg).toBe(true)
     }

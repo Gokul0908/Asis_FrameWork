@@ -51,7 +51,7 @@ class lls {
 
     async enterLinenGrpCode(linenCode, concatLinenCode) {
         await ReusablesComponents.waitAndSetValue(this.linenGrpCode, linenCode)
-        await this.getLinenCodeDropDown(concatLinenCode).click()
+        await ReusablesComponents.spotClick(this.getLinenCodeDropDown(concatLinenCode))
     }
     async selectFileType(filetype) {
         await ReusablesComponents.waitAndClick(this.getFileType(filetype))
@@ -63,8 +63,8 @@ class lls {
     async uploadFile(filepath) {
 
         const remoteFilePath = await browser.uploadFile(filepath)
-        await this.chooseFile.waitForDisplayed()
-        await this.chooseFile.setValue(remoteFilePath)
+        await ReusablesComponents.waitForDisplay(this.chooseFile)
+        await ReusablesComponents.waitAndSetValue(this.chooseFile, remoteFilePath)
     }
 
     async enterUnitPriceRM(unitPrice) {
@@ -80,14 +80,14 @@ class lls {
 
     async selectUserDepartmentArea(userDepartmentCode, concatCodeName) {
         await ReusablesComponents.waitAndSetValue(this.userDepartmentCode, userDepartmentCode)
-        await this.getdropDown(concatCodeName).click()
+        await ReusablesComponents.spotClick(this.getdropDown(concatCodeName))
     }
 
 
     async selecthospital(selectHospital, concatHospitalRep) {
 
         await ReusablesComponents.waitAndSetValue(this.hospitalRepresentative, selectHospital)
-        await this.gethospitalDropDown(concatHospitalRep).click()
+        await ReusablesComponents.spotClick(this.gethospitalDropDown(concatHospitalRep))
     }
     async selectOperatingDays(operatingDays) {
         await ReusablesComponents.waitAndClick(this.getoperatingDays(operatingDays))
@@ -98,14 +98,14 @@ class lls {
     }
 
     async verifyTimeDropDown() {
-        await this.deliveryTimeDropDown.waitForDisplayed()
+        await ReusablesComponents.waitForDisplay(this.deliveryTimeDropDown)
     }
 
     async enterDeliveryTime(deliveryTime) {
 
         await ReusablesComponents.waitAndClick(this.deliveryTime)
         await this.verifyTimeDropDown()
-        await this.gettime(deliveryTime).click()
+        await ReusablesComponents.spotClick(this.gettime(deliveryTime))
     }
 
     async clickLabelRemarks() {
@@ -113,23 +113,23 @@ class lls {
     }
 
     async verifyCollectionTimeDropDown() {
-        await this.collectionTimeDropDown.waitForDisplayed()
+        await ReusablesComponents.waitForDisplay(this.collectionTimeDropDown)
     }
 
     async enterCollectionTime(collectionTime) {
         await ReusablesComponents.waitAndClick(this.collectionTime)
         await this.verifyCollectionTimeDropDown()
-        await this.getCollectionTime(collectionTime).click()
+        await ReusablesComponents.spotClick(this.getCollectionTime(collectionTime))
     }
 
     async verifyLinenArrangementTimeDropDown() {
-        await this.linenArrangementTimeDropDown.waitForDisplayed()
+        await ReusablesComponents.waitForDisplay(this.linenArrangementTimeDropDown)
     }
 
     async enterLinenArrangementTime(linenTime) {
         await ReusablesComponents.waitAndClick(this.linenArrangement)
         await this.verifyLinenArrangementTimeDropDown()
-        await this.getLinenArrangementTime(linenTime).click()
+        await ReusablesComponents.spotClick(this.getLinenArrangementTime(linenTime))
     }
 
     async selectFurnishingItem(furnishingItem) {
@@ -149,7 +149,7 @@ class lls {
 
     async enterLinencode(linencode, concatLinenCode) {
         await ReusablesComponents.waitAndSetValue(this.linencode, linencode)
-        await this.getUserDepartLinenCodeDropDown(concatLinenCode).click()
+        await ReusablesComponents.spotClick(this.getUserDepartLinenCodeDropDown(concatLinenCode))
     }
 
     async enterPar1Require(par1Require) {
@@ -175,7 +175,7 @@ class lls {
     }
 
     async checkSuccessNotification(successMessage) {
-        await this.succesLabel.waitForDisplayed({ timeout: 20000 })
+        await ReusablesComponents.waitForDisplay(this.succesLabel)
         const status = await ReusablesComponents.waitAndGetText(this.succesLabel)
         await expect(status).toBe(successMessage)
         return status

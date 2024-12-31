@@ -14,12 +14,12 @@ class heppmRegister {
 
     async enterAssetTypeCode(assetTypeCode, concatAssetTypeCode) {
         await ReusablesComponents.waitAndSetValue(this.assetTypeCode, assetTypeCode)
-        await this.getAssetTypeCodeDropDown(concatAssetTypeCode).click()
+        await ReusablesComponents.spotClick(this.getAssetTypeCodeDropDown(concatAssetTypeCode))
     }
 
     async enterTaskCode(taskCode, concatTaskCode) {
         await ReusablesComponents.waitAndSetValue(this.taskCode, taskCode)
-        await this.getTaskCodeDropDown(concatTaskCode).click()
+        await ReusablesComponents.spotClick(this.getTaskCodeDropDown(concatTaskCode))
     }
 
     async selectPPMFrequency(selectfrequency) {

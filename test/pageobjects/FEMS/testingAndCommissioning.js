@@ -12,7 +12,7 @@ class TestingandCommissioning {
 
     async enterServiceRequestNo(requestno) {
         await ReusablesComponents.waitAndSetValue(this.serviceRequestNo, requestno)
-        await ReusablesComponents.waitAndClick(this.getServiceRequestDD(requestno))
+        await ReusablesComponents.spotClick(this.getServiceRequestDD(requestno))
     }
 
     async ClickNewTypeCodeRequest() {

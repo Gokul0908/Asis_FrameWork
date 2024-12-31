@@ -27,7 +27,7 @@ class typeCodeDetails {
 
     async enterAssetGroupCode(assetGroupCode, concatAssetGroupCode) {
         await ReusablesComponents.waitAndSetValue(this.assetGroupCode, assetGroupCode)
-        await this.getAssetDropDown(concatAssetGroupCode).click()
+        await ReusablesComponents.spotClick(this.getAssetDropDown(concatAssetGroupCode))
     }
 
     async selectAssetClarification(assetclarification) {

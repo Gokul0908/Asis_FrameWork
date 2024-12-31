@@ -18,9 +18,9 @@ class asisHomePage {
 
 
    async hoverOnServiceIcon(serviceName) {
-      await this.getServicesIcon(serviceName).moveTo()
-      await this.getIconExpansion(serviceName).waitForDisplayed()
-      await expect(await this.getIconExpansion(serviceName).isDisplayed()).toBe(true)
+      await ReusablesComponents.moveToTheElement(this.getServicesIcon(serviceName))
+      await ReusablesComponents.waitForDisplay(this.getIconExpansion(serviceName))
+      await expect(ReusablesComponents.isDisplayed(this.getIconExpansion(serviceName))).toBe(true)
    }
 
    async asisuserLogoutToTheApplication() {
@@ -42,13 +42,13 @@ class asisHomePage {
       await ReusablesComponents.waitAndClick(this.chooseLocationDropDown);
       await ReusablesComponents.waitAndClick(this.getlocation(selectLocation));
    }
-   async headerVisible(){
+   async headerVisible() {
       await WaitUntil.ElementIsVisible(5)
-      const header = await this.asisheader.isDisplayed()
+      const header = await ReusablesComponents.isDisplayed(this.asisheader)
       expect(header).toBe(true)
    }
 
-   
+
 }
 
 export default new asisHomePage()
