@@ -24,23 +24,51 @@ class assetStandardization {
     }
 
     async enterManufacturer(manufacturer, concatManufacturer) {
-        await ReusablesComponents.waitAndSetValue(this.manufacturer, manufacturer)
+        // await ReusablesComponents.waitAndSetValue(this.manufacturer, manufacturer)
+
+        await ReusablesComponents.waitAndSetValue(this.manufacturer, '')
+        for (const char of manufacturer) {
+            await $(this.manufacturer).addValue(char)
+            await browser.pause(500)
+        }
+
         await ReusablesComponents.spotClick(this.getManufacturerDropDown(concatManufacturer))
-        await WaitUntil.ElementIsVisible(2)
     }
 
     async enterMake(make, concatMake) {
-        await ReusablesComponents.waitAndSetValue(this.make, make)
+        // await ReusablesComponents.waitAndSetValue(this.make, make)
+        await ReusablesComponents.waitAndSetValue(this.make, '')
+
+        for (const char of make) {
+            await $(this.make).addValue(char)
+            await browser.pause(500);
+        }
+
         await ReusablesComponents.spotClick(this.getMakeDropDown(concatMake))
     }
 
     async enterBrand(brand, concatBrand) {
-        await ReusablesComponents.waitAndSetValue(this.brand, brand)
+        // await ReusablesComponents.waitAndSetValue(this.brand, brand)
+
+        await ReusablesComponents.waitAndSetValue(this.brand, '')
+
+        for (const char of brand) {
+            await $(this.brand).addValue(char)
+            await browser.pause(500);
+        }
+
         await ReusablesComponents.spotClick(this.getBrandDropDown(concatBrand))
     }
 
     async enterModel(model, concatModel) {
-        await ReusablesComponents.waitAndSetValue(this.model, model)
+        // await ReusablesComponents.waitAndSetValue(this.model, model)
+        await ReusablesComponents.waitAndSetValue(this.model, '')
+
+        for (const char of model) {
+            await $(this.model).addValue(char)
+            await browser.pause(500);
+        }
+
         await ReusablesComponents.spotClick(this.getModelDropDown(concatModel))
     }
 

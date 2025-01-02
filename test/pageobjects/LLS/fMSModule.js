@@ -2,7 +2,7 @@ import * as Constant from "../../../Constants/const"
 import ReusablesComponents from '../reuse'
 
 class FMSModule {
-    
+
     getCategoryofArea(AreaName) { return (`//select[@name='CategoryofArea']/option[.='${AreaName}']`) }
     //get companyMasterAddButton() { return $("//span[@class='ui-icon ui-icon-refresh']") }
     get userAreaMaterRefreshIcon() { return ("//span[@class='ui-icon ui-icon-refresh']") }
@@ -43,9 +43,9 @@ class FMSModule {
     getCompanyDropDown(concatCompanyRep) { return (`//ul[@id='UlFetchCompany']/li/div/a[.='${concatCompanyRep}']`) }
     getUserAreaCodeDropDown(concatUserAreaCode) { return (`//ul[@id='UlFetchUserAreaCode']/li/div/a[.='${concatUserAreaCode}']`) }
     get unsavedChangePopup() { return ("//button[.='No']") }
-    get remarks() { return ("//textarea[@name='Remarks']") }   
+    get remarks() { return ("//textarea[@name='Remarks']") }
 
-    
+
     async enterRemarks(remarks) {
         await ReusablesComponents.waitAndSetValue(this.remarks, remarks)
     }
@@ -62,11 +62,9 @@ class FMSModule {
         await ReusablesComponents.spotClick(this.labelDesignation)
     }
     async clickLabelLevel() {
-        await ReusablesComponents.waitForDisplay(this.labelLevel)
         await ReusablesComponents.spotClick(this.labelLevel)
     }
     async clickLabelUDC() {
-        await ReusablesComponents.waitForDisplay(this.labelUDC)
         await ReusablesComponents.spotClick(this.labelUDC)
     }
     async clickRemarks() {
@@ -113,8 +111,13 @@ class FMSModule {
         // await this.userDepartmentCode.setValue(userDepartmentCode)
         // const selectvalue= await this.dropDown
         // selectvalue.selectByVisibleText(userDepartmentCode)
-        await ReusablesComponents.waitAndSetValue(this.userDepartmentCode, userDepartmentCode)
-        // await this.getdropDown(Constant.concatCodeName).waitForDisplayed({timeout:20000})
+        await ReusablesComponents.waitAndSetValue(this.userDepartmentCode, '')
+
+        for (const char of userDepartmentCode) {
+
+            await $(this.userDepartmentCode).addValue(char)
+            await browser.pause(500)
+        }
         await ReusablesComponents.spotClick(this.getdropDown(Constant.concatCodeName))
     }
 
@@ -123,9 +126,15 @@ class FMSModule {
         // await ReusablesComponents.waitAndClick(this.hospitalrep)
         // //await this.hospitalrep.setValue()
         // await this.hospitalrep.selectByVisibleText(hospitalRepresentative).click()
-        await ReusablesComponents.waitAndSetValue(this.hospitalRepresentative, selectHospital)
-        // await this.gethospitalDropDown(Constant.concatHospitalRep).waitForDisplayed()
-        await ReusablesComponents.spotClick(this.gethospitalDropDown(Constant.concatHospitalRep))        
+        await ReusablesComponents.waitAndSetValue(this.hospitalRepresentative, '')
+
+        for (const char of selectHospital) {
+
+            await $(this.hospitalRepresentative).addValue(char)
+            await browser.pause(500)
+        }
+
+        await ReusablesComponents.spotClick(this.gethospitalDropDown(Constant.concatHospitalRep))
     }
 
     async selectHospitalRepresentative(hospitalRepresentative) {
@@ -133,8 +142,12 @@ class FMSModule {
     }
 
     async selectCompanyRepresentative(companyRepresentative) {
-        await ReusablesComponents.waitAndSetValue(this.companyRepresentative, companyRepresentative)
-        // await this.getCompanyDropDown(Constant.concatCompanyRep).waitForDisplayed()
+        await ReusablesComponents.waitAndSetValue(this.companyRepresentative, '')
+
+        for (const char of companyRepresentative) {
+            await $(this.companyRepresentative).addValue(char)
+            await browser.pause(500)
+        }
         await ReusablesComponents.spotClick(this.getCompanyDropDown(Constant.concatCompanyRep))
     }
 

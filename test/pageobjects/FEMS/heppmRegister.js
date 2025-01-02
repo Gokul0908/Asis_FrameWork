@@ -4,7 +4,7 @@ class heppmRegister {
 
     get assetTypeCode() { return ("//input[@id='AssetTypeCode']") }
     getAssetTypeCodeDropDown(assetTypeCode) { return (`//ul[@id='UlFetchAssetTypeCode']/li/div/a[.='${assetTypeCode}']`) }
-    get taskCode() { return $("//input[@id='TaskCode']") }
+    get taskCode() { return ("//input[@id='TaskCode']") }
     getTaskCodeDropDown(taskCode) { return (`//ul[@id='UlFetchTaskCode']/li/div/a[.='${taskCode}']`) }
     getppmFrequency(selectfrequency) { return (`//select[@id='PPMFrequency']/option[.='${selectfrequency}']`) }
     get version() { return ("//input[@ng-model='HEPPMRegister.Version']") }
@@ -13,12 +13,26 @@ class heppmRegister {
     get addIcon() { return ("//a[@ng-click='VersionHistory()']") }
 
     async enterAssetTypeCode(assetTypeCode, concatAssetTypeCode) {
-        await ReusablesComponents.waitAndSetValue(this.assetTypeCode, assetTypeCode)
+
+        await ReusablesComponents.waitAndSetValue(this.assetTypeCode, '')
+
+        for (const char of assetTypeCode) {
+            await $(this.assetTypeCode).addValue(char)
+            await browser.pause(500)
+        }
+
         await ReusablesComponents.spotClick(this.getAssetTypeCodeDropDown(concatAssetTypeCode))
     }
 
     async enterTaskCode(taskCode, concatTaskCode) {
-        await ReusablesComponents.waitAndSetValue(this.taskCode, taskCode)
+
+        await ReusablesComponents.waitAndSetValue(this.taskCode, '')
+
+        for (const char of taskCode) {
+
+            await $(this.taskCode).addValue(char)
+            await browser.pause(500)
+        }
         await ReusablesComponents.spotClick(this.getTaskCodeDropDown(concatTaskCode))
     }
 
@@ -36,8 +50,8 @@ class heppmRegister {
 
     async uploadFile(filepath) {
         const remoteFilePath = await browser.uploadFile(filepath)
-        await this.chooseFile.waitForDisplayed()
-        await this.chooseFile.setValue(remoteFilePath)
+        await ReusablesComponents.waitForDisplay(this.chooseFile)
+        await ReusablesComponents.waitAndSetValue(this.chooseFile, remoteFilePath)
     }
 
     async clickAddIcon() {

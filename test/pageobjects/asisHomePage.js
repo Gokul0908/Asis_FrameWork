@@ -20,7 +20,8 @@ class asisHomePage {
    async hoverOnServiceIcon(serviceName) {
       await ReusablesComponents.moveToTheElement(this.getServicesIcon(serviceName))
       await ReusablesComponents.waitForDisplay(this.getIconExpansion(serviceName))
-      await expect(ReusablesComponents.isDisplayed(this.getIconExpansion(serviceName))).toBe(true)
+      const iconExpansion = await ReusablesComponents.isDisplayed(this.getIconExpansion(serviceName))
+      await expect(iconExpansion).toBe(true)
    }
 
    async asisuserLogoutToTheApplication() {

@@ -26,7 +26,7 @@ class ReusablesComponents {
     }
 
     async waitAndSetValue(selector, value) {
-        await $(selector).waitForDisplayed({ timeout: 60000 })
+        // await $(selector).waitForDisplayed({ timeout: 60000 })
         await $(selector).setValue(value)
     }
 
@@ -51,11 +51,11 @@ class ReusablesComponents {
     }
 
     async waitForDisplay(selector) {
-        await $(selector).waitForDisplayed()
+        await $(selector).waitForDisplayed({ timeout: 60000 })
     }
 
     async isDisplayed(selector) {
-        await $(selector).isDisplayed()
+        return await $(selector).isDisplayed()
     }
 
     async waitForElementIsClickable(selector) {
@@ -206,7 +206,12 @@ class ReusablesComponents {
     }
 
     async enterValue(entertext) {
-        await this.waitAndSetValue(this.enterText, entertext)
+        await this.waitAndSetValue(this.enterText, '')
+
+        for (const char of entertext) {
+            await $(this.enterText).addValue(char)
+            await browser.pause(500)
+        }
     }
 
     async clickFindButton() {

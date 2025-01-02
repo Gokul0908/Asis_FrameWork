@@ -9,7 +9,14 @@ class userAreaMaster {
 
 
     async enterUserAreaCode(userAreaCode, concatfmsUserAreaCode) {
-        await ReusablesComponents.waitAndSetValue(this.userAreaCode, userAreaCode)        
+        // await ReusablesComponents.waitAndSetValue(this.userAreaCode, userAreaCode)
+        await ReusablesComponents.waitAndSetValue(this.userAreaCode, '')
+
+        for (const char of userAreaCode ){
+
+            await $(this.userAreaCode).addValue(char)
+            await browser.pause(500)
+        }
         await ReusablesComponents.spotClick(this.getUserAreaCodeDD(concatfmsUserAreaCode))
     }
 

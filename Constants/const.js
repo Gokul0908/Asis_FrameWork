@@ -278,7 +278,7 @@ export const requestorName = "Asisuser"
 export const requestorDesignation = "Hospital Director"
 export const concatRequestorName = requestorName + ' ' + '-' + ' ' + requestorDesignation
 export const userLocationCode = fmsUserLocationCode
-export const concatUserLocationCode = fmsUserLocationCode + ' ' + '-' + fmsUserLocationName
+export const concatUserLocationCode = fmsUserLocationCode + ' ' + '-' + ' ' + fmsUserLocationName
 export const details = "Demo Details"
 export const TandC = 'T&C'
 export const TestingandCommissioning = "Testing and Commissioning"
@@ -300,3 +300,12 @@ export const vendorStatus = 'Active'
 
 
 export const OriginalText = 'You have unsaved changes on this page. Do you want to continue?'
+export const state = 'Selangor'
+export const addressLine1 = "Line 1 Address" + utils.getRandomNumbers(3)
+export const city = "City" + utils.getRandomNumbers(3)
+export const postCode = 'Code' + utils.getRandomNumbers(3)
+export const contactPerson = "Person" + utils.getRandomNumbers(2)
+export const telephone = utils.getRandomNumbers(11)
+export const designation = "Job" + utils.getRandomNumbers(2)
+export const email = "mail@gmail.com" + utils.getRandomNumbers(3)
+

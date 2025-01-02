@@ -8,7 +8,15 @@ class TestingandCommissioning {
     get newTypeCodeRequest() { return ("//button[contains(.,'New Type Code Request')]") }
     gettndcType(type) { return (`//select[@id='ddlTCType']/option[.='${type}']`) }
     get tndcDate() { return ("//input[@id='txtTCDate']") }
-    get requestorDate() { return ("//input[@id='txtRequestorDate']") }
+    get requestorDate() { return ("//input[@name='RequestorDate']") }
+    get requestorName() { return ("//input[@name='RequestorName']") }
+    getAssetClasification(selectClasification) { return (`//select[@name='AssetClassification']/option[.='${selectClasification}']`) }
+    getAssetCategory(selectCategory) { return (`//select[@name='AssetCategory']/option[.='${selectCategory}']`) }
+    getAssetGroupCode() { return ("//input[@name='AssetgroupCode']") }
+    getMaintenancesCategory(selectCategory) { return (`//select[@name='MaintenanceCategory']/option[contains(.,'${selectCategory}')]`) }
+    get assetTypeCode() { return ("(//input[@name='AssetTypeCode'])[2]") }
+
+
 
     async enterServiceRequestNo(requestno) {
         await ReusablesComponents.waitAndSetValue(this.serviceRequestNo, requestno)
@@ -29,7 +37,7 @@ class TestingandCommissioning {
         await ReusablesComponents.waitAndSetValue(this.tndcDate, TodayDate)
     }
 
-    async EnterRequestorDate(requestordate){
+    async EnterRequestorDate(requestordate) {
 
         await ReusablesComponents.waitAndSetValue(this.requestorDate, requestordate)
     }

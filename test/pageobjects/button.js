@@ -99,12 +99,12 @@ class reuseButtons {
 
    async clickBackButton() {
 
-      await this.waitAndClick(this.backButton)
+      await ReusablesComponents.waitAndClick(this.backButton)
    }
 
    async clickToggleSearchBtn(){
 
-      await this.waitAndClick(this.toggleSearchButton)
+      await ReusablesComponents.waitAndClick(this.toggleSearchButton)
    }
 
 } export default new reuseButtons()

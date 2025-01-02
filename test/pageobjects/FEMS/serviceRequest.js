@@ -8,7 +8,7 @@ class serviceRequest {
     get requestorName() { return (`//input[@name='RequestorName']`) }
     getRequestorDD(RequestorDD) { return (`//ul[@id='UlFetchhospital']/li/div/a[.='${RequestorDD}']`) }
     get userLocationCode() { return ("//input[@id='UserLocationCode']") }
-    getUserLocationDD(userLocation) { return (`//ul[@id='UlFetchUserLocationCode']/li[@class='table-responsive tableFixedHeight']/div/a[contains(.,'${userLocation}'])`) }
+    getUserLocationDD(userLocation) { return (`//ul[@id='UlFetchUserLocationCode']/li/div/a[contains(.,'${userLocation}')]`) }
     get details() { return ("//textarea[@name='Details']") }
     getFilterDD(filterdd) { return (`//select/option[.='${filterdd}']`) }
     getFilterDD2(filter2) { return (`//select[@class='selectopts']/option[.='${filter2}']`) }
@@ -36,7 +36,13 @@ class serviceRequest {
 
     async selectUserLocationCode(userLocationCode, concatuserLocationCode) {
 
-        await ReusablesComponents.waitAndSetValue(this.userLocationCode, userLocationCode)
+        await ReusablesComponents.waitAndSetValue(this.userLocationCode, '')
+
+        for (const char of userLocationCode) {
+            await $(this.userLocationCode).addValue(char)
+            await browser.pause(500)
+        }
+
         await ReusablesComponents.spotClick(this.getUserLocationDD(concatuserLocationCode))
     }
 

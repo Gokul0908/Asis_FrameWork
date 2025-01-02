@@ -8,7 +8,13 @@ class userLocationMaster {
 
 
     async enterUserLocationCode(userLocationCode, concatfmsUserLocationCode) {
-        await ReusablesComponents.waitAndSetValue(this.userLocationCode, userLocationCode)        
+        // await ReusablesComponents.waitAndSetValue(this.userLocationCode, userLocationCode)
+        await ReusablesComponents.waitAndSetValue(this.userLocationCode, '')
+
+        for (const char of userLocationCode) {
+
+            await $(this.userLocationCode).addValue(char)
+        }
         await ReusablesComponents.spotClick(this.getUserLocationCodeDD(concatfmsUserLocationCode))
     }
 }
