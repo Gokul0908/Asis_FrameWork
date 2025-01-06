@@ -53,7 +53,7 @@ class serviceRequest {
 
     async selectFilter(filterdd) {
 
-        const icon = await this.resetIcon.isDisplayed()
+        const icon = await ReusablesComponents.waitForDisplay(this.resetIcon)
         if (icon == true) {
             await ReusablesComponents.waitAndClick(this.resetIcon)
         }

@@ -35,11 +35,13 @@ class TestingandCommissioning {
     async selectTandCDate(TodayDate) {
 
         await ReusablesComponents.waitAndSetValue(this.tndcDate, TodayDate)
+        await browser.keys('Enter')
     }
 
     async EnterRequestorDate(requestordate) {
 
         await ReusablesComponents.waitAndSetValue(this.requestorDate, requestordate)
+        await browser.keys('Enter')
     }
 
 }

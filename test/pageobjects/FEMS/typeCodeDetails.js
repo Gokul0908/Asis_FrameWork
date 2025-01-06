@@ -92,10 +92,12 @@ class typeCodeDetails {
 
     async enterDuringWarrantyRateDate(duringWarrantyRateDate) {
         await ReusablesComponents.waitAndSetValue(this.duringWarrantyRateDate, duringWarrantyRateDate)
+        await browser.keys('Enter')
     }
 
     async enterPostWarrantyRateDate(postWarrantyRateDate) {
         await ReusablesComponents.waitAndSetValue(this.postWarrantyRateDate, postWarrantyRateDate)
+        await browser.keys('Enter')
     }
 
     async clickQAPDetailsLabel() {

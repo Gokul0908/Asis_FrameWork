@@ -79,6 +79,7 @@ class fmsAddUserLocationMaster {
 
     async setStartServiceDate(startServiceDate) {
         await ReusablesComponents.waitAndSetValue(this.startServiceDate, startServiceDate)
+        await browser.keys('Enter')
     }
 }
 

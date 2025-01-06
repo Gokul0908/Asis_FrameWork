@@ -22,6 +22,7 @@ class userAreaMaster {
 
     async enterStartServiceDate(startServiceDate) {
         await ReusablesComponents.waitAndSetValue(this.startServiceDate, startServiceDate)
+        await browser.keys('Enter')
     }
 }
 

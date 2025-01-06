@@ -44,6 +44,7 @@ class FMSModule {
     getUserAreaCodeDropDown(concatUserAreaCode) { return (`//ul[@id='UlFetchUserAreaCode']/li/div/a[.='${concatUserAreaCode}']`) }
     get unsavedChangePopup() { return ("//button[.='No']") }
     get remarks() { return ("//textarea[@name='Remarks']") }
+    get stopServiceDate() { return ("(//input[@title='DD-MMM-YYYY'])[3]") }
 
 
     async enterRemarks(remarks) {
@@ -103,7 +104,14 @@ class FMSModule {
         await ReusablesComponents.waitAndSetValue(this.totalFloorArea, floorArea)
     }
     async setStartServiceDate(startServiceDate) {
-        await ReusablesComponents.waitAndSetValue(this.startServiceDate, startServiceDate)
+        await ReusablesComponents.waitAndSetValue(this.startServiceDate, '')
+
+        for (const char of startServiceDate) {
+            await $(this.startServiceDate).addValue(char)
+            await browser.pause(500)
+        }
+
+        await browser.keys('Enter')
     }
 
     async enterfmsUserDepartCode(userDepartmentCode) {

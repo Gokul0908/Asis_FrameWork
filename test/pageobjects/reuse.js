@@ -1,4 +1,5 @@
 import * as Constants from '../../Constants/const.js'
+import button from './button.js'
 
 class ReusablesComponents {
 
@@ -201,8 +202,19 @@ class ReusablesComponents {
         await this.waitAndClick(this.searchicon)
     }
 
-    async clickRestIcon() {
+    async clickResetIcon() {
         await this.waitAndClick(this.resetIcon)
+    }
+
+    async resetIconVisible() {
+        const resetIconVisible = await this.isDisplayed(this.resetIcon)
+
+        if (resetIconVisible == false) {
+            await this.waitAndClick(button.toggleSearchButton())
+        }
+        else (
+            console.log("Reset Icon Is Visible")
+        )
     }
 
     async enterValue(entertext) {
