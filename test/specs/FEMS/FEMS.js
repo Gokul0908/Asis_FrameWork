@@ -21,6 +21,7 @@ import serviceRequest from '../../pageobjects/FEMS/serviceRequest.js'
 import hooks from '../../../hooks.js'
 import testingAndCommissioning from '../../pageobjects/FEMS/testingAndCommissioning.js'
 import contractorAndVendorMaster from '../../pageobjects/FEMS/contractorAndVendorMaster.js'
+import srAttachment from '../../pageobjects/FEMS/srAttachment.js'
 
 
 
@@ -338,13 +339,20 @@ describe("Creating a full flow for FEMS", async () => {
             await reuseButtons.clickBackButton()
             // await ReusablesComponents.clickRestIcon()
             await reuseButtons.clickToggleSearchBtn()
-            await ReusablesComponents.resetIconVisible()
+            // await ReusablesComponents.resetIconVisible()
+            await WaitUntil.ElementIsVisible(3)
             await ReusablesComponents.clickResetIcon()
+            await WaitUntil.ElementIsVisible(3)
             await serviceRequest.selectFilter(constant.filter1)
             // await serviceRequest.selectFilter2(constant.filter2)
             await ReusablesComponents.enterValue(constant.fmsUserLocationCode)
+            await WaitUntil.ElementIsVisible(3)
             await ReusablesComponents.clickFindButton()
             requestno = await serviceRequest.getRequestNo()
+            await reuseButtons.clickEditIcon()
+            await srAttachment.enterFileName(constant.fileName)
+            await srAttachment.uploadFile(constant.filepath)
+            await reuseButtons.clickSaveButton2()
 
 
         })

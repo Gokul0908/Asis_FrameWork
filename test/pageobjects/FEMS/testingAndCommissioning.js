@@ -19,7 +19,12 @@ class TestingandCommissioning {
 
 
     async enterServiceRequestNo(requestno) {
-        await ReusablesComponents.waitAndSetValue(this.serviceRequestNo, requestno)
+        await ReusablesComponents.waitAndSetValue(this.serviceRequestNo, '')
+
+        for (const char of requestno) {
+            await $(this.serviceRequestNo).addValue(char)
+            await browser.pause(500)
+        }
         await ReusablesComponents.spotClick(this.getServiceRequestDD(requestno))
     }
 

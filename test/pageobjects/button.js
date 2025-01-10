@@ -23,6 +23,8 @@ class reuseButtons {
    get addNewButton() { return ("//button[.='Add New']") }
    get backButton() { return ("(//button[.='Back'])[1]") }
    get toggleSearchButton() { return ("(//a[@id='advanceSearch'])[1]") }
+   get resetIconBtn() { return ("//a[@id='fbox_grid_reset']") }
+   get editIcon() { return ("//a[@class='ui-icon ui-icon-pencil']") }
 
 
    async asisuserLogoutToTheApplication() {
@@ -102,9 +104,24 @@ class reuseButtons {
       await ReusablesComponents.waitAndClick(this.backButton)
    }
 
-   async clickToggleSearchBtn(){
+   async clickToggleSearchBtn() {
 
       await ReusablesComponents.waitAndClick(this.toggleSearchButton)
+
+      const resetIcon = await ReusablesComponents.isDisplayed(this.resetIconBtn)
+
+      if (!resetIcon) {
+
+         await ReusablesComponents.waitAndClick(this.toggleSearchButton)
+      }
+      else {
+         console.log(" Toggle Search Icon is Visible")
+      }
    }
 
+
+   async clickEditIcon(){
+
+      await ReusablesComponents.spotClick(this.editIcon)
+   }
 } export default new reuseButtons()

@@ -209,12 +209,12 @@ class ReusablesComponents {
     async resetIconVisible() {
         const resetIconVisible = await this.isDisplayed(this.resetIcon)
 
-        if (resetIconVisible == false) {
-            await this.waitAndClick(button.toggleSearchButton())
+        if (!resetIconVisible) {
+            await this.waitAndClick(button.clickToggleSearchBtn())
         }
-        else (
+        else {
             console.log("Reset Icon Is Visible")
-        )
+        }
     }
 
     async enterValue(entertext) {
@@ -227,7 +227,7 @@ class ReusablesComponents {
     }
 
     async clickFindButton() {
-        await this.waitAndClick(this.findButton)
+        await this.spotClick(this.findButton)
     }
 }
 export default new ReusablesComponents()
