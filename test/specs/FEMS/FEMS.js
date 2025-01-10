@@ -357,7 +357,7 @@ describe("Creating a full flow for FEMS", async () => {
 
         })
 
-        xit("Creating SSM Registration code for T and C ", async () => {
+        it("Creating SSM Registration code for T and C ", async () => {
 
             await asisHomePage.clickasisHeartIcon()
             await asisHomePage.selectServicesIcon(constant.fmsServices)

@@ -46,6 +46,11 @@ class TestingandCommissioning {
     async EnterRequestorDate(requestordate) {
 
         await ReusablesComponents.waitAndSetValue(this.requestorDate, requestordate)
+
+        for (const char of requestordate) {
+            await $(this.requestorDate).addValue(char)
+            await browser.pause(500)
+        }
         await browser.keys('Enter')
     }
 
