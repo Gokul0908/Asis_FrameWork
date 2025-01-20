@@ -41,6 +41,8 @@ export const config = {
         // './test/specs/FEMS/ValidateTheAsisLoginWithInvalidCredentials.js'
         // './SQL_Connectivity_Test/controller/excelTest1.js'
 
+        // './seetha/spec/ValidateTheStandardUserDepartmentodeInGeneralMaster.js'
+
         //Mysql Test
 
         // './SQL_Connectivity_Test/mysql_spec/mysql.js'
@@ -131,8 +133,7 @@ export const config = {
             // Save the screenshot with a timestamped filename
             const screenshotPath = path.join(screenshotDir, `${Date.now()}.png`);
             fs.writeFileSync(screenshotPath, screenshot, 'base64');
-
-            // console.log(`Screenshot saved at: ${screenshotPath}`);
+                        // console.log(`Screenshot saved at: ${screenshotPath}`);
 
         }
     },

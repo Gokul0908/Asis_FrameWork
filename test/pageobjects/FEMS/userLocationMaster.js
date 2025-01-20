@@ -14,6 +14,7 @@ class userLocationMaster {
         for (const char of userLocationCode) {
 
             await $(this.userLocationCode).addValue(char)
+            await browser.pause(500)
         }
         await ReusablesComponents.spotClick(this.getUserLocationCodeDD(concatfmsUserLocationCode))
     }

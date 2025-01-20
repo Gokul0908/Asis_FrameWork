@@ -25,7 +25,6 @@ import srAttachment from '../../pageobjects/FEMS/srAttachment.js'
 
 
 
-
 let requestno;
 
 
@@ -314,6 +313,7 @@ describe("Creating a full flow for FEMS", async () => {
             await reuseButtons.clickAddButton()
             await WaitUntil.ElementIsVisible(2)
             await userLocationMaster.enterUserLocationCode(constant.fmsUserLocationCode, constant.concatfmsUserLocationCode)
+            await WaitUntil.ElementIsVisible(2)
             await reuseButtons.clickSaveButton1()
             await ReusablesComponents.checkSuccessNotification(constant.SuccessMessage)
             console.log("Validation for User Location Master in FEMS is successful")
@@ -363,6 +363,7 @@ describe("Creating a full flow for FEMS", async () => {
             await asisHomePage.selectServicesIcon(constant.fmsServices)
             await sideNavBar.clickMasterDropDown(constant.contractndContractor)
             await sideNavBar.clickSubModulesDropDown(constant.contractorndVendor)
+            await reuseButtons.clickAddButton()
             await contractorAndVendorMaster.selectContractorType(constant.contractType)
             await contractorAndVendorMaster.enterRegistrationCode(constant.registrationcode)
             await contractorAndVendorMaster.selectContratorStatus(constant.contractorStatus)
