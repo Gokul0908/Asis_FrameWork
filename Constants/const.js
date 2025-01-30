@@ -16,11 +16,11 @@ export const locationSubModule1 = "User Area Master"
 export const locationSubModule2 = "User Location Master"
 
 // Add User Area Master 
-export const userDepartmentCode = "AF" + utils.getRandomNumbers(4)
-export const userDepartmentName = "AFinding" + utils.getRandomNumbers(4)
+export const userDepartmentCode = "AQ" + utils.getRandomNumbers(4)
+export const userDepartmentName = "AQuery" + utils.getRandomNumbers(4)
 export const concatCodeName = userDepartmentCode + ' ' + '-' + ' ' + userDepartmentName
-export const fmsUserAreaCode = "AF" + utils.getRandomNumbers(4)
-export const fmsUserAreaName = "AFinding" + utils.getRandomNumbers(4)
+export const fmsUserAreaCode = "AH" + utils.getRandomNumbers(4)
+export const fmsUserAreaName = "AHelp" + utils.getRandomNumbers(4)
 export const concatfmsUserAreaCode = fmsUserAreaCode + ' ' + '-' + ' ' + fmsUserAreaName
 export const fmsMySpaCode = "ASPA" + utils.getRandomNumbers(4)
 export const fmsCategoryOfArea = "General Area"
@@ -41,8 +41,8 @@ export const remarks = " Data Saved"
 
 
 //Add User Location Master 
-export const fmsUserLocationCode = "AF" + utils.getRandomNumbers(4)
-export const fmsUserLocationName = "AFinding" + utils.getRandomString(4)
+export const fmsUserLocationCode = "AH" + utils.getRandomNumbers(4)
+export const fmsUserLocationName = "AHelp" + utils.getRandomString(4)
 export const concatfmsUserLocationCode = fmsUserLocationCode + ' ' + '-' + ' ' + fmsUserLocationName
 export const status = "Active"  //  Inactive  Active
 export const locationSpecificName = "ANearICU"
@@ -198,17 +198,17 @@ export const selectQuantity = requestedQuantity
 ///FEMS
 export const femsSubModule = "FEMS"
 export const workGrpDetails = "Work Group Details"
-export const workGroupCode = "AF" + utils.getRandomNumbers(4)
-export const WorkGroupDesc = "AFinding" + utils.getRandomNumbers(4)
+export const workGroupCode = "AH" + utils.getRandomNumbers(4)
+export const WorkGroupDesc = "AHelp" + utils.getRandomNumbers(4)
 
 
-export const assetGroupCode = "AF" + utils.getRandomNumbers(4)
-export const assetGroupDesc = "AFixing" + utils.getRandomNumbers(4)
+export const assetGroupCode = "AH" + utils.getRandomNumbers(4)
+export const assetGroupDesc = "AHelp" + utils.getRandomNumbers(4)
 export const assetGroupDetails = "Asset Group Details"
 
 export const standardTaskDetails = "Standard Task Details"
-export const taskCode = "AF" + utils.getRandomNumbers(4)
-export const taskDesc = "AFixing" + utils.getRandomNumbers(4)
+export const taskCode = "AAsk" + utils.getRandomNumbers(4)
+export const taskDesc = "AAsking" + utils.getRandomNumbers(4)
 export const standardStatus = "Active"
 export const standardEffectiveFrom = getTodayDate()
 export const typeCodeDetails = "Type Code Details"
@@ -241,13 +241,13 @@ export const effectiveFrom = getTodayDate()
 //Asset Information
 export const assetInformation = "Asset Information"
 export const TypeManufacturer = "Manufacturer"
-export const ManufacturerName = "IndiaA" + utils.getRandomNumbers(4)
+export const ManufacturerName = "IndiaAA" + utils.getRandomNumbers(4)
 export const TypeMake = "Make"
-export const MakeName = "IndiaB" + utils.getRandomNumbers(4)
+export const MakeName = "IndiaBB" + utils.getRandomNumbers(4)
 export const TypeBrand = "Brand"
-export const BrandName = "IndiaC" + utils.getRandomNumbers(4)
+export const BrandName = "IndiaCC" + utils.getRandomNumbers(4)
 export const TypeModel = "Model"
-export const ModelName = "IndiaD" + utils.getRandomNumbers(4)
+export const ModelName = "IndiaDD" + utils.getRandomNumbers(4)
 export const selectStatus = "Active"
 
 
@@ -293,7 +293,7 @@ export const currentDate = getTodayDate()
 export const contractndContractor = 'Contract & Contractor'
 export const contractorndVendor = 'Contractor and Vendor Master'
 export const contractType = 'Sub-Contractor/Non-Specialised'
-export const registrationcode = 'RC' + utils.getRandomAlphaNumericString(4)
+export const registrationcode = 'RCA' + utils.getRandomAlphaNumericString(4)
 export const contractorStatus = 'Bumi '
 export const vendorStatus = 'Active'
 
@@ -308,4 +308,5 @@ export const contactPerson = "Person" + utils.getRandomNumbers(2)
 export const telephone = utils.getRandomNumbers(11)
 export const designation = "Job" + utils.getRandomNumbers(2)
 export const email = "mail@gmail.com" + utils.getRandomNumbers(3)
-
+export const requestorName2 = 'izza'
+export const assetClassification='Building'
