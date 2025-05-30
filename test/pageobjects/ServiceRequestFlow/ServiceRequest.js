@@ -6,7 +6,7 @@ class serviceRequest {
     getRequestType(RequestType) { return (`//select[@name='TypeOfRequestname']/option[.='${RequestType}']`) }
     getServiceRequest(serviceRequest) { return (`//select[@name='Service']/option[.='${serviceRequest}']`) }
     get requestorName() { return (`//input[@name='RequestorName']`) }
-    getRequestorDD(RequestorDD) { return (`//ul[@id='UlFetchhospital']/li/div/a[.='${RequestorDD}']`) }
+    getRequestorDD(RequestorDD) { return (`(//ul[@id='UlFetchhospital']/li/div/a[.='${RequestorDD}[1]`) }
     get userLocationCode() { return ("//input[@id='UserLocationCode']") }
     getUserLocationDD(userLocation) { return (`//ul[@id='UlFetchUserLocationCode']/li/div/a[contains(.,'${userLocation}')]`) }
     get details() { return ("//textarea[@name='Details']") }

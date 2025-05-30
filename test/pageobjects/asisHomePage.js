@@ -33,6 +33,8 @@ class asisHomePage {
    }
 
    async selectServicesIcon(serviceName) {
+      await ReusablesComponents.moveToTheElement(this.getServicesIcon(serviceName))
+      await ReusablesComponents.waitForDisplay(this.getIconExpansion(serviceName))
       await ReusablesComponents.waitAndClick(this.getServicesIcon(serviceName))
    }
    async chooseCompany(selectCompany) {
