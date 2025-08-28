@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Asis_Wdio">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/Constants.zip!/" />
+      <root url="jar://$PROJECT_DIR$/seetha.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

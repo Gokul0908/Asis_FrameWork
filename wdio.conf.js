@@ -36,7 +36,7 @@ export const config = {
 
         // "./test/specs/FEMS/*.js",
         // "./test/specs/LLS/LLS.js"
-        // "./test/specs/FEMS/FEMS.js",
+        "./test/specs/FEMS/FEMS.js",
         // './test/specs/FEMS/ValidateTheAsisLoginWithValidCredentials.js'
         // './test/specs/FEMS/ValidateTheAsisLoginWithInvalidCredentials.js'
         // './SQL_Connectivity_Test/controller/excelTest1.js'
@@ -46,7 +46,7 @@ export const config = {
         //Mysql Test
 
         // './SQL_Connectivity_Test/mysql_spec/mysql.js',
-        './test/specs/ServiceRequestFlow/ServiceRequestFlow.js',
+        // './test/specs/ServiceRequestFlow/ServiceRequestFlow.js',
 
     ],
 
