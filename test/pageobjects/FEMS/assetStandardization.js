@@ -1,6 +1,5 @@
 import ReusablesComponents from '../reuse'
-import utils from '../../utils/utilities'
-import constants from '../../../Constants/const'
+import * as constant from '../../../Constants/const.js'
 
 
 
